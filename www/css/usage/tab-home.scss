@@ -1,0 +1,150 @@
+@charset "utf-8";
+/*
+* @description: "主栏目—视频"页面样式
+* @author: 孔
+* @update: name (2016-10-08)
+*/
+/*
+* k==kong
+* c==classify
+* */
+.tab_home {
+    ion-content{
+        &.has-subheader{
+            top: 84px;
+        }
+    }
+    .tabs {
+        top: 0;
+        height: 44px!important;
+        line-height: 44px;
+        width: 100%;
+        padding: 0 5rem;
+        
+    }
+    .has-tabs.pane {
+        top: 44px;
+        bottom: 50px;
+    }
+    .tab-item-active{
+        font-weight: bolder;
+    }
+    .scrollToTop {
+        height: 32px;
+        width: 32px;
+        background: #657287;
+        border-radius: 50%;
+        position: absolute;
+        bottom: 65px;
+        right: 10px;
+        z-index: 10000;
+        color: #fff;
+        font-size: 16px;
+    }
+    .h_center {
+        &.bar{
+            padding: 0;
+            
+        }
+        &.has-header{
+            top: 40px;
+        }
+        .scroll{
+            white-space: nowrap;
+            
+            .button{
+                height: 20px;
+                padding: 0 14px;
+                font-size: 12px;
+                line-height: 20px;
+                min-height: 22px;
+                margin: 13px 0 9px 1rem;
+                color: #55473e;
+                &:last-child{
+                    margin-right: 44px;
+                }
+                &.activated{
+                    color: #fff;
+                    background: $color;
+                }
+                &.active{
+                    color: #fff;
+                    background: $color;
+                }
+            }
+        }
+        
+        .h_more {
+            display: block;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 40px;
+            height: 40px;
+            z-index: 1;
+            opacity: 0.8;
+            background-color: #f1f6fb;
+            box-shadow: 0 -1px 3px 0 #91abd3;
+            i {
+                //              font-weight: bold;
+                display: block;
+                line-height: 40px;
+                text-align: center;
+                font-size: 24px;
+                color: $color;
+                font-weight: bold;
+            }
+        }
+        
+    }
+    .h_banner {
+        padding: 1rem 1rem 0.625rem;
+        .slider-pager-page{
+            color: #f0e2d7;
+            &.active{
+                color: $color;
+            }
+        }
+        img {
+            width: 100%;
+            height: 8.5rem;
+            border-radius: 10px;
+        }
+    }
+    .h_list {
+        .h_recommend{
+            padding-left: 1rem;
+            font-weight: bold;
+            color: #333;
+        }
+        .item {
+            padding-left: 8.75rem;
+            border: none;
+            img {
+                width: 7rem;
+                height: 4.5rem;
+                left: 1rem!important;
+                max-width: 7rem!important;
+                border-radius: 5px;
+            }
+            h2 {
+                white-space: normal;
+                overflow: visible;
+                color: #2a2a2a;
+            }
+            p {
+                padding-top: 1rem;
+                color: #aab0b8;
+                .h_camera {
+                    .icon {
+                        color: #d6dbe2;
+                        padding: 0 0.2rem;
+                        font-size: 1rem;
+                    }
+                    display: inline-block;
+                    float: right;
+                }
+            }
+        }
+    }
+}

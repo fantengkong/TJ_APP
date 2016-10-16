@@ -1,0 +1,266 @@
+@charset "utf-8";
+/*
+* @description: "视频播放页"页面样式
+* @author: 孔
+* @update: name (2016-10-08)
+*/
+/*
+* k==kong
+* p==play
+* */
+
+.k_play {
+    
+    .p_wrap {
+        height: 13.125rem;
+        width: 100%;
+        position: relative;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+        .p_back {
+            position: absolute;
+            z-index: 1;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            background: rgba(0,0,0,0.5);
+            font-size: 1.5rem;
+            line-height: 2rem;
+            text-align: center;
+            color: #fff;
+            left: 1rem;
+            top: 0.625rem;
+        }
+        .p_sign {
+            position: absolute;
+            z-index: 1;
+            width: 5.5rem;
+            height: 3.75rem;
+            border-radius: 5px;
+            background: rgba(0,0,0,0.5);
+            font-size: 2.5rem;
+            line-height: 3.75rem;
+            text-align: center;
+            color: #fff;
+            left: 0;
+            top: 0;
+            margin: auto;
+            right: 0;
+            bottom: 0;
+        }
+    }
+    .p_content {
+        top: 13.125rem;
+        p {
+            margin: 0;
+        }
+        .p_info {
+            .row {
+                padding: 0;
+            }
+            padding: 1.125rem 1rem 0;
+            .p_title {
+                p {
+                    font-size: 1.25rem;
+                    font-weight: normal;
+                    font-style: normal;
+                    font-stretch: normal;
+                    line-height: 1.4;
+                    color: #2b2a2a;
+                }
+                i {
+                    color: #98a4b8;
+                    text-align: right;
+                    font-size: 1rem;
+                }
+            }
+            .p_visitor {
+                color: #d6dbe2;
+                line-height: 1.375rem;
+                padding: 0.625rem 0;
+                i {
+                    padding: 0 1px;
+                    font-size: 14px;
+                }
+            }
+            .p_major {
+                i {
+                    display: inline-block;
+                    padding: 0 1rem;
+                    font-size: 0.75rem;
+                    line-height: 1.375rem;
+                    box-sizing: border-box;
+                    border-radius: 6.25rem;
+                    color: #d6dbe2;
+                    border: solid 1px #d6dbe2;
+                    margin-right: 0.5rem;
+                }
+                padding-bottom: 1rem;
+            }
+        }
+        .p_anchor {
+            padding: 0.625rem 1rem;
+            border: 1px solid #eaeaea;
+            border-right: none;
+            border-left: none;
+            .col {
+                padding: 0;
+            }
+            .a_portrait {
+                img {
+                    width: 3.5rem;
+                    height: 3.5rem;
+                    border-radius: 50%;
+                }
+            }
+            .a_message {
+                p {
+                    margin-bottom: 0.5rem;
+                    font-size: 0.75rem;
+                    .a_name {
+                        font-weight: bold;
+                        font-size: 1rem;
+                        padding-right: 0.5rem;
+                        color: #2a2a2a;
+                    }
+                    .a_title {
+                        color: #aab0b8;
+                    }
+                    .a_place {
+                        color: #8d939d;
+                        padding-right: 0.5rem;
+                    }
+                    .a_office {
+                        color: #8d939d;
+                    }
+                }
+            }
+            .a_go {
+                text-align: right;
+                font-size: 1rem;
+                color: #98a4b8;
+                padding-top: 1.5rem;
+            }
+        }
+        .p_set {
+            padding: 1rem 1rem 0.625rem;
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+            color: #98a4b8;
+            b {
+                padding-right: 3px;
+            }
+        }
+        .p_vList {
+            .list {
+                padding: 0 1rem;
+                .item {
+                    margin-bottom: 0.625rem;
+                    padding: 0;
+                    border-color: #97baf0;
+                    padding: 2px 0;
+                    .p_intro {
+                        padding: 0.5rem 3rem 0.5rem 1rem;
+                        p {
+                            line-height: 1.25rem;
+                            font-size: 14px;
+                            color: #2b2a2a;
+                            font-weight: bold;
+                        }
+                        .p_time {
+                            font-weight: normal;
+                            color: #aab0b8;
+                            font-size: 12px;
+                            line-height: 1rem;
+                        }
+                    }
+                    i {
+                        color: #4689f2;
+                    }
+                }
+            }
+        }
+    }
+    .p_mask {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        opacity: 0.5;
+        
+    }
+    .card {
+        span {
+            position: absolute;
+            display: block;
+            right: 0.625rem;
+            top: 0.625rem;
+            font-size: 1.125rem;
+            color: #fff;
+            width: 1.125rem;
+            height: 1.125rem;
+            text-align: center;
+            z-index: 10002;
+        }
+        z-index: 1;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 6.375rem;
+        margin: auto;
+        width: 19.75rem;
+        height: 25rem;
+        ion-scroll {
+            height: 15rem;
+        }
+        .p_introduce {
+            padding-bottom: 0;
+            padding-top: 0;
+            border-width: 0;
+            p {
+                padding-right: 0.625rem;
+                &:first-child {
+                    margin-top: 0;
+                }
+            }
+        }
+        .p_background {
+            width: 100%;
+            height: 7.5rem;
+            overflow: visible;
+            background: #4384e9!important;
+            margin-bottom: 2.75rem;
+            .item {
+                background: none;
+            }
+            .p_people {
+                height: 10.25rem;
+                overflow: visible;
+                z-index: 1000;
+                padding: 0;
+                border: none;
+                padding: 5.625rem 0 0.25rem 6.625rem;
+                img {
+                    top: 4.375rem;
+                    left: 1rem;
+                    border: 2px solid #fff;
+                    box-sizing: border-box;
+                }
+                h2 {
+                    line-height: 1.375rem;
+                    color: #fff;
+                    font-size: 1rem;
+                    margin-bottom: 1rem;
+                }
+                p {
+                    color: #8D939D;
+                    line-height: 1.125rem;
+                    font-size: 0.75rem;
+                }
+            }
+        }
+    }
+}

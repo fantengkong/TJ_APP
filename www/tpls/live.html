@@ -1,0 +1,44 @@
+<!--
+@description: "直播间"页面
+@author: 孔
+@update: name (2016-10-08)
+-->
+<!--
+k==kong
+l==live
+-->
+<ion-view class="live">
+	<div class="l_play"><img src="../img/List_Act_1.jpg" alt="" /></div>
+	<div class="l_player">
+		<img src="../img/perry.png"/>
+		<i class="l_people">张启科</i>
+		<i class="l_title">讲师</i>
+		<span><i>123456</i>人看<b>·</b><i>1234</i>赞</span>
+	</div>
+	<ion-content class="has-footer padding" delegate-handle="liveScroll">
+		<ul class="l_chat">
+			<li class="msgContent l_speaker" style="clear: both;"><img src="../img/perry.png"/><p><b class="l_left"></b>我是讲师，有专业气泡</p></li>
+			
+			<li class="msgContent l_speaker" style="clear: both;"><img src="../img/perry.png"/><p><b class="l_left"></b>我是讲师，有专业气泡</p></li>
+			<li class="msgContent l_me" style="clear: both;"><p><b class="l_right"></b>我的发言</p><img src="../img/ben.png"/></li>
+			<li class="msgContent" style="clear: both;"><img src="../img/mike.png"/><p><b class="l_left"></b>其它观众发言其它观众发言其它观众发言其它观众发言</p></li>
+			<div class="l_system" style="clear: both;">系统消息：后台场控后台场控后台场控后台场控后台场控后台场控后台场控后台场控后台场控</div>
+			<li class="msgContent l_me" style="clear: both;"><p><b class="l_right"></b>我的发言我的发言我的发言我的发言我的发言我的发言</p><img src="../img/ben.png"/></li>
+			
+		</ul>
+	</ion-content>
+	<button class="l_like button button-clear">
+			<i class="iconfont">&#xe603;</i>
+	</button>
+	<div class="l_footer bar bar-footer item-input-inset">
+		<button class="button button-clear">
+			<i class="iconfont">&#xe603;</i>
+		</button>
+	  <label class="item-input-wrapper">
+	    <input ng-model="Chat" type="text" placeholder="一起讨论">
+	  </label>
+	  <button class="button button-clear" ng-click="sendChat()">
+	    <i class="iconfont">&#xe605;</i>
+	  </button>
+	</div>
+</ion-view>

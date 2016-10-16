@@ -1,0 +1,90 @@
+<!--
+@description: "我的"页面
+@author: 孔
+@update: name (2016-10-08)
+-->
+<!--
+k==kong
+-->
+<ion-view class="tab-my">
+	<ion-content class="k_nologin">
+		<div class="k_no">
+			<p>还未登录，请先
+				<a href="#/login_register"><button class="button button-clear" title="登录">登录</button></a>
+			</p>
+		</div>
+		<div class="k_prompt">
+			<p class="k_play"><span><i class="icon ion-play"></i></span></p>
+			<p>还没有视频播放记录，开始学习吧！</p>
+		</div>
+	</ion-content>
+	<ion-scroll scrollbar-y="false" has-bouncing="false" scroll="false" class="k_haslogin" hidden>
+		<div>
+			<div class="k_has">
+				<div class="k_border">
+					<img src="../img/List_Act_1.jpg" />
+					<!--<div class="badge">ddddddddd</div>-->
+				</div>
+				<p>sofeeling @#^!*$% 兼容特殊字符</p>
+			</div>
+			<div class="k_message" scroll-height1 style="position: relative;">
+				<ion-tabs class="tabs-top tabs-light tabs-striped tabs-color-assertive">
+
+					<ion-tab title="我的视频">
+
+						<ion-content scroll-height2>
+
+							<div class="k_lookedList">
+								<ion-list>
+									<ion-item ng-repeat="item in items1" class="item item-thumbnail-left">
+										<img ng-src={{item.imgUrl}} />
+										<h2>{{item.title}}</h2>
+										<p><i>{{item.name}}</i><i> {{item.designation}}</i><span class="h_camera"><i class="icon ion-ios-videocam {{item.icon}}"></i><i>{{item.num}}</i></span></p>
+									</ion-item>
+								</ion-list>
+
+							</div>
+						</ion-content>
+					</ion-tab>
+
+					<ion-tab title="我看过的">
+						<ion-content scroll-height2>
+
+							<div class="k_lookedList">
+								<ion-list>
+									<ion-item ng-repeat="item in items1" class="item item-thumbnail-left">
+										<img ng-src={{item.imgUrl}} />
+										<h2>{{item.title}}</h2>
+										<p><i>{{item.name}}</i><i> {{item.designation}}</i><span class="h_camera"><i class="icon ion-ios-videocam {{item.icon}}"></i><i>{{item.num}}</i></span></p>
+									</ion-item>
+								</ion-list>
+
+							</div>
+
+						</ion-content>
+					</ion-tab>
+
+				</ion-tabs>
+			</div>
+
+			<!--<ion-scroll scroll-height1>
+				<div>
+					<div class="k_looked">
+						<p>我看过的</p>
+					</div>
+					<div class="k_lookedList">
+						<ion-list>
+							<ion-item ng-repeat="item in items1" class="item item-thumbnail-left">
+								<img ng-src={{item.imgUrl}} />
+								<h2>{{item.title}}</h2>
+								<p><i>{{item.name}}</i><i> {{item.designation}}</i><span class="h_camera"><i class="icon ion-ios-videocam {{item.icon}}"></i><i>{{item.num}}</i></span></p>
+							</ion-item>
+						</ion-list>
+
+					</div>
+				</div>
+			</ion-scroll>-->
+		</div>
+
+	</ion-scroll>
+</ion-view>

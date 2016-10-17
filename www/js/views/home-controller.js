@@ -17,18 +17,13 @@ starterCtrls
 
 			}
 		}
-		$scope.houzhui= {};
-		$scope.items = {};
-		$http.get('./mock/home_list.json')
+		$http.get('./api/home_list.php?pageNo=0')
 			.then(
 				function(res) {
-					console.log(res.data)
 					$scope.items = res.data;
 				}
 			);
-//		$http({
-//			
-//		})
+
 		/*
 		$http（{  
 			method:string,//就是请求方式get、post等  
@@ -52,43 +47,65 @@ starterCtrls
 		$scope.$on('scroll.inifiteScrollComplete', function() {
 			console.log("load complete");
 		})
-		$ionicModal.fromTemplateUrl('my-modal.html', {
-			scope: $scope,
-			animation: 'slide-in-up'
-		}).then(function(modal) {
-			$scope.modal = modal;
-		});
-		$scope.openModal = function($event) {
-			$scope.modal.show($event);
-			$(".c_choice a").on("click", function() {
-				if($(this).hasClass("active")) {
-					$(this).removeClass("active");
-				} else {
-					$(this).addClass("active");
+		$scope.activeNavItem = 0;
+		$scope.navItemAction = function(index){
+    	$scope.activeNavItem = index;
+//  	$ionicScrollDelegate.$getByHandle('nav-content1').scrollTo(0,index*200,true);
+    	$http.get('./api/home_list.php?pageNo='+index)
+			.then(
+				function(res) {
+					$scope.items = res.data;
 				}
-
-			})
-		};
-		$scope.closeModal = function() {
-			$scope.modal.hide();
-		};
-		//当我们用到模型时，清除它！
-		$scope.$on('$destroy', function() {
-			$scope.modal.remove();
-		});
-		// 当隐藏的模型时执行动作
-		$scope.$on('modal.hide', function() {
-			// 执行动作
-		});
-		// 当移动模型时执行动作
-		$scope.$on('modal.removed', function() {
-			// 执行动作
-		});
+			);
+    }
+		$scope.navItems1=[
+			{ id: 0 ,name: "精品推荐"},
+	    { id: 1 ,name: "基因组"},
+	    { id: 2 ,name: "癌症" },
+	    { id: 3 ,name: "单细胞" },
+	    { id: 4 ,name: "基因检测" },
+	    { id: 5 ,name: "转基因" },
+	    { id: 6 ,name: "六字类目名称" },
+	    { id: 7 ,name: "二字" },
+	    { id: 8 ,name: "三字名" },
+	    { id: 9 ,name: "English Name" },
+	    { id: 10 ,name: "三字名" },
+	    { id: 11 ,name: "五字类目" },
+	    { id: 12 ,name: "二字" },
+	    { id: 13 ,name: "三字名" }
+		];
+		$scope.navItems2=[
+			{ id: 0 ,name: "精品推荐"},
+	    { id: 1 ,name: "学知识"},
+	    { id: 2 ,name: "癌症" },
+	    { id: 3 ,name: "单细胞" },
+	    { id: 4 ,name: "基因检测" },
+	    { id: 5 ,name: "转基因" },
+	    { id: 6 ,name: "六字类目名称" },
+	    { id: 7 ,name: "二字" },
+	    { id: 8 ,name: "三字名" },
+	    { id: 9 ,name: "English Name" },
+	    { id: 10 ,name: "三字名" },
+	    { id: 11 ,name: "五字类目" },
+	    { id: 12 ,name: "二字" },
+	    { id: 13 ,name: "三字名" }
+		];
+		$scope.navItems3=[
+			{ id: 0 ,name: "精品推荐"},
+	    { id: 1 ,name: "大咖说"},
+	    { id: 2 ,name: "癌症" },
+	    { id: 3 ,name: "单细胞" },
+	    { id: 4 ,name: "基因检测" },
+	    { id: 5 ,name: "转基因" },
+	    { id: 6 ,name: "六字类目名称" },
+	    { id: 7 ,name: "二字" },
+	    { id: 8 ,name: "三字名" },
+	    { id: 9 ,name: "English Name" },
+	    { id: 10 ,name: "三字名" },
+	    { id: 11 ,name: "五字类目" },
+	    { id: 12 ,name: "二字" },
+	    { id: 13 ,name: "三字名" }
+		];
 
 	})
-	.controller('subnavController', function($ionicModal, $scope, $ionicScrollDelegate, $http, $timeout) {
-		$(".h_subnav button").on("click", function() {
-			$(this).addClass("active").siblings().removeClass("active");
-		})
-
-	})
+	

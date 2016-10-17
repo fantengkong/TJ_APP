@@ -12,18 +12,13 @@ h==home
 	<ion-tabs class="tabs-assertive first_tab">
 		<ion-tab title="看大会">
 			<ion-view>
+				<!--<ion-item ng-repeat="item in items" item="item" href="#/item/{{item.id}}" class="item-remove-animate">-->
 				<div class="bar bar-subheader has-header h_center">
-					<ion-scroll ng-controller="subnavController" direction="x" lock="true" scrollbar-y="false" scrollbar-x="false" style="width: 100%;">
+					<ion-scroll direction="x" lock="true" scrollbar-y="false" scrollbar-x="false" style="width: 100%;">
 						<div class="h_subnav">
-							<button class="active button button-stable">推荐</button>
-							<button class="button button-stable">精准医学</button>
-							<button class="button button-stable">基因组</button>
-							<button class="button button-stable">癌症</button>
-							<button class="button button-stable">单细胞</button>
-							<button class="button button-stable">基因组</button>
-							<button class="button button-stable">癌症</button>
-							<button class="button button-stable">单细胞</button>
+							<button ng-repeat="navItem in navItems1" class="button button-stable" ng-class="{'active':$index==activeNavItem}" ng-click="navItemAction($index)">{{navItem.name}}</button>
 						</div>
+						<!--<button class="button ng-repeat="item in navItems" button-stable" ng-class="{'active':$index==activeNavItem}" ng-click="navItemAction($index)">{{item}}</button>-->
 					</ion-scroll>
 					<button class="h_more button-clear" ng-click="openClassify()">
 						<i class="icon ion-ios-plus-outline"></i>
@@ -36,10 +31,10 @@ h==home
 								<img src="../img/Home_Banner.jpg" alt="" />
 							</ion-slide>
 							<ion-slide>
-								<img src="../img/Home_Banner.jpg" alt="" />
+								<img src="../img/List_Act_1.jpg" alt="" />
 							</ion-slide>
 							<ion-slide>
-								<img src="../img/Home_Banner.jpg" alt="" />
+								<img src="../img/List_Act_3.jpg" alt="" />
 							</ion-slide>
 						</ion-slide-box>
 					</div>
@@ -65,13 +60,12 @@ h==home
 		<ion-tab title="学知识">
 			<ion-view>
 				<div class="bar bar-subheader has-header h_center">
-					<ion-scroll ng-controller="subnavController" direction="x" lock="true" scrollbar-y="false" scrollbar-x="false" style="width: 100%;">
+					<ion-scroll direction="x" lock="true" scrollbar-y="false" scrollbar-x="false" style="width: 100%;">
 						<div class="h_subnav">
-							<button class="active button button-stable">推荐</button>
-							<button class="button button-stable">学知识</button>
+							<button ng-repeat="navItem in navItems2" class="button button-stable" ng-class="{'active':$index==activeNavItem}" ng-click="navItemAction($index)">{{navItem.name}}</button>
 						</div>
 					</ion-scroll>
-					<button class="h_more button-clear" ng-click="openClassify()">
+					<button class="h_more button-clear">
 						<i class="icon ion-ios-plus-outline"></i>
 					</button>
 				</div>
@@ -111,13 +105,12 @@ h==home
 		<ion-tab title="大咖说">
 			<ion-view>
 				<div class="bar bar-subheader has-header h_center">
-					<ion-scroll ng-controller="subnavController" direction="x" lock="true" scrollbar-y="false" scrollbar-x="false" style="width: 100%;">
+					<ion-scroll direction="x" lock="true" scrollbar-y="false" scrollbar-x="false" style="width: 100%;">
 						<div class="h_subnav">
-							<button class="active button button-stable">推荐</button>
-							<button class="button button-stable">大咖说</button>
+							<button ng-repeat="navItem in navItems3" class="button button-stable" ng-class="{'active':$index==activeNavItem}" ng-click="navItemAction($index)">{{navItem.name}}</button>
 						</div>
 					</ion-scroll>
-					<button class="h_more button-clear" ng-click="openModal($event)">
+					<button class="h_more button-clear">
 						<i class="icon ion-ios-plus-outline"></i>
 					</button>
 				</div>
@@ -159,54 +152,3 @@ h==home
 		<i class="icon ion-arrow-up-a"></i>
 	</button>
 </ion-view>
-
-<!--
-@description: "分类目订阅层"页面
-@author: 孔
-@update: name (2016-10-09)
--->
-<!--
-k==kong
-c==classify
--->
-<script id="my-modal.html" type="text/ng-template">
-	<ion-view class="k_classify">
-		<ion-tabs class="tabs-assertive">
-			<ion-tab title="看大会">
-				<ion-content>
-					<p class="c_select">请选择感兴趣的视频类目（可多选）</p>
-					<div class="c_choice">
-						<a href="" class="button active">精准医学<i class="icon ion-ios-checkmark-empty"></i></a>
-						<a href="" class="button active">基因组<i class="icon ion-ios-checkmark-empty"></i></a>
-						<a href="" class="button active">癌症<i class="icon ion-ios-checkmark-empty"></i></a>
-						<a href="" class="button active">单细胞<i class="icon ion-ios-checkmark-empty"></i></a>
-						<a href="" class="button">基因检测<i class="icon ion-ios-checkmark-empty"></i></a>
-						<a href="" class="button ">转基因<i class="icon ion-ios-checkmark-empty"></i></a>
-						<a href="" class="button ">六字类目名称<i class="icon ion-ios-checkmark-empty"></i></a>
-						<a href="" class="button ">二字<i class="icon ion-ios-checkmark-empty"></i></a>
-						<a href="" class="button ">三字名<i class="icon ion-ios-checkmark-empty"></i></a>
-						<a href="" class="button ">English Name<i class="icon ion-ios-checkmark-empty"></i></a>
-						<a href="" class="button ">三字名<i class="icon ion-ios-checkmark-empty"></i></a>
-						<a href="" class="button ">五字类目名<i class="icon ion-ios-checkmark-empty"></i></a>
-						<a href="" class="button ">二字<i class="icon ion-ios-checkmark-empty"></i></a>
-						<a href="" class="button ">三字名<i class="icon ion-ios-checkmark-empty"></i></a>
-					</div>
-				</ion-content>
-			</ion-tab>
-
-			<ion-tab title="学知识">
-				<ion-pane>
-
-				</ion-pane>
-			</ion-tab>
-
-			<ion-tab title="大咖说">
-
-			</ion-tab>
-		</ion-tabs>
-
-		<ion-footer-bar>
-			<h1 class="title" ng-click="closeModal()">关闭</h1>
-		</ion-footer-bar>
-	</ion-view>
-</script>

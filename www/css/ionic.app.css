@@ -9645,6 +9645,7 @@ html {
 .tab_home ion-content.has-subheader {
   top: 84px; }
 .tab_home .tabs {
+  background: #ff6600;
   top: 0;
   height: 44px !important;
   line-height: 44px;

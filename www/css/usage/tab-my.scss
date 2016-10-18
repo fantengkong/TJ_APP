@@ -51,29 +51,48 @@
     }
     .k_haslogin {
         .k_has {
+            z-index: 6;
+            background-color: $color;
+            height: 10.375rem;
+            text-align: center;
+            
+            p {
+                color: #fff;
+            }
             .k_border{
                 width: 5.625rem;
                 height: 5.625rem;
                 border: 3px solid #ff944c;
                 margin: auto;
-                margin-top: 3.2rem;
-                margin-bottom: 1rem;
+                margin-top: 3rem;
+                margin-bottom: .625rem;
                 border-radius: 50%;
+                position: relative;
                 img {
                     width: 100%;
                     height: 100%;
                     border: 3px solid #fff;
                     border-radius: 50%;
                 }
+                p{
+                    margin: 0;
+                    height: 1rem;
+                    width: 3.25rem;
+                    border-radius: .5rem;
+                    background: #33d170;
+                    color: #fff;
+                    line-height: 1rem;
+                    text-align: center;
+                    font-size: .625rem;
+                    position: absolute;
+                    bottom: -2px;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                    z-index: 10000;
+                }
             }
-            z-index: 6;
-            background-color: $color;
-            height: 13.375rem;
-            text-align: center;
             
-            p {
-                color: #fff;
-            }
         }
         .k_message{
             .has-tabs-top{

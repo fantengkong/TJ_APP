@@ -40,7 +40,7 @@
             height: 3.75rem;
             border-radius: 5px;
             background: rgba(0,0,0,0.5);
-            font-size: 2.5rem;
+            
             line-height: 3.75rem;
             text-align: center;
             color: #fff;
@@ -49,6 +49,9 @@
             margin: auto;
             right: 0;
             bottom: 0;
+            i{
+                font-size: 2.5rem;
+            }
         }
     }
     .p_content {
@@ -154,12 +157,31 @@
             }
         }
         .p_vList {
+            .item-icon-right .icon{
+                font-size: 22px;
+            }
             .list {
+                
                 padding: 0 1rem;
                 .item {
+                    border-radius: 5px;
+                    &.playing{
+                        color: #fff;
+                        background: $color;
+                        .p_intro{
+                            p{
+                                color: #fff;
+                            }
+                            
+                            
+                        }
+                        i{
+                            color: #fff;
+                        }
+                    }    
                     margin-bottom: 0.625rem;
                     padding: 0;
-                    border-color: #97baf0;
+                    border-color: $color;
                     padding: 2px 0;
                     .p_intro {
                         padding: 0.5rem 3rem 0.5rem 1rem;
@@ -177,7 +199,7 @@
                         }
                     }
                     i {
-                        color: #4689f2;
+                        color: $color;
                     }
                 }
             }

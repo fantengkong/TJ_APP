@@ -17,12 +17,22 @@ starterCtrls
 
 			}
 		}
-		$http.get('./api/home_list.php?pageNo=0')
+		/*获取假数据*/
+		$http.get('mock/home_list.json')
 			.then(
 				function(res) {
 					$scope.items = res.data;
 				}
 			);
+			
+			
+			/*从后台获取数据*/
+/*		$http.get('./api/home_list.php?pageNo=0')
+			.then(
+				function(res) {
+					$scope.items = res.data;
+				}
+			);*/
 
 		/*
 		$http（{  

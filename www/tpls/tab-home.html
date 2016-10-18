@@ -20,6 +20,7 @@ h==home
 						</div>
 						<!--<button class="button ng-repeat="item in navItems" button-stable" ng-class="{'active':$index==activeNavItem}" ng-click="navItemAction($index)">{{item}}</button>-->
 					</ion-scroll>
+					<!--加载更多-->
 					<button class="h_more button-clear" ng-click="openClassify()">
 						<i class="icon ion-ios-plus-outline"></i>
 					</button>
@@ -38,12 +39,14 @@ h==home
 							</ion-slide>
 						</ion-slide-box>
 					</div>
+					<!--精品推荐列表-->
 					<ion-list class="h_list">
 						<p class="h_recommend">精选推荐</p>
 						<ion-item ng-repeat="item in items" class="item item-thumbnail-left">
 							<img ng-src={{item.imgUrl}} alt="" />
 							<h2>{{item.title}}</h2>
 							<p><i>{{item.name}}</i><i> {{item.designation}}</i><span class="h_camera"><i class="icon ion-ios-videocam {{item.icon}}"></i><i>{{item.num}}</i></span></p>
+							<div class="h_state">{{item.info}}</div>
 						</ion-item>
 					</ion-list>
 					<!--<ion-list class="h_list">
@@ -65,7 +68,8 @@ h==home
 							<button ng-repeat="navItem in navItems2" class="button button-stable" ng-class="{'active':$index==activeNavItem}" ng-click="navItemAction($index)">{{navItem.name}}</button>
 						</div>
 					</ion-scroll>
-					<button class="h_more button-clear">
+					<!--加载更多-->
+					<button class="h_more button-clear" ng-click="openClassify()">
 						<i class="icon ion-ios-plus-outline"></i>
 					</button>
 				</div>
@@ -110,7 +114,8 @@ h==home
 							<button ng-repeat="navItem in navItems3" class="button button-stable" ng-class="{'active':$index==activeNavItem}" ng-click="navItemAction($index)">{{navItem.name}}</button>
 						</div>
 					</ion-scroll>
-					<button class="h_more button-clear">
+					<!--加载更多-->
+					<button class="h_more button-clear" ng-click="openClassify()">
 						<i class="icon ion-ios-plus-outline"></i>
 					</button>
 				</div>
@@ -148,7 +153,8 @@ h==home
 			</ion-view>
 		</ion-tab>
 	</ion-tabs>
+	<!--回到顶部按钮-->
 	<button class="scrollToTop button-clear" ng-click="scrollTop()" hidden>
-		<i class="icon ion-arrow-up-a"></i>
+		<i class="iconfont">&#xe654;</i>
 	</button>
 </ion-view>

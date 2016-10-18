@@ -30,6 +30,7 @@
     .tab-item-active{
         font-weight: bolder;
     }
+    //回到顶部
     .scrollToTop {
         height: 32px;
         width: 32px;
@@ -40,7 +41,10 @@
         right: 10px;
         z-index: 10000;
         color: #fff;
-        font-size: 16px;
+//      font-size: 16px;
+        padding: 0;
+        border-width: 0;
+        line-height: 32px;
     }
     .h_center {
         &.bar{
@@ -86,15 +90,41 @@
             opacity: 0.8;
             background-color: #f1f6fb;
             box-shadow: 0 -1px 3px 0 #91abd3;
+            padding: 0;
+            border: none;
             i {
-                //              font-weight: bold;
                 display: block;
                 line-height: 40px;
                 text-align: center;
                 font-size: 24px;
                 color: $color;
                 font-weight: bold;
+                &.iconfont{
+                    font-size: 40px;
+                }
+                &.icon:before{
+                    font-size: 24px;
+                    font-weight: bold;
+                }
             }
+//          padding: 0;
+//          border: none;            
+//          i { 
+//              display: block;
+//              text-align: center;
+//              color: $color;
+//              font-weight: bold;
+//              width: 32px;
+//              height: 32px;
+//              border-radius: 50%;
+//              border: 2px solid $color;
+//              left: 0;
+//              position: absolute;
+//              right: 0;
+//              margin: auto;
+//              top: 0;
+//              bottom: 0;
+//          }
         }
         
     }
@@ -145,6 +175,19 @@
                     display: inline-block;
                     float: right;
                 }
+            }
+            .h_state{
+                position: absolute;
+                left: 1rem;
+                top: 10px;
+                line-height: 1.25rem;
+                font-size: 10px;
+                line-height: 1.25rem;
+                text-align: center;
+                width: 3rem;
+                color: #fff;
+                background: #409cf3;
+                border-radius: 5px 0 5px 0;
             }
         }
     }

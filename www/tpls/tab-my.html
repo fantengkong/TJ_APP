@@ -7,18 +7,23 @@
 k==kong
 -->
 <ion-view class="tab-my">
-	<ion-content class="k_nologin">
+	<!--未登录页面-->
+	<ion-content class="k_nologin" scroll="false">
 		<div class="k_no">
 			<p>还未登录，请先
 				<a href="#/login_register"><button class="button button-clear" title="登录">登录</button></a>
 			</p>
 		</div>
 		<div class="k_prompt">
-			<p class="k_play"><span><i class="icon ion-play"></i></span></p>
-			<p>还没有视频播放记录，开始学习吧！</p>
+			<p class="k_play">
+				<!--<span><i class="icon ion-play"></i></span>-->
+				<img src="../img/TJ.jpg" alt="" />
+			</p>
+			<p>还没有视频播放记录，快去看视频，学知识！</p>
 		</div>
 	</ion-content>
-	<ion-scroll scrollbar-y="false" has-bouncing="false" scroll="false" class="k_haslogin" hidden>
+	<!--已登录页面-->
+	<ion-pane class="k_haslogin" hidden="true"><!-- style="height: 100%;" scroll="false" scrollbar-y="false" has-bouncing="false" scroll="false"-->
 		<div>
 			<div class="k_has">
 				<div class="k_border">
@@ -29,41 +34,38 @@ k==kong
 			</div>
 			<div class="k_message" scroll-height1 style="position: relative;">
 				<ion-tabs class="tabs-top tabs-light tabs-striped tabs-color-assertive">
-
+					<!--我的视频选项卡-->
 					<ion-tab title="我的视频">
 
 						<ion-content scroll-height2>
 
-							<div class="k_lookedList">
+							<div class="k_lookedList myVedio">
 								<ion-list>
 									<ion-item ng-repeat="item in items1" class="item item-thumbnail-left">
 										<img ng-src={{item.imgUrl}} />
 										<h2>{{item.title}}</h2>
-										<p><i>{{item.name}}</i><i> {{item.designation}}</i><span class="h_camera"><i class="icon ion-ios-videocam {{item.icon}}"></i><i>{{item.num}}</i></span></p>
+										<p><i>{{item.name}}</i><i> {{item.designation}}</i></p>
+										<b>{{item.info}}</b>
 									</ion-item>
 								</ion-list>
-
 							</div>
 						</ion-content>
 					</ion-tab>
-
+					<!--我看过的选项卡-->
 					<ion-tab title="我看过的">
-						<ion-content scroll-height2>
-
-							<div class="k_lookedList">
+						<ion-content ng-controller="MyLookedController" scroll-height2>
+							<div class="k_lookedList myLooked">
 								<ion-list>
-									<ion-item ng-repeat="item in items1" class="item item-thumbnail-left">
+									<ion-item ng-repeat="item in items2" class="item item-thumbnail-left">
 										<img ng-src={{item.imgUrl}} />
 										<h2>{{item.title}}</h2>
-										<p><i>{{item.name}}</i><i> {{item.designation}}</i><span class="h_camera"><i class="icon ion-ios-videocam {{item.icon}}"></i><i>{{item.num}}</i></span></p>
+										<p><i>{{item.name}}</i><i> {{item.designation}}</i></p>
+										<b>{{item.info}}</b>
 									</ion-item>
 								</ion-list>
-
 							</div>
-
 						</ion-content>
 					</ion-tab>
-
 				</ion-tabs>
 			</div>
 
@@ -86,5 +88,5 @@ k==kong
 			</ion-scroll>-->
 		</div>
 
-	</ion-scroll>
+	</ion-pane>
 </ion-view>

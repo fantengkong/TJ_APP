@@ -27,18 +27,15 @@ l==live
 			
 		</ul>
 	</ion-content>
-	<button class="l_like button button-clear">
-			<i class="iconfont">&#xe603;</i>
-	</button>
 	<div class="l_footer bar bar-footer item-input-inset">
-		<button class="button button-clear">
-			<i class="iconfont">&#xe603;</i>
+		<button class="button button-clear" ng-click="liveGood()" ng-class="{true: 'actived', false: ''}[isActived]">
+			<i class="iconfont">&#xe64d;</i>
 		</button>
 	  <label class="item-input-wrapper">
 	    <input ng-model="Chat" type="text" placeholder="一起讨论">
 	  </label>
 	  <button class="button button-clear" ng-click="sendChat()">
-	    <i class="iconfont">&#xe605;</i>
+	    <i class="iconfont">&#xe64f;</i>
 	  </button>
 	</div>
 </ion-view>

@@ -9666,7 +9666,9 @@ html {
   right: 10px;
   z-index: 10000;
   color: #fff;
-  font-size: 16px; }
+  padding: 0;
+  border-width: 0;
+  line-height: 32px; }
 .tab_home .h_center.bar {
   padding: 0; }
 .tab_home .h_center.has-header {
@@ -9699,7 +9701,9 @@ html {
   z-index: 1;
   opacity: 0.8;
   background-color: #f1f6fb;
-  box-shadow: 0 -1px 3px 0 #91abd3; }
+  box-shadow: 0 -1px 3px 0 #91abd3;
+  padding: 0;
+  border: none; }
   .tab_home .h_center .h_more i {
     display: block;
     line-height: 40px;
@@ -9707,6 +9711,11 @@ html {
     font-size: 24px;
     color: #ff6600;
     font-weight: bold; }
+    .tab_home .h_center .h_more i.iconfont {
+      font-size: 40px; }
+    .tab_home .h_center .h_more i.icon:before {
+      font-size: 24px;
+      font-weight: bold; }
 .tab_home .h_banner {
   padding: 1rem 1rem 0.625rem; }
   .tab_home .h_banner .slider-pager-page {
@@ -9744,15 +9753,23 @@ html {
         color: #d6dbe2;
         padding: 0 0.2rem;
         font-size: 1rem; }
+  .tab_home .h_list .item .h_state {
+    position: absolute;
+    left: 1rem;
+    top: 10px;
+    line-height: 1.25rem;
+    font-size: 10px;
+    line-height: 1.25rem;
+    text-align: center;
+    width: 3rem;
+    color: #fff;
+    background: #409cf3;
+    border-radius: 5px 0 5px 0; }
 
 .k_footer .k_color {
   color: #98a4b8; }
   .k_footer .k_color.tab-item-active {
     color: #ff6600; }
-.k_footer .ion-ios-videocam:before {
-  content: ""; }
-.k_footer .ion-ios-videocam:after {
-  content: "&#xe600;"; }
 
 /*
 * @description: "主栏目—活动"页面样式
@@ -9810,7 +9827,6 @@ html {
   color: #fff;
   background-color: #ff6600; }
   .tab-my .k_nologin .k_no p {
-    margin-bottom: 6px;
     padding: 5.625rem 0; }
     .tab-my .k_nologin .k_no p .button {
       min-width: 78px;
@@ -9821,30 +9837,19 @@ html {
       border: 2px solid #fff;
       margin-left: 10px; }
 .tab-my .k_nologin .k_prompt {
-  color: #dadee4;
+  color: #d1d1d1;
   font-weight: bold;
   text-align: center; }
   .tab-my .k_nologin .k_prompt .k_play {
-    padding: 0 7rem; }
-  .tab-my .k_nologin .k_prompt span {
-    display: inline-block;
-    color: #dadee4;
-    font-size: 3rem;
-    height: 4.375rem;
-    line-height: 4.375rem;
-    width: 4.375rem;
-    border: 5px solid #dadee4;
-    border-radius: 50%;
-    text-align: center;
-    margin: 1.25rem; }
-    .tab-my .k_nologin .k_prompt span i {
-      position: relative;
-      top: -5px;
-      left: 3px; }
+    padding: 3rem 0 1.25rem 0; }
+    .tab-my .k_nologin .k_prompt .k_play img {
+      width: 2.625rem;
+      height: 2.625rem; }
 .tab-my .k_haslogin .k_has {
+  padding-top: 3rem;
   z-index: 6;
   background-color: #ff6600;
-  height: 10.375rem;
+  height: 13.375rem;
   text-align: center; }
   .tab-my .k_haslogin .k_has p {
     color: #fff; }
@@ -9853,7 +9858,6 @@ html {
     height: 5.625rem;
     border: 3px solid #ff944c;
     margin: auto;
-    margin-top: 3rem;
     margin-bottom: .625rem;
     border-radius: 50%;
     position: relative; }
@@ -9894,6 +9898,7 @@ html {
   padding: 0.75rem 1rem 0.625rem 9rem;
   border: none; }
   .tab-my .k_lookedList .item img {
+    border-radius: 4px;
     width: 7.25rem;
     height: 4.5rem;
     max-width: none;
@@ -9912,6 +9917,20 @@ html {
       right: 0; }
       .tab-my .k_lookedList .item p span i {
         padding: 0 4px; }
+  .tab-my .k_lookedList .item b {
+    position: absolute;
+    top: .75rem;
+    left: 1rem;
+    font-weight: 100;
+    display: block;
+    width: 2.25rem;
+    height: 1.25rem;
+    line-height: 1.25rem;
+    background: #409cf3;
+    text-align: center;
+    font-size: 10px;
+    border-radius: 4px 0 4px 0;
+    color: #fff; }
 
 /*
 * @description: "活动详情页"页面样式
@@ -10081,7 +10100,6 @@ html {
     height: 3.75rem;
     border-radius: 5px;
     background: rgba(0, 0, 0, 0.5);
-    font-size: 2.5rem;
     line-height: 3.75rem;
     text-align: center;
     color: #fff;
@@ -10090,6 +10108,8 @@ html {
     margin: auto;
     right: 0;
     bottom: 0; }
+    .k_play .p_wrap .p_sign i {
+      font-size: 2.5rem; }
 .k_play .p_content {
   top: 13.125rem; }
   .k_play .p_content p {
@@ -10166,13 +10186,23 @@ html {
     color: #98a4b8; }
     .k_play .p_content .p_set b {
       padding-right: 3px; }
+  .k_play .p_content .p_vList .item-icon-right .icon {
+    font-size: 22px; }
   .k_play .p_content .p_vList .list {
     padding: 0 1rem; }
     .k_play .p_content .p_vList .list .item {
+      border-radius: 5px;
       margin-bottom: 0.625rem;
       padding: 0;
-      border-color: #97baf0;
+      border-color: #ff6600;
       padding: 2px 0; }
+      .k_play .p_content .p_vList .list .item.playing {
+        color: #fff;
+        background: #ff6600; }
+        .k_play .p_content .p_vList .list .item.playing .p_intro p {
+          color: #fff; }
+        .k_play .p_content .p_vList .list .item.playing i {
+          color: #fff; }
       .k_play .p_content .p_vList .list .item .p_intro {
         padding: 0.5rem 3rem 0.5rem 1rem; }
         .k_play .p_content .p_vList .list .item .p_intro p {
@@ -10186,7 +10216,7 @@ html {
           font-size: 12px;
           line-height: 1rem; }
       .k_play .p_content .p_vList .list .item i {
-        color: #4689f2; }
+        color: #ff6600; }
 .k_play .p_mask {
   position: absolute;
   top: 0;
@@ -10324,7 +10354,8 @@ html {
   height: 44px !important;
   line-height: 44px;
   width: 100%;
-  padding: 0 5rem; }
+  padding: 0 5rem;
+  background: #ff6600; }
 .k_classify .tab-item-active {
   font-weight: bolder; }
 .k_classify .has-tabs.pane {
@@ -10476,27 +10507,6 @@ html {
         float: right;
         margin-left: 1rem;
         margin-right: 0; }
-.live .l_like {
-  position: absolute;
-  bottom: 60px;
-  left: 10px;
-  z-index: 10000;
-  border: 1px solid #b7b6b4;
-  height: 34px;
-  width: 34px;
-  min-height: 34px;
-  min-width: 34px;
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  border-radius: 50%; }
-  .live .l_like i {
-    position: relative;
-    left: 1px;
-    top: -4px;
-    color: #b3b0ab;
-    font-size: 32px; }
-  .live .l_like.button-clear {
-    padding: 0; }
 .live .has-footer {
   bottom: 50px;
   top: 13.125rem; }
@@ -10509,20 +10519,22 @@ html {
     -webkit-border-radius: 50%;
     border-radius: 50%; }
     .live .l_footer.bar-footer button i {
-      position: relative;
-      left: -1px; }
+      position: relative; }
     .live .l_footer.bar-footer button:nth-of-type(1) {
       background: #ff7a61;
       margin-right: 10px;
       border: 1px solid #F26B4E; }
       .live .l_footer.bar-footer button:nth-of-type(1) i {
-        color: #fff;
-        font-size: 32px; }
+        color: #fff; }
+      .live .l_footer.bar-footer button:nth-of-type(1).actived {
+        border: 1px solid #b7b6b4;
+        background: none; }
+        .live .l_footer.bar-footer button:nth-of-type(1).actived i {
+          color: #b3b0ab; }
     .live .l_footer.bar-footer button:nth-of-type(2) {
       border: 1px solid #bfbebc; }
       .live .l_footer.bar-footer button:nth-of-type(2) i {
-        color: #b4b1ac;
-        font-size: 32px; }
+        color: #b4b1ac; }
   .live .l_footer.bar-footer .item-input-wrapper {
     height: 34px;
     border-radius: 17px; }

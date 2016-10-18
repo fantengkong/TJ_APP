@@ -6,7 +6,7 @@
 		"designation": "教授",
 		"icon":"hide",
 		"num": "500人在学",
-		"info": "直播中"
+		"info": "课程"
 	},
 	{
 		"imgUrl": "../img/List_Act_2.jpg",
@@ -15,7 +15,7 @@
 		"designation": "肿瘤/白血病/血液科",
 		"icon":"",
 		"num": "331",
-		"info": "直播预告"
+		"info": "大会"
 	},
 	{
 		"imgUrl": "../img/List_Act_3.jpg",
@@ -24,7 +24,7 @@
 		"designation": "教授",
 		"icon":"",
 		"num": "331",
-		"info": "直播结束"
+		"info": "论坛"
 	},
 	{
 		"imgUrl": "../img/video_fengmian.jpg",
@@ -33,7 +33,7 @@
 		"designation": "教授",
 		"icon":"",
 		"num": "331",
-		"info": "直播回放"
+		"info": "课程"
 	},
 	{
 		"imgUrl": "../img/List_Act_1.jpg",
@@ -96,3 +96,4 @@
 	
 	
 ]
+

@@ -10,7 +10,7 @@
             color: #fff;
             background-color: $color;
             p {
-                margin-bottom: 6px;
+                
                 padding: 5.625rem 0;
                 .button {
                     min-width: 78px;
@@ -24,36 +24,41 @@
             }
         }
         .k_prompt {
-            color: #dadee4;
+            color: #d1d1d1;
             font-weight: bold;
             text-align: center;
             .k_play {
-                padding: 0 7rem;
-            }
-            span {
-                display: inline-block;
-                color: #dadee4;
-                font-size: 3rem;
-                height: 4.375rem;
-                line-height: 4.375rem;
-                width: 4.375rem;
-                border: 5px solid #dadee4;
-                border-radius: 50%;
-                text-align: center;
-                margin: 1.25rem;
-                i {
-                    position: relative;
-                    top: -5px;
-                    left: 3px;
+                padding: 3rem 0 1.25rem 0;
+                img{
+                   width: 2.625rem;
+                   height: 2.625rem; 
                 }
             }
+//          span {
+//              display: inline-block;
+//              color: #dadee4;
+//              font-size: 3rem;
+//              height: 4.375rem;
+//              line-height: 4.375rem;
+//              width: 4.375rem;
+//              border: 5px solid #dadee4;
+//              border-radius: 50%;
+//              text-align: center;
+//              margin: 1.25rem;
+//              i {
+//                  position: relative;
+//                  top: -5px;
+//                  left: 3px;
+//              }
+//          }
         }
     }
     .k_haslogin {
         .k_has {
+            padding-top: 3rem;
             z-index: 6;
             background-color: $color;
-            height: 10.375rem;
+            height: 13.375rem;
             text-align: center;
             
             p {
@@ -64,7 +69,7 @@
                 height: 5.625rem;
                 border: 3px solid #ff944c;
                 margin: auto;
-                margin-top: 3rem;
+                
                 margin-bottom: .625rem;
                 border-radius: 50%;
                 position: relative;
@@ -120,6 +125,7 @@
             padding: 0.75rem 1rem 0.625rem 9rem;
             border: none;
             img {
+                border-radius: 4px;
                 width: 7.25rem;
                 height: 4.5rem;
                 max-width: none;
@@ -142,6 +148,22 @@
                         padding: 0 4px;
                     }
                 }
+            }
+            b{
+                position: absolute;
+                top: .75rem;
+                left: 1rem;
+                font-weight: 100;
+                display: block;
+                width: 2.25rem;
+                height: 1.25rem;
+                line-height: 1.25rem;
+                background: #409cf3;
+                text-align: center;
+                font-size: 10px;
+                border-radius: 4px 0 4px 0;
+                color: #fff;
+                
             }
         }
     }

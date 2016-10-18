@@ -14,4 +14,8 @@ starterCtrls
 				$scope.Chat="";
 			}
     }
+    $scope.isActived = false;
+    $scope.liveGood = function(){
+    	$scope.isActived = true;
+    }
   })

@@ -91,7 +91,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       templateUrl: './tpls/classify.html',
       controller: 'ClassifyController'
     });
-    $urlRouterProvider.otherwise('classify');
+    $urlRouterProvider.otherwise('/tab/home');
     $ionicConfigProvider.tabs.position('bottom');
     
 })

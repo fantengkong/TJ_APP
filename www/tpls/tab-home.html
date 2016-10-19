@@ -14,7 +14,7 @@ h==home
 			<ion-view>
 				<!--<ion-item ng-repeat="item in items" item="item" href="#/item/{{item.id}}" class="item-remove-animate">-->
 				<div class="bar bar-subheader has-header h_center">
-					<ion-scroll direction="x" lock="true" scrollbar-y="false" scrollbar-x="false" style="width: 100%;">
+					<ion-scroll scroll-x="false" direction="x" lock="true" scrollbar-y="false" scrollbar-x="false" style="width: 100%;height: 98%;">
 						<div class="h_subnav">
 							<button ng-repeat="navItem in navItems1" class="button button-stable" ng-class="{'active':$index==activeNavItem}" ng-click="navItemAction($index)">{{navItem.name}}</button>
 						</div>

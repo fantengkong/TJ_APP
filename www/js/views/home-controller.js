@@ -14,7 +14,6 @@ starterCtrls
 				$(".scrollToTop").show();
 			} else {
 				$(".scrollToTop").hide();
-
 			}
 		}
 		/*获取假数据*/
@@ -23,9 +22,7 @@ starterCtrls
 				function(res) {
 					$scope.items = res.data;
 				}
-			);
-			
-			
+			);			
 			/*从后台获取数据*/
 /*		$http.get('./api/home_list.php?pageNo=0')
 			.then(
@@ -33,7 +30,6 @@ starterCtrls
 					$scope.items = res.data;
 				}
 			);*/
-
 		/*
 		$http（{  
 			method:string,//就是请求方式get、post等  
@@ -47,12 +43,10 @@ starterCtrls
 		}）.success().error()   
 		 * */
 		$scope.loadMore = function() {
-
 			$http.get('./mock/home_more-item.json').success(function(items) {
 				$scope.items = $scope.items.concat(items);
 				$scope.$broadcast('scroll.infiniteScrollComplete');
 			})
-
 		};
 		$scope.$on('scroll.inifiteScrollComplete', function() {
 			console.log("load complete");
@@ -68,54 +62,37 @@ starterCtrls
 				}
 			);
     }
-		$scope.navItems1=[
-			{ id: 0 ,name: "精品推荐"},
-	    { id: 1 ,name: "基因组"},
-	    { id: 2 ,name: "癌症" },
-	    { id: 3 ,name: "单细胞" },
-	    { id: 4 ,name: "基因检测" },
-	    { id: 5 ,name: "转基因" },
-	    { id: 6 ,name: "六字类目名称" },
-	    { id: 7 ,name: "二字" },
-	    { id: 8 ,name: "三字名" },
-	    { id: 9 ,name: "English Name" },
-	    { id: 10 ,name: "三字名" },
-	    { id: 11 ,name: "五字类目" },
-	    { id: 12 ,name: "二字" },
-	    { id: 13 ,name: "三字名" }
-		];
-		$scope.navItems2=[
-			{ id: 0 ,name: "精品推荐"},
-	    { id: 1 ,name: "学知识"},
-	    { id: 2 ,name: "癌症" },
-	    { id: 3 ,name: "单细胞" },
-	    { id: 4 ,name: "基因检测" },
-	    { id: 5 ,name: "转基因" },
-	    { id: 6 ,name: "六字类目名称" },
-	    { id: 7 ,name: "二字" },
-	    { id: 8 ,name: "三字名" },
-	    { id: 9 ,name: "English Name" },
-	    { id: 10 ,name: "三字名" },
-	    { id: 11 ,name: "五字类目" },
-	    { id: 12 ,name: "二字" },
-	    { id: 13 ,name: "三字名" }
-		];
-		$scope.navItems3=[
-			{ id: 0 ,name: "精品推荐"},
-	    { id: 1 ,name: "大咖说"},
-	    { id: 2 ,name: "癌症" },
-	    { id: 3 ,name: "单细胞" },
-	    { id: 4 ,name: "基因检测" },
-	    { id: 5 ,name: "转基因" },
-	    { id: 6 ,name: "六字类目名称" },
-	    { id: 7 ,name: "二字" },
-	    { id: 8 ,name: "三字名" },
-	    { id: 9 ,name: "English Name" },
-	    { id: 10 ,name: "三字名" },
-	    { id: 11 ,name: "五字类目" },
-	    { id: 12 ,name: "二字" },
-	    { id: 13 ,name: "三字名" }
-		];
-
+//		console.log(JSON.parse( localStorage.getItem("watch") ));
+		if(!JSON.parse( localStorage.getItem("watch") )){
+			$scope.navItems1 = [
+				{id: 0,name: "看大会",selected: true},
+				{id: 1,name: "基因组",selected: true}, 
+				{id: 2,name: "癌症",selected: true}, 
+				{id: 3,name: "单细胞",selected: true}
+			];
+		}else{
+			$scope.navItems1=JSON.parse( localStorage.getItem("watch") );
+		}
+		
+		if(!JSON.parse( localStorage.getItem("learn") )){
+			$scope.navItems2 = [
+				{id: 0,name: "学知识",selected: true},
+				{id: 1,name: "基因组",selected: true}, 
+				{id: 2,name: "癌症",selected: true}, 
+				{id: 3,name: "单细胞",selected: true}
+			];
+		}else{
+			$scope.navItems2=JSON.parse( localStorage.getItem("learn") );
+		}
+		if(!JSON.parse( localStorage.getItem("say") )){
+			$scope.navItems3 = [
+				{id: 0,name: "大咖说",selected: true},
+				{id: 1,name: "基因组",selected: true}, 
+				{id: 2,name: "癌症",selected: true}, 
+				{id: 3,name: "单细胞",selected: true}
+			];
+		}else{
+			$scope.navItems3=JSON.parse( localStorage.getItem("say") );
+		}
 	})
 	

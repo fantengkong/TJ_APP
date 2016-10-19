@@ -90,38 +90,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       cache: false,
       templateUrl: './tpls/classify.html',
       controller: 'ClassifyController'
-    })
-    .state('classify.watch', {
-      url: '/classify/watch',
-      cache: false,
-      	views: {
-	        'watch-tab': {
-	          templateUrl: './tpls/tab-watch.html',
-	          controller: 'MyController'
-	        }
-	      }
-    })
-    .state('classify.learn', {
-      url: '/classify/learn',
-      cache: false,
-      	views: {
-	        'learn-tab': {
-	          templateUrl: './tpls/tab-learn.html',
-	          controller: 'MyController'
-	        }
-	      }
-    })
-    .state('classify.say', {
-      url: '/classify/say',
-      cache: false,
-      	views: {
-	        'say-tab': {
-	          templateUrl: './tpls/tab-say.html',
-	          controller: 'MyController'
-	        }
-	      }
     });
-    $urlRouterProvider.otherwise('/tab/home');
+    $urlRouterProvider.otherwise('classify');
     $ionicConfigProvider.tabs.position('bottom');
     
 })

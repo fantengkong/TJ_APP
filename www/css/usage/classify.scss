@@ -24,7 +24,11 @@
         top: 44px;
         
     }
+    .has-tabs, .bar-footer.has-tabs{
+        bottom: 0;
+    }
     ion-content {
+        top: 44px;
         background: #fff;
         padding: 0 1rem;
         p {
@@ -44,7 +48,7 @@
             min-width: 0;
             color: #8bb3f3;
             background: #ebf4ff;
-            
+            margin-right: 10px;
             margin-bottom: 0.625rem;
             i {
                 display: none;

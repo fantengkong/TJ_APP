@@ -10360,7 +10360,10 @@ html {
   font-weight: bolder; }
 .k_classify .has-tabs.pane {
   top: 44px; }
+.k_classify .has-tabs, .k_classify .bar-footer.has-tabs {
+  bottom: 0; }
 .k_classify ion-content {
+  top: 44px;
   background: #fff;
   padding: 0 1rem; }
   .k_classify ion-content p {
@@ -10378,6 +10381,7 @@ html {
     min-width: 0;
     color: #8bb3f3;
     background: #ebf4ff;
+    margin-right: 10px;
     margin-bottom: 0.625rem; }
     .k_classify ion-content .button i {
       display: none; }

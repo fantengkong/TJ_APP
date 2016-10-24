@@ -1,11 +1,11 @@
 starterCtrls
-	.controller('ClassifyController', function($scope, $state) {
+	.controller('ClassifyController', ['$scope','$state',function($scope, $state) {
 		$scope.closeClassify = function() {
 			$state.go("tabs.home");
 		}
-	})
+	}])
 	/*看大会*/
-	.controller('watchCtrl', function($scope) {
+	.controller('watchCtrl',['$scope', function($scope) {
 		if(localStorage.getItem("navItems1")) {
 			$scope.navItems1 = JSON.parse(localStorage.getItem("navItems1"));
 		} else {
@@ -58,9 +58,9 @@ starterCtrls
 				localStorage.setItem("watch", JSON.stringify($scope.watch));
 			}
 		}
-	})
+	}])
 	/*学知识*/
-	.controller('learnCtrl', function($scope) {
+	.controller('learnCtrl',['$scope', function($scope) {
 		if(localStorage.getItem("navItems2")) {
 			$scope.navItems2 = JSON.parse(localStorage.getItem("navItems2"));
 		} else {
@@ -113,9 +113,9 @@ starterCtrls
 				localStorage.setItem("learn", JSON.stringify($scope.learn));
 			}
 		}
-	})
+	}])
 	/*大咖说*/
-	.controller('sayCtrl', function($scope) {
+	.controller('sayCtrl', ['$scope',function($scope) {
 		if(localStorage.getItem("navItems3")) {
 			$scope.navItems3 = JSON.parse(localStorage.getItem("navItems3"));
 		} else {
@@ -168,4 +168,4 @@ starterCtrls
 				localStorage.setItem("say", JSON.stringify($scope.say));
 			}
 		}
-	})
+	}]);

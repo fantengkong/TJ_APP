@@ -42,8 +42,8 @@ h==home
 					<!--精品推荐列表-->
 					<ion-list class="h_list">
 						<p class="h_recommend">精选推荐</p>
-						<ion-item ng-repeat="item in items" class="item item-thumbnail-left">
-							<img ng-src={{item.imgUrl}} alt="" />
+						<ion-item ng-repeat="item in items" class="item item-thumbnail-left" href="#/tab/{{item.id}}">
+							<img ng-src={{item.imgUrl}} />
 							<h2>{{item.title}}</h2>
 							<p><i>{{item.name}}</i><i> {{item.designation}}</i><span class="h_camera"><i class="icon ion-ios-videocam {{item.icon}}"></i><i>{{item.num}}</i></span></p>
 							<div class="h_state">{{item.info}}</div>
@@ -89,19 +89,12 @@ h==home
 					</div>
 					<ion-list class="h_list">
 						<p class="h_recommend">精选推荐</p>
-						<ion-item ng-repeat="item in items" class="item item-thumbnail-left">
+						<ion-item ng-repeat="item in items" class="item item-thumbnail-left"  href="#/tab/{{item.id}}">
 							<img ng-src={{item.imgUrl}} alt="" />
 							<h2>{{item.title}}</h2>
 							<p><i>{{item.name}}</i><i> {{item.designation}}</i><span class="h_camera"><i class="icon ion-ios-videocam {{item.icon}}"></i><i>{{item.num}}</i></span></p>
 						</ion-item>
 					</ion-list>
-					<!--<ion-list class="h_list">
-						<ion-item class="item item-thumbnail-left">
-							<img src="../img/List_Act_1.jpg">
-							<h2>NEJM：新算法可降低NIPT的假阳性</h2>
-							<p><i>谭维仁</i><i> 教授</i><span class="h_camera"><i class="icon ion-ios-videocam"></i><i>331</i></span></p>
-						</ion-item>
-					</ion-list>-->
 					<ion-infinite-scroll on-infinite="loadMore()"></ion-infinite-scroll>
 				</ion-content>
 			</ion-view>
@@ -135,19 +128,12 @@ h==home
 					</div>
 					<ion-list class="h_list">
 						<p class="h_recommend">精选推荐</p>
-						<ion-item ng-repeat="item in items" class="item item-thumbnail-left">
+						<ion-item ng-repeat="item in items" class="item item-thumbnail-left" href="#/tab/{{item.id}}">
 							<img ng-src={{item.imgUrl}} alt="" />
 							<h2>{{item.title}}</h2>
 							<p><i>{{item.name}}</i><i> {{item.designation}}</i><span class="h_camera"><i class="icon ion-ios-videocam {{item.icon}}"></i><i>{{item.num}}</i></span></p>
 						</ion-item>
 					</ion-list>
-					<!--<ion-list class="h_list">
-						<ion-item class="item item-thumbnail-left">
-							<img src="../img/List_Act_1.jpg">
-							<h2>NEJM：新算法可降低NIPT的假阳性</h2>
-							<p><i>谭维仁</i><i> 教授</i><span class="h_camera"><i class="icon ion-ios-videocam"></i><i>331</i></span></p>
-						</ion-item>
-					</ion-list>-->
 					<ion-infinite-scroll on-infinite="loadMore()"></ion-infinite-scroll>
 				</ion-content>
 			</ion-view>

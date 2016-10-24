@@ -1,5 +1,5 @@
 starterCtrls
-  .controller('MyController', function ($scope, $ionicTabsDelegate, $log,$http) {
+  .controller('MyController', ['$scope', '$ionicTabsDelegate', '$http', function ($scope, $ionicTabsDelegate, $log,$http) {
   	$scope.isFlag = true;		
   	if(sessionStorage.getItem("login")){
   		$(".k_nologin").attr("hidden","true");
@@ -23,13 +23,12 @@ starterCtrls
 				}
 			);
 		
-  })
-  .controller('MyLookedController', function ($scope, $ionicTabsDelegate, $log,$http) {
+  }])
+  .controller('MyLookedController',['$scope', '$ionicTabsDelegate', '$http', function ($scope, $ionicTabsDelegate, $http) {
   	$scope.items2 = {};
   	$http.get('./mock/my_list2.json')
 			.then(
-				function(res) {
-					
+				function(res) {				
 					$scope.items2 = res.data;
 					if($scope.items2.length==0){
 						$(".myLooked").html("您还没有播放记录哦!").css({
@@ -40,4 +39,4 @@ starterCtrls
 					}
 				}
 			);
-  })
+  }]);

@@ -9,24 +9,21 @@ d==detail
 -->
 
 <ion-view class="k_detail" view-title="详情页">
-	<ion-content>
-		
+	<ion-content>		
 		<div class="d_img">
 			<div ng-click="dBack()" class="d_back">
 				<i class="icon ion-ios-arrow-back"></i>
 			</div>
-			<a href="#/play">
-				<img src="../img/List_Act_1.jpg" alt="" />
+			<a href="#/play/{{item.id}}">
+				<img ng-src={{item.imgUrl}} />
 			</a>
 		</div>
-
 		<ion-list>
 			<p class="d_title">相约北京 | 第二届精准医疗与基因测序大会</p>
 			<p class="d_time">
 				<span class="row">
 					<i class=".col-5 icon ion-android-time"></i><b>7月24日 9:00-7月25日 17:30</b>
-				</span>
-				
+				</span>				
 			</p>
 			<p class="d_position">
 				<span class="row">
@@ -35,7 +32,7 @@ d==detail
 			</p>
 			<dl class="d_info">
 				<dt>
-					<h2>活动介绍标题</h2>
+					<h2>{{item.title}}</h2>
 					<p>文本段落样式，需考虑长英文文本的兼容性，实现强制换行。</p>
 				</dt>
 				<dd class="i_list">
@@ -55,12 +52,10 @@ d==detail
 				</dd>
 			</dl>
 			<div class="d_weixin">
-				<div class="w_attention"><p>更多学习视频,请关注<i>探基</i>微信号</p><p>专注基因行业教育</p></div>
-				
-				<div class="w_QR_code"><img src="../img/ionic.png" alt="" /></div>
+				<div class="w_attention"><p>更多学习视频,请关注<i>探基</i>微信号</p><p>专注基因行业教育</p></div>				
+				<div class="w_QR_code"><img src="../img/1475915991.png" alt="" /></div>
 				<p class="w_distinguish ">长按上图，选择识别“识别图中二维码”</p>
-			</div>
-			
+			</div>			
 		</ion-list>
 	</ion-content>
 	<ion-footer-bar>

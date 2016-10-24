@@ -1,5 +1,5 @@
 starterCtrls
-	.controller('HomeController', function($state,$ionicModal, $scope, $ionicScrollDelegate, $http, $timeout) {
+	.controller('HomeController', ['$state', '$scope', '$ionicScrollDelegate', '$http', '$timeout', function($state, $scope, $ionicScrollDelegate, $http, $timeout) {
 		$scope.openClassify = function(){
 			$state.go("classify",{},{reload:true});
 		}
@@ -21,6 +21,7 @@ starterCtrls
 			.then(
 				function(res) {
 					$scope.items = res.data;
+					console.log($scope.items);
 				}
 			);			
 			/*从后台获取数据*/
@@ -30,18 +31,6 @@ starterCtrls
 					$scope.items = res.data;
 				}
 			);*/
-		/*
-		$http（{  
-			method:string,//就是请求方式get、post等  
-			url:string ,//向服务器请求的地址  
-			params:object,//携带的参数  
-			data:string or obj,//发送的数据  
-			heaers:obj,//设置头部  
-			cache:bool,//是否缓存  
-			timeout:number,//设置超时时间，在这段时间内没有响应，自动响应错误error这个函数  
-			//还有其他参数，常用的就上面这些  
-		}）.success().error()   
-		 * */
 		$scope.loadMore = function() {
 			$http.get('./mock/home_more-item.json').success(function(items) {
 				$scope.items = $scope.items.concat(items);
@@ -54,15 +43,13 @@ starterCtrls
 		$scope.activeNavItem = 0;
 		$scope.navItemAction = function(index){
     	$scope.activeNavItem = index;
-//  	$ionicScrollDelegate.$getByHandle('nav-content1').scrollTo(0,index*200,true);
     	$http.get('./api/home_list.php?pageNo='+index)
 			.then(
 				function(res) {
 					$scope.items = res.data;
 				}
 			);
-    }
-//		console.log(JSON.parse( localStorage.getItem("watch") ));
+   }
 		if(!JSON.parse( localStorage.getItem("watch") )){
 			$scope.navItems1 = [
 				{id: 0,name: "看大会",selected: true},
@@ -94,5 +81,5 @@ starterCtrls
 		}else{
 			$scope.navItems3=JSON.parse( localStorage.getItem("say") );
 		}
-	})
+	}]);
 	

@@ -9729,29 +9729,31 @@ html {
   font-weight: bold;
   color: #333; }
 .tab_home .h_list .item {
-  padding-left: 8.75rem;
   border: none; }
-  .tab_home .h_list .item img {
+.tab_home .h_list .item-content {
+  padding-left: 8.75rem;
+  padding-right: 1rem; }
+  .tab_home .h_list .item-content img {
     width: 7rem;
     height: 4.5rem;
     left: 1rem !important;
     max-width: 7rem !important;
     border-radius: 5px; }
-  .tab_home .h_list .item h2 {
+  .tab_home .h_list .item-content h2 {
     white-space: normal;
     overflow: visible;
     color: #2a2a2a; }
-  .tab_home .h_list .item p {
+  .tab_home .h_list .item-content p {
     padding-top: 1rem;
     color: #aab0b8; }
-    .tab_home .h_list .item p .h_camera {
+    .tab_home .h_list .item-content p .h_camera {
       display: inline-block;
       float: right; }
-      .tab_home .h_list .item p .h_camera .icon {
+      .tab_home .h_list .item-content p .h_camera .icon {
         color: #d6dbe2;
         padding: 0 0.2rem;
         font-size: 1rem; }
-  .tab_home .h_list .item .h_state {
+  .tab_home .h_list .item-content .h_state {
     position: absolute;
     left: 1rem;
     top: 10px;

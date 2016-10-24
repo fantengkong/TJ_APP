@@ -1,9 +1,15 @@
 starterCtrls
-  .controller('PlayController', function ($scope, $state) {
-
+  .controller('PlayController', ['$scope', '$state', '$stateParams', '$http', function ($scope, $state, $stateParams,$http) {
+		console.log($stateParams.playId);
 		$scope.pBack=function(){
-			$state.go("detail");
+			$state.go("detail", {detailId:$stateParams.playId});
 		}
+		$http.get('mock/home_list.json')
+			.then(
+				function(res) {
+					$scope.item2 = res.data[$stateParams.playId];				
+				}
+			);
   	$scope.cardShow = function(){
   		$(".card").show();
   		$(".p_mask").show();
@@ -13,4 +19,4 @@ starterCtrls
   		$(".card").hide();
   		$(".p_mask").hide();
   	}
-  })
+  }]);

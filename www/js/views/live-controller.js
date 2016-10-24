@@ -1,5 +1,5 @@
 starterCtrls
-  .controller('LiveController', function ($scope, $http,$ionicScrollDelegate) {
+  .controller('LiveController',['$scope', '$http','$ionicScrollDelegate', function ($scope, $http,$ionicScrollDelegate) {
     $scope.sendChat = function(){
   		var oDiv=document.createElement('div');
 			oDiv.style='clear:both';
@@ -18,4 +18,4 @@ starterCtrls
     $scope.liveGood = function(){
     	$scope.isActived = true;
     }
-  })
+  }]);

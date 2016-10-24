@@ -1,4 +1,4 @@
 starterCtrls
-  .controller('TabsController', function ($scope,$state) {
+  .controller('TabsController', ['$scope','$state', function ($scope,$state) {
     
-  })
+  }]);

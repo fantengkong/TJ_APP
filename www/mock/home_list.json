@@ -1,5 +1,6 @@
 [
 	{
+		"id": "0",
 		"imgUrl": "../img/List_Act_1.jpg",
 		"title": "NEJM：新算法可降低NIPT的假阳性",
 		"name": "谭维仁",
@@ -9,6 +10,7 @@
 		"info": "直播中"
 	},
 	{
+		"id": "1",	
 		"imgUrl": "../img/List_Act_2.jpg",
 		"title": "NEJM：新算法可降低NIPT的假阳性",
 		"name": "",
@@ -18,6 +20,7 @@
 		"info": "直播预告"
 	},
 	{
+		"id":"2",
 		"imgUrl": "../img/List_Act_3.jpg",
 		"title": "NEJM：新算法可降低NIPT的假阳性",
 		"name": "谭维仁",
@@ -27,6 +30,7 @@
 		"info": "直播结束"
 	},
 	{
+		"id": "3",
 		"imgUrl": "../img/video_fengmian.jpg",
 		"title": "NEJM：新算法可降低NIPT的假阳性",
 		"name": "谭维仁",
@@ -36,6 +40,7 @@
 		"info": "直播回放"
 	},
 	{
+		"id": "4",
 		"imgUrl": "../img/List_Act_1.jpg",
 		"title": "NEJM：新算法可降低NIPT的假阳性",
 		"name": "谭维仁",
@@ -45,6 +50,7 @@
 		"info": "课程"
 	},
 	{
+		"id": "5",
 		"imgUrl": "../img/List_Act_1.jpg",
 		"title": "NEJM：新算法可降低NIPT的假阳性",
 		"name": "谭维仁",
@@ -55,6 +61,7 @@
 	}
 	,
 	{
+		"id": "6",
 		"imgUrl": "../img/List_Act_1.jpg",
 		"title": "NEJM：新算法可降低NIPT的假阳性",
 		"name": "谭维仁",
@@ -65,6 +72,7 @@
 	}
 	,
 	{
+		"id": "7",
 		"imgUrl": "../img/List_Act_1.jpg",
 		"title": "NEJM：新算法可降低NIPT的假阳性",
 		"name": "谭维仁",
@@ -75,6 +83,7 @@
 	}
 	,
 	{
+		"id": "8",
 		"imgUrl": "../img/List_Act_1.jpg",
 		"title": "NEJM：新算法可降低NIPT的假阳性",
 		"name": "谭维仁",
@@ -85,6 +94,7 @@
 	}
 	,
 	{
+		"id": "9",
 		"imgUrl": "../img/List_Act_1.jpg",
 		"title": "NEJM：新算法可降低NIPT的假阳性",
 		"name": "谭维仁",

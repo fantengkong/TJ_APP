@@ -147,9 +147,13 @@
             font-weight: bold;
             color: #333;
         }
-        .item {
-            padding-left: 8.75rem;
+        .item{
             border: none;
+        }
+        .item-content {
+            padding-left: 8.75rem;
+            padding-right: 1rem;
+            
             img {
                 width: 7rem;
                 height: 4.5rem;

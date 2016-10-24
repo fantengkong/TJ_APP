@@ -9669,8 +9669,6 @@ html {
   padding: 0;
   border-width: 0;
   line-height: 32px; }
-.tab_home .h_center.bar {
-  padding: 0; }
 .tab_home .h_center.has-header {
   top: 40px; }
 .tab_home .h_center .scroll {
@@ -9681,7 +9679,7 @@ html {
     font-size: 12px;
     line-height: 20px;
     min-height: 22px;
-    margin: 13px 0 9px 1rem;
+    margin: 10px 0 9px 1rem;
     color: #55473e; }
     .tab_home .h_center .scroll .button:last-child {
       margin-right: 44px; }

@@ -48,7 +48,7 @@
     }
     .h_center {
         &.bar{
-            padding: 0;
+            
             
         }
         &.has-header{
@@ -56,14 +56,13 @@
         }
         .scroll{
             white-space: nowrap;
-            
             .button{
                 height: 20px;
                 padding: 0 14px;
                 font-size: 12px;
                 line-height: 20px;
                 min-height: 22px;
-                margin: 13px 0 9px 1rem;
+                margin: 10px 0 9px 1rem;
                 color: #55473e;
                 &:last-child{
                     margin-right: 44px;

@@ -50,6 +50,7 @@
             background: #ebf4ff;
             margin-right: 10px;
             margin-bottom: 0.625rem;
+            border: none;
             i {
                 display: none;
             }
@@ -57,6 +58,7 @@
                 background: $color;
                 color: #ffffff;
                 border-color: #5FDD63;
+                border: none;
                 i {
                     display: block;
                     position: absolute;

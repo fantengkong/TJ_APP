@@ -10382,13 +10382,15 @@ html {
     color: #8bb3f3;
     background: #ebf4ff;
     margin-right: 10px;
-    margin-bottom: 0.625rem; }
+    margin-bottom: 0.625rem;
+    border: none; }
     .k_classify ion-content .button i {
       display: none; }
     .k_classify ion-content .button.active {
       background: #ff6600;
       color: #ffffff;
-      border-color: #5FDD63; }
+      border-color: #5FDD63;
+      border: none; }
       .k_classify ion-content .button.active i {
         display: block;
         position: absolute;

@@ -7,7 +7,6 @@ starterCtrls
 			$ionicScrollDelegate.scrollTop(true);
 			$(".scrollToTop").hide();
 		};
-
 		$scope.getPos = function() {
 			var d_top = $ionicScrollDelegate.$getByHandle('h_content').getScrollPosition().top;
 			if(d_top > 10) {
@@ -21,7 +20,6 @@ starterCtrls
 			.then(
 				function(res) {
 					$scope.items = res.data;
-					console.log($scope.items);
 				}
 			);			
 			/*从后台获取数据*/
@@ -41,15 +39,8 @@ starterCtrls
 			console.log("load complete");
 		})
 		$scope.activeNavItem = 0;
-		$scope.navItemAction = function(index){
-    	$scope.activeNavItem = index;
-    	$http.get('./api/home_list.php?pageNo='+index)
-			.then(
-				function(res) {
-					$scope.items = res.data;
-				}
-			);
-   }
+		
+		
 		if(!JSON.parse( localStorage.getItem("watch") )){
 			$scope.navItems1 = [
 				{id: 0,name: "看大会",selected: true},
@@ -58,7 +49,7 @@ starterCtrls
 				{id: 3,name: "单细胞",selected: true}
 			];
 		}else{
-			$scope.navItems1=JSON.parse( localStorage.getItem("watch") );
+			$scope.navItems1=JSON.parse( localStorage.getItem("watch") );			
 		}
 		
 		if(!JSON.parse( localStorage.getItem("learn") )){
@@ -81,5 +72,17 @@ starterCtrls
 		}else{
 			$scope.navItems3=JSON.parse( localStorage.getItem("say") );
 		}
+		//点击按钮操作
+		$scope.navItemAction = function(index){
+    	$scope.activeNavItem = index;
+    	console.log($scope.activeNavItem)
+    	//点击切换页面
+/*    	$http.get('./api/home_list.php?pageNo='+$scope.navItems1[index].id)
+			.then(
+				function(res) {
+					$scope.items = res.data;
+				}
+			);*/
+  	}
 	}]);
 	

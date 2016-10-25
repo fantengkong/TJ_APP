@@ -1,5 +1,5 @@
 starterCtrls
-  .controller('MyController', ['$scope', '$ionicTabsDelegate', '$http', function ($scope, $ionicTabsDelegate, $log,$http) {
+  .controller('MyController', ['$scope', '$ionicTabsDelegate', '$http', function ($scope, $ionicTabsDelegate, $http) {
   	$scope.isFlag = true;		
   	if(sessionStorage.getItem("login")){
   		$(".k_nologin").attr("hidden","true");

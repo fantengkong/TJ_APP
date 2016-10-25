@@ -15,44 +15,31 @@ c==classify
 			<ion-content ng-controller="watchCtrl" scroll="false">
 				<p class="c_select">请选择感兴趣的视频类目（可多选）</p>
 				<div class="c_choice">
-					<a class="button button-assertive" ng-repeat="navItem in navItems1" ng-click="navItemActived($index)" ng-class="{true: 'active', false: ''}[navItem.selected]">{{navItem.name}}<i class="icon ion-ios-checkmark-empty"></i></a>
-					<!--<a href="" class="button active">精准医学<i class="icon ion-ios-checkmark-empty"></i></a>
-					<a href="" class="button active">基因组<i class="icon ion-ios-checkmark-empty"></i></a>
-					<a href="" class="button active">癌症<i class="icon ion-ios-checkmark-empty"></i></a>
-					<a href="" class="button active">单细胞<i class="icon ion-ios-checkmark-empty"></i></a>
-					<a href="" class="button">基因检测<i class="icon ion-ios-checkmark-empty"></i></a>
-					<a href="" class="button ">转基因<i class="icon ion-ios-checkmark-empty"></i></a>
-					<a href="" class="button ">六字类目名称<i class="icon ion-ios-checkmark-empty"></i></a>
-					<a href="" class="button ">二字<i class="icon ion-ios-checkmark-empty"></i></a>
-					<a href="" class="button ">三字名<i class="icon ion-ios-checkmark-empty"></i></a>
-					<a href="" class="button ">English Name<i class="icon ion-ios-checkmark-empty"></i></a>
-					<a href="" class="button ">三字名<i class="icon ion-ios-checkmark-empty"></i></a>
-					<a href="" class="button ">五字类目名<i class="icon ion-ios-checkmark-empty"></i></a>
-					<a href="" class="button ">二字<i class="icon ion-ios-checkmark-empty"></i></a>
-					<a href="" class="button ">三字名<i class="icon ion-ios-checkmark-empty"></i></a>
-				-->
+					<a class="button" ng-repeat="navItem in navItems1" ng-click="navItemActived($index)" ng-class="{true: 'active', false: ''}[navItem.selected]">{{navItem.name}}<i class="icon ion-ios-checkmark-empty"></i></a>
 				</div>
 			</ion-content>
 			<ion-footer-bar>
 				<h1 class="title" ng-click="closeClassify()">关闭</h1>
 			</ion-footer-bar>
 		</ion-tab>
+		<!--学知识-->
 		<ion-tab title="学知识">
 			<ion-content ng-controller="learnCtrl">
 				<p class="c_select">请选择感兴趣的视频类目（可多选）</p>
 				<div class="c_choice">
-					<a class="button button-outline" ng-repeat="navItem in navItems2" ng-click="navItemActived($index)" ng-class="{true: 'active', false: ''}[navItem.selected]">{{navItem.name}}<i class="icon ion-ios-checkmark-empty"></i></a>
+					<a class="button" ng-repeat="navItem in navItems2" ng-click="navItemActived($index)" ng-class="{true: 'active', false: ''}[navItem.selected]">{{navItem.name}}<i class="icon ion-ios-checkmark-empty"></i></a>
 				</div>
 			</ion-content>
 			<ion-footer-bar>
 				<h1 class="title" ng-click="closeClassify()">关闭</h1>
 			</ion-footer-bar>
 		</ion-tab>
+		<!--大咖说-->
 		<ion-tab title="大咖说">
 			<ion-content ng-controller="sayCtrl">
 				<p class="c_select">请选择感兴趣的视频类目（可多选）</p>
 				<div class="c_choice">
-					<a class="button button-outline" ng-repeat="navItem in navItems3" ng-click="navItemActived($index)" ng-class="{true: 'active', false: ''}[navItem.selected]">{{navItem.name}}<i class="icon ion-ios-checkmark-empty"></i></a>
+					<a class="button" ng-repeat="navItem in navItems3" ng-click="navItemActived($index)" ng-class="{true: 'active', false: ''}[navItem.selected]">{{navItem.name}}<i class="icon ion-ios-checkmark-empty"></i></a>
 				</div>
 			</ion-content>
 			<ion-footer-bar>

@@ -1,0 +1,48 @@
+<ion-view ng-controller="home_watchCtrl">
+	<!--<ion-item ng-repeat="item in items" item="item" href="#/item/{{item.id}}" class="item-remove-animate">-->
+	<div class="bar bar-subheader has-header h_center">
+		<ion-scroll scroll-x="false" direction="x" lock="true" scrollbar-y="false" scrollbar-x="false" style="width: 100%;height: 98%;">
+			<div class="h_subnav">
+				<button ng-repeat="navItem in navItems1" class="button button-stable" ng-class="{'active':$index==activeNavItem}" ng-click="navItemAction($index)">{{navItem.name}}</button>
+			</div>
+			<!--<button class="button ng-repeat="item in navItems" button-stable" ng-class="{'active':$index==activeNavItem}" ng-click="navItemAction($index)">{{item}}</button>-->
+		</ion-scroll>
+		<!--加载更多-->
+		<button class="h_more button-clear" ng-click="openWatchClassify()">
+			<i class="icon ion-ios-plus-outline"></i>
+		</button>
+	</div>
+	<ion-content delegate-handle="h_content" on-scroll="getPos()" scroll-event-interval="5" class="scdiv h_content has-header has-subheader">
+		<div class="h_banner">
+			<ion-slide-box auto-play="true" does-continue="true" show-pager="true">
+				<ion-slide>
+					<img src="../img/Home_Banner.jpg" alt="" />
+				</ion-slide>
+				<ion-slide>
+					<img src="../img/List_Act_1.jpg" alt="" />
+				</ion-slide>
+				<ion-slide>
+					<img src="../img/List_Act_3.jpg" alt="" />
+				</ion-slide>
+			</ion-slide-box>
+		</div>
+		<!--精品推荐列表-->
+		<ion-list class="h_list">
+			<p class="h_recommend">精选推荐</p>
+			<ion-item ng-repeat="item in items" class="item item-thumbnail-left" href="#/tab/{{item.id}}">
+				<img ng-src={{item.imgUrl}} />
+				<h2>{{item.title}}</h2>
+				<p><i>{{item.name}}</i><i> {{item.designation}}</i><span class="h_camera"><i class="icon ion-ios-videocam {{item.icon}}"></i><i>{{item.num}}</i></span></p>
+				<div class="h_state">{{item.info}}</div>
+			</ion-item>
+		</ion-list>
+		<!--<ion-list class="h_list">
+						<ion-item class="item item-thumbnail-left">
+							<img src="../img/List_Act_1.jpg">
+							<h2>NEJM：新算法可降低NIPT的假阳性</h2>
+							<p><i>谭维仁</i><i> 教授</i><span class="h_camera"><i class="icon ion-ios-videocam"></i><i>331</i></span></p>
+						</ion-item>
+					</ion-list>-->
+		<ion-infinite-scroll on-infinite="loadMore()"></ion-infinite-scroll>
+	</ion-content>
+</ion-view>

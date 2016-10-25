@@ -62,6 +62,33 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
     })
+    .state('tabs.home.watch', {
+    	url:'/watch',
+    	cache: false,
+    	views: {
+    		'watch-home': {
+    			templateUrl: './tpls/home/watch-home.html'
+    		}
+    	}
+    })
+    .state('tabs.home.learn', {
+    	url:'/learn',
+    	cache: false,
+    	views: {
+    		'learn-home': {
+    			templateUrl: './tpls/home/learn-home.html'
+    		}
+    	}
+    })
+    .state('tabs.home.say', {
+    	url:'/say',
+    	cache: false,
+    	views: {
+    		'say-home': {
+    			templateUrl: './tpls/home/say-home.html'
+    		}
+    	}
+    })
     //配置'活动页面'的路由
     .state('tabs.activity', {
       url: '/activity',
@@ -111,8 +138,36 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     .state('classify', {
       url: '/classify',
       cache: false,
-      templateUrl: './tpls/classify.html',
+      abstract:true,
+      templateUrl: './tpls/classify/classify.html',
       controller: 'ClassifyController'
+    })
+    //配置'分类页面/看大会页面'的路由
+    .state('classify.watch', {
+    	url:'/watch',
+     	views: {
+        'watch-classify': {
+          templateUrl: 'tpls/classify/watch-classify.html'
+        }
+      }
+    })
+    //配置'分类页面/学知识页面'的路由
+    .state('classify.learn', {
+    	url:'/learn',
+    	views: {
+        'learn-classify': {
+          templateUrl: 'tpls/classify/learn-classify.html'
+        }
+      }
+    })
+  	//配置'分类页面/大咖说页面'的路由
+    .state('classify.say', {
+    	url:'/say',
+    	views: {
+        'say-classify': {
+          templateUrl: 'tpls/classify/say-classify.html'
+        }
+      }
     });
     $urlRouterProvider.otherwise('/tab/home');
 //  $ionicConfigProvider.tabs.position('bottom');

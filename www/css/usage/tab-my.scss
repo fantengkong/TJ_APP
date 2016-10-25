@@ -67,18 +67,25 @@
             .k_border{
                 width: 5.625rem;
                 height: 5.625rem;
-                border: 3px solid #ff944c;
+                border: 2px solid #ff944c;
                 margin: auto;
                 
                 margin-bottom: .625rem;
                 border-radius: 50%;
                 position: relative;
-                img {
+                .k_border2{
                     width: 100%;
                     height: 100%;
-                    border: 3px solid #fff;
+                    border: 2px solid #fff;
                     border-radius: 50%;
+                    overflow: hidden;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 50%;
+                    }
                 }
+                    
                 p{
                     margin: 0;
                     height: 1rem;
@@ -96,8 +103,7 @@
                     margin: auto;
                     z-index: 10000;
                 }
-            }
-            
+            } 
         }
         .k_message{
             .has-tabs-top{

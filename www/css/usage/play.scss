@@ -184,7 +184,7 @@
                     border-color: $color;
                     padding: 2px 0;
                     .p_intro {
-                        padding: 0.5rem 3rem 0.5rem 1rem;
+                        margin: 0.5rem 3rem 0.5rem 1rem;
                         p {
                             line-height: 1.25rem;
                             font-size: 14px;
@@ -266,6 +266,7 @@
                 border: none;
                 padding: 5.625rem 0 0.25rem 6.625rem;
                 img {
+                    z-index: 1000;
                     top: 4.375rem;
                     left: 1rem;
                     border: 2px solid #fff;

@@ -1,11 +1,16 @@
 starterCtrls
-	.controller('ClassifyController', ['$scope','$state',function($scope, $state) {
-		$scope.closeClassify = function() {
-			$state.go("tabs.home");
-		}
+	.controller('ClassifyController', ['$scope',function($scope) {
+		
 	}])
 	/*看大会*/
-	.controller('watchCtrl',['$scope', function($scope) {
+	.controller('watchCtrl',['$scope', '$state', function($scope, $state) {
+		
+		/*跳转到首页*/
+		$scope.closeWatch = function() {
+			$state.go("tabs.home.watch");
+		}
+		
+		
 		if(localStorage.getItem("navItems1")){
 			$scope.navItems1 = JSON.parse(localStorage.getItem("navItems1"));
 		}else{
@@ -43,7 +48,13 @@ starterCtrls
 		}
 	}])
 	/*学知识*/
-	.controller('learnCtrl',['$scope', function($scope) {
+	.controller('learnCtrl',['$scope', '$state', function($scope, $state) {
+		
+		/*跳转到首页*/
+		$scope.closeLearn = function() {
+			$state.go("tabs.home.learn");
+		}
+		
 		if(localStorage.getItem("navItems2")){
 			$scope.navItems2 = JSON.parse(localStorage.getItem("navItems2"));
 		}else{
@@ -83,7 +94,13 @@ starterCtrls
 		}
 	}])
 	/*大咖说*/
-	.controller('sayCtrl', ['$scope',function($scope) {
+	.controller('sayCtrl', ['$scope', '$state', function($scope, $state) {
+		
+		/*跳转到首页*/
+		$scope.closeSay = function() {
+			$state.go("tabs.home.say");
+		}
+				
 		if(localStorage.getItem("navItems3")){
 			$scope.navItems3 = JSON.parse(localStorage.getItem("navItems3"));
 		}else{

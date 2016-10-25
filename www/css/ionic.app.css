@@ -9669,6 +9669,8 @@ html {
   padding: 0;
   border-width: 0;
   line-height: 32px; }
+.tab_home .h_center.bar {
+  padding-left: 0; }
 .tab_home .h_center.has-header {
   top: 40px; }
 .tab_home .h_center .scroll {

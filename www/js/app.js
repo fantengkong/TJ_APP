@@ -40,21 +40,21 @@ angular.module('starter', ['ionic', 'starter.controllers'])
   	//配置tabs路由
     .state('tabs', {
       url: '/tab',
-      cache: false,
+      cache: true,
       templateUrl: './tpls/tabs.html',
       controller: 'TabsController'
     })
     //配置直播的路由
   	.state('live', {
-  		url: "/tab/live",
-  		cache: false,
+  		url: "/live/:liveId",
+  		cache: true,
   		templateUrl: './tpls/live.html',
   		controller: 'LiveController'
   	})
   	//配置首页的路由
     .state('tabs.home', {
       url: '/home',
-      cache: false,
+      cache: true,
       views: {
         'home-tab': {
           templateUrl: './tpls/tab-home.html',
@@ -62,27 +62,30 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
     })
+  	//配置首页-看大会的路由    
     .state('tabs.home.watch', {
     	url:'/watch',
-    	cache: false,
+    	cache: true,
     	views: {
     		'watch-home': {
     			templateUrl: './tpls/home/watch-home.html'
     		}
     	}
     })
+  	//配置首页-学知识的路由    
     .state('tabs.home.learn', {
     	url:'/learn',
-    	cache: false,
+    	cache: true,
     	views: {
     		'learn-home': {
     			templateUrl: './tpls/home/learn-home.html'
     		}
     	}
     })
+  	//配置首页-大咖说的路由    
     .state('tabs.home.say', {
     	url:'/say',
-    	cache: false,
+    	cache: true,
     	views: {
     		'say-home': {
     			templateUrl: './tpls/home/say-home.html'
@@ -92,7 +95,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     //配置'活动页面'的路由
     .state('tabs.activity', {
       url: '/activity',
-      cache: false,
+      cache: true,
+      params:{"detailId":null,"view":"activity"},
       views: {
         'activity-tab': {
           templateUrl: './tpls/tab-activity.html',
@@ -103,7 +107,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     //配置'我的页面'的路由
     .state('tabs.my', {
       url: '/my',
-      cache: false,
+      cache: true,
       	views: {
 	        'my-tab': {
 	          templateUrl: './tpls/tab-my.html',
@@ -115,29 +119,29 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     .state('detail', {
       url: '/tab/:detailId',
       //url: '/tab/:homeId',
-      
-      cache: false,
+      params:{"detailId":null,"view":null},
+      cache: true,
       templateUrl: './tpls/detail.html',
       controller: 'DetailController'
     })
     //配置'播放页面'的路由
     .state('play', {
       url: '/play/:playId',
-      cache: false,
+      cache: true,
       templateUrl: './tpls/play.html',
       controller: 'PlayController'
     })
     //配置'登录注册'的路由
 		.state('login_register', {
       url: '/login_register',
-      cache: false,
+      cache: true,
       templateUrl: './tpls/login_register.html',
       controller: 'LoginRegisterController'
     })
 		//配置'分类页面'的路由
     .state('classify', {
       url: '/classify',
-      cache: false,
+      cache: true,
       abstract:true,
       templateUrl: './tpls/classify/classify.html',
       controller: 'ClassifyController'

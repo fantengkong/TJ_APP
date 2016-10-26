@@ -23,14 +23,13 @@ k==kong
 		</div>
 	</ion-content>
 	<!--已登录页面-->
-	<ion-pane class="k_haslogin" hidden="true"><!-- style="height: 100%;" scroll="false" scrollbar-y="false" has-bouncing="false" scroll="false"-->
+	<ion-pane class="k_haslogin" hidden="true">
 		<div>
 			<div class="k_has">
 				<div class="k_border">
 					<div class="k_border2">
 						<img src="../img/adam.jpg" />
 					</div>
-					
 					<p>认证讲师</p>
 				</div>
 				<p>张启科</p>
@@ -39,16 +38,14 @@ k==kong
 				<ion-tabs class="tabs-top tabs-light tabs-striped tabs-color-assertive">
 					<!--我的视频选项卡-->
 					<ion-tab title="我的视频">
-
 						<ion-content scroll-height2>
-
-							<div class="k_lookedList myVedio">
+							<div class="k_lookedList myVedios">
 								<ion-list>
-									<ion-item ng-repeat="item in items1" class="item item-thumbnail-left">
-										<img ng-src={{item.imgUrl}} />
-										<h2>{{item.title}}</h2>
-										<p><i>{{item.name}}</i><i> {{item.designation}}</i></p>
-										<b>{{item.info}}</b>
+									<ion-item ng-repeat="myvedio in myVedios" href="#/tab/{{myvedio.id}}" class="item-thumbnail-left">
+										<img ng-src={{myvedio.imgUrl}} />
+										<h2>{{myvedio.title}}</h2>
+										<p><i>{{myvedio.name}}</i><i> {{myvedio.designation}}</i></p>
+										<b>{{myvedio.message}}</b>
 									</ion-item>
 								</ion-list>
 							</div>
@@ -59,11 +56,11 @@ k==kong
 						<ion-content ng-controller="MyLookedController" scroll-height2>
 							<div class="k_lookedList myLooked">
 								<ion-list>
-									<ion-item ng-repeat="item in items2" class="item item-thumbnail-left">
-										<img ng-src={{item.imgUrl}} />
-										<h2>{{item.title}}</h2>
-										<p><i>{{item.name}}</i><i> {{item.designation}}</i></p>
-										<b>{{item.info}}</b>
+									<ion-item ng-repeat="myLookedVedio in myLookedVedios"  href="#/tab/{{myLookedVedio.id}} class="item-thumbnail-left">
+										<img ng-src={{myLookedVedio.imgUrl}} />
+										<h2>{{myLookedVedio.title}}</h2>
+										<p><i>{{myLookedVedio.name}}</i><i> {{myLookedVedio.designation}}</i></p>
+										<b>{{myLookedVedio.message}}</b>
 									</ion-item>
 								</ion-list>
 							</div>
@@ -71,25 +68,6 @@ k==kong
 					</ion-tab>
 				</ion-tabs>
 			</div>
-
-			<!--<ion-scroll scroll-height1>
-				<div>
-					<div class="k_looked">
-						<p>我看过的</p>
-					</div>
-					<div class="k_lookedList">
-						<ion-list>
-							<ion-item ng-repeat="item in items1" class="item item-thumbnail-left">
-								<img ng-src={{item.imgUrl}} />
-								<h2>{{item.title}}</h2>
-								<p><i>{{item.name}}</i><i> {{item.designation}}</i><span class="h_camera"><i class="icon ion-ios-videocam {{item.icon}}"></i><i>{{item.num}}</i></span></p>
-							</ion-item>
-						</ion-list>
-
-					</div>
-				</div>
-			</ion-scroll>-->
 		</div>
-
 	</ion-pane>
 </ion-view>

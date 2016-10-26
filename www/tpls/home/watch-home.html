@@ -1,8 +1,8 @@
 <ion-view ng-controller="home_watchCtrl">
 	<!--<ion-item ng-repeat="item in items" item="item" href="#/item/{{item.id}}" class="item-remove-animate">-->
 	<div class="bar bar-subheader has-header h_center">
-		<ion-scroll scroll-x="false" direction="x" lock="true" scrollbar-y="false" scrollbar-x="false" style="width: 100%;height: 98%;">
-			<div class="h_subnav">
+		<ion-scroll scroll-x="false" direction="x" lock="true" scrollbar-y="false" scrollbar-x="false" style="width: 100%;height: 34px;">
+			<div class="h_subnav" style="height: 100%;">
 				<button ng-repeat="navItem in navItems1" class="button button-stable" ng-class="{'active':$index==activeNavItem}" ng-click="navItemAction($index)">{{navItem.name}}</button>
 			</div>
 			<!--<button class="button ng-repeat="item in navItems" button-stable" ng-class="{'active':$index==activeNavItem}" ng-click="navItemAction($index)">{{item}}</button>-->

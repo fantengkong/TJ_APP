@@ -16,9 +16,13 @@
         width: 100%;
         padding: 0 5rem;
         background: $color;
-    }
-    .tab-item-active{
-        font-weight: bolder;
+        .tab-item{
+            font-size: 14px;
+        }
+        .tab-item-active{
+            font-size: 16px;
+            font-weight: bolder;
+        }
     }
     .has-tabs.pane {
         top: 44px;
@@ -51,6 +55,7 @@
             margin-right: 10px;
             margin-bottom: 0.625rem;
             border: none;
+            white-space: nowrap;
             i {
                 display: none;
             }

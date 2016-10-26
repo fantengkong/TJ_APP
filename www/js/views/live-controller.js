@@ -1,5 +1,5 @@
 starterCtrls
-  .controller('LiveController',['$scope', '$http','$ionicScrollDelegate', function ($scope, $http,$ionicScrollDelegate) {
+  .controller('LiveController',['$scope', '$http', '$ionicScrollDelegate', '$ionicHistory', '$state', function ($scope, $http, $ionicScrollDelegate, $ionicHistory, $state) {
     $scope.sendChat = function(){
   		var oDiv=document.createElement('div');
 			oDiv.style='clear:both';
@@ -18,4 +18,13 @@ starterCtrls
     $scope.liveGood = function(){
     	$scope.isActived = true;
     }
+    
+//  $scope.liveBack = function(){
+//  	$ionicHistory.backView();
+//  } 
+
+    $scope.liveBack = function(){
+    	$state.go("tabs.activity");
+    } 
+    
   }]);

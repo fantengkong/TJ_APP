@@ -1,7 +1,15 @@
 starterCtrls
-  .controller('DetailController',['$scope','$state','$stateParams','$http', function ($scope, $state, $stateParams, $http) {
+  .controller('DetailController',['$scope','$state','$stateParams','$http', '$ionicHistory',function ($scope, $state, $stateParams, $http, $ionicHistory) {
+    console.log($stateParams.view);
     $scope.dBack=function(){
-    	$state.go("tabs.home");
+    	
+    	if($stateParams.view=="activity"){
+    		$state.go("tabs.activity");
+    	}else{
+    		$state.go("tabs.home");
+    	}
+    	
+//  	$ionicHistory.goBack();
     }   
     $http.get('mock/home_list.json')
 			.then(
@@ -10,4 +18,5 @@ starterCtrls
 					console.log($scope.item);
 				}
 			);
+			
   }]);

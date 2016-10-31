@@ -17,16 +17,26 @@
 	<ion-content class="p_content">		
 		<div class="p_info">
 			<div class="row p_title">
-				<p>成人ph+ALL 治疗研究进展(多行演示)</p>
-				<i class="col-10 icon ion-chevron-down"></i>
+				<p class="col-90">成人ph+ALL 治疗研究进展(多行演示)</p>
+				<span ng-click="showMore()" class="showMore col-10"><i class="icon ion-chevron-down"></i></span>
 			</div>
 			<div class="p_visitor">
 				<i class="icon ion-ios-videocam"></i>
 				<i>3718</i>
 			</div>
-			<div class="p_major">
-				<i>肿瘤</i><i>白血病</i><i>血液科</i>
+			<div ng-if="display">
+				<div class="p_major">
+					<i class="playSign">大会</i><i>白血病</i><i>血液科</i>
+				</div>
+				<div class="playMessage">
+					<p>会议时间： <i>2106.09.21-2016.09.22</i></p>
+					<p>会议地点： <i>廊坊市 固安区 福朋喜来登酒店</i></p>
+				</div>
+				<div class="playIntroduce">
+					<p>有一个大叔有一个大叔有一个大叔有一个大叔有一个大叔有一个大叔有一个大叔有一个大叔有一个大叔有一个大叔有一个大叔有一个大叔.......</p>
+				</div>
 			</div>
+				
 		</div>
 		<div class="p_anchor row">
 			<div class="a_portrait col col-20">
@@ -41,9 +51,15 @@
 		<div class="p_set">
 			<b>视频选集</b>(<i>5</i>)
 		</div>
-		<div class="p_vList">
+		<div class="p_vList"><!-- ng-repeat="playItem in playList"-->
+			<!--<button ng-repeat="navItem in navItems2"
+				 class="button button-stable" ng-class="{'active':$index==activeNavItem}" 
+				 ng-click="navItemAction($index)">{{navItem.name}}</button>-->
 			<ion-list class="p_list">
-				<ion-item class="item-icon-right playing" ng-click="playing()">
+				<!--<ion-item class="item-icon-right playing" ng-click="playing()"
+					ng-class="{'playing':$index==activeNavItem}"
+					ng-click="navItemAction($index)
+					>
 					<div class="p_intro">
 						<p class="">ph+ALL的疾病概述</p>
 						<p class="p_time">04:56</p>
@@ -51,8 +67,16 @@
 					
 						<i class="icon iconfont" ng-if="false">&#xe64c;</i>
 						<i class="icon iconfont">&#xe65c;</i>						
+				</ion-item>-->
+				<ion-item class="item-icon-right playAll" ng-repeat="playItem in playList" ng-class="{'playing':$index==selectItem}" ng-click="selectPlay($index)">
+					<div class="p_intro">
+						<p class="">{{playItem.title}}</p>
+						<p class="p_time">{{playItem.time}}</p>
+					</div>
+					<i class="icon iconfont" ng-class="{'ng-hide':$index==selectItem}">&#xe64c;</i>
+					<i class="icon iconfont" ng-class="{'ng-hide':$index!=selectItem}">&#xe65c;</i>
 				</ion-item>
-				<ion-item class="item-icon-right">
+				<!--<ion-item class="item-icon-right">
 					<div class="p_intro">
 						<p class="">ph+ALL的疾病概述</p>
 						<p class="p_time">04:56</p>
@@ -72,14 +96,7 @@
 						<p class="p_time">04:56</p>
 					</div>
 					<i class="icon iconfont">&#xe64c;</i>
-				</ion-item>
-				<ion-item class="item-icon-right">
-					<div class="p_intro">
-						<p class="">ph+ALL的疾病概述</p>
-						<p class="p_time">04:56</p>
-					</div>
-					<i class="icon iconfont">&#xe64c;</i>
-				</ion-item>
+				</ion-item>-->
 			</ion-list>
 		</div>
 	</ion-content>

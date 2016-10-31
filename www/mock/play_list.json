@@ -1,0 +1,119 @@
+[
+	{
+		"id": "0",
+		"imgUrl": "../img/List_Act_1.jpg",
+		"title": "ph+ALL的疾病概述1",
+		"name": "谭维仁",
+		"designation": "教授",
+		"time": "04:56",
+		"icon":"hide",
+		"num": "500人在学",
+		"info": "直播中"
+	},
+	{
+		"id": "1",	
+		"imgUrl": "../img/List_Act_2.jpg",
+		"title": "ph+ALL的疾病概述2",
+		"name": "",
+		"designation": "教授",
+		"time": "04:56",
+		"designation": "肿瘤/白血病/血液科",
+		"icon":"",
+		"num": "331",
+		"info": "直播预告"
+	},
+	{
+		"id":"2",
+		"imgUrl": "../img/List_Act_3.jpg",
+		"title": "ph+ALL的疾病概述3",
+		"name": "谭维仁",
+		"designation": "教授",
+		"time": "05:56",
+		"icon":"",
+		"num": "331",
+		"info": "直播结束"
+	},
+	{
+		"id": "3",
+		"imgUrl": "../img/video_fengmian.jpg",
+		"title": "ph+ALL的疾病概述4",
+		"name": "谭维仁",
+		"designation": "教授",
+		"time": "06:56",
+		"icon":"",
+		"num": "331",
+		"info": "直播回放"
+	},
+	{
+		"id": "4",
+		"imgUrl": "../img/List_Act_1.jpg",
+		"title": "ph+ALL的疾病概述5",
+		"name": "谭维仁",
+		"designation": "教授",
+		"time": "07:56",
+		"icon":"",
+		"num": "331",
+		"info": "课程"
+	},
+	{
+		"id": "5",
+		"imgUrl": "../img/List_Act_3.jpg",
+		"title": "ph+ALL的疾病概述6",
+		"name": "谭维仁",
+		"designation": "教授",
+		"time": "08:56",
+		"icon":"",
+		"num": "331",
+		"info": "课程"
+	}
+	,
+	{
+		"id": "6",
+		"imgUrl": "../img/List_Act_2.jpg",
+		"title": "ph+ALL的疾病概述7",
+		"name": "谭维仁",
+		"designation": "教授",
+		"time": "09:56",
+		"icon":"",
+		"num": "331",
+		"info": "课程"
+	}
+	,
+	{
+		"id": "7",
+		"imgUrl": "../img/List_Act_1.jpg",
+		"title": "ph+ALL的疾病概述8",
+		"name": "谭维仁",
+		"designation": "教授",
+		"time": "10:56",
+		"icon":"",
+		"num": "331",
+		"info": "课程"
+	}
+	,
+	{
+		"id": "8",
+		"imgUrl": "../img/List_Act_3.jpg",
+		"title": "ph+ALL的疾病概述9",
+		"name": "谭维仁",
+		"designation": "教授",
+		"time": "11:56",
+		"icon":"",
+		"num": "331",
+		"info": "课程"
+	}
+	,
+	{
+		"id": "9",
+		"imgUrl": "../img/List_Act_2.jpg",
+		"title": "ph+ALL的疾病概述10",
+		"name": "谭维仁",
+		"designation": "教授",
+		"time": "12:56",
+		"icon":"",
+		"num": "331",
+		"info": "课程"
+	}
+	
+	
+]

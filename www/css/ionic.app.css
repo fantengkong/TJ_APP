@@ -10150,11 +10150,13 @@ html {
       font-stretch: normal;
       line-height: 1.4;
       color: #2b2a2a; }
-    .k_play .p_content .p_info .p_title i {
-      display: block;
-      color: #98a4b8;
-      text-align: right;
-      font-size: 1rem; }
+    .k_play .p_content .p_info .p_title span {
+      display: block; }
+      .k_play .p_content .p_info .p_title span i {
+        display: block;
+        float: right;
+        color: #98a4b8;
+        font-size: 1rem; }
     .k_play .p_content .p_info .p_visitor {
       color: #d6dbe2;
       line-height: 1.375rem;
@@ -10163,17 +10165,31 @@ html {
         padding: 0 1px;
         font-size: 14px; }
     .k_play .p_content .p_info .p_major {
-      padding-bottom: 1rem; }
+      padding-bottom: .875rem; }
       .k_play .p_content .p_info .p_major i {
         display: inline-block;
         padding: 0 1rem;
         font-size: 0.75rem;
         line-height: 1.375rem;
         box-sizing: border-box;
-        border-radius: 6.25rem;
-        color: #d6dbe2;
-        border: solid 1px #d6dbe2;
-        margin-right: 0.5rem; }
+        border-radius: 4px;
+        color: #b4b3ae;
+        margin-right: 0.5rem;
+        background: #f4f4f4; }
+        .k_play .p_content .p_info .p_major i.playSign {
+          color: #b4b1ac;
+          background: none;
+          border: solid 1px #b4b1ac; }
+    .k_play .p_content .p_info .playMessage p {
+      line-height: 20px;
+      font-size: 10px;
+      color: #888; }
+    .k_play .p_content .p_info .playIntroduce {
+      padding: 10px 0; }
+      .k_play .p_content .p_info .playIntroduce p {
+        font-size: 10px;
+        line-height: 18px;
+        color: #888; }
   .k_play .p_content .p_anchor {
     padding: 0.625rem 1rem;
     border: 1px solid #eaeaea;
@@ -10392,6 +10408,8 @@ html {
   top: 44px; }
 .k_classify .has-tabs, .k_classify .bar-footer.has-tabs {
   bottom: 0; }
+.k_classify .bar-footer .title {
+  color: #ff6600; }
 .k_classify ion-content {
   top: 44px;
   background: #fff;

@@ -36,15 +36,9 @@ starterCtrls
 		$scope.$on('scroll.inifiteScrollComplete', function() {
 			console.log("load complete");
 		})
-		$scope.activeNavItem = 0;
-		
-		
-		
-		
-		
-		
 		
 		//点击按钮操作
+		$scope.activeNavItem = 0;
 		$scope.navItemAction = function(index){
     	$scope.activeNavItem = index;
     	console.log($scope.activeNavItem)

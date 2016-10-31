@@ -36,6 +36,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
   $ionicConfigProvider.platform.android.navBar.alignTitle('center');//标题的显示
   $ionicConfigProvider.platform.android.views.transition('ios');//过度的动画 三种风格
   
+//$ionicConfigProvider.views.transition();
+  
   $stateProvider
   	//配置tabs路由
     .state('tabs', {

@@ -31,6 +31,9 @@
     .has-tabs, .bar-footer.has-tabs{
         bottom: 0;
     }
+    .bar-footer .title {
+        color: $color;
+    }
     ion-content {
         top: 44px;
         background: #fff;

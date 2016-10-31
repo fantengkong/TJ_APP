@@ -9,8 +9,14 @@ starterCtrls
 		$scope.closeWatch = function() {
 			$state.go("tabs.home.watch");
 		}
-		
-		
+		/*滑动切换*/
+		$scope.onSwipeLeft = function() {
+        $state.go("classify.say");
+    };
+    $scope.onSwipeRight = function() {
+        $state.go("classify.learn");
+    };
+		/*判断本地存储*/
 		if(localStorage.getItem("navItems1")){
 			$scope.navItems1 = JSON.parse(localStorage.getItem("navItems1"));
 		}else{
@@ -32,6 +38,7 @@ starterCtrls
 			];
 		}		
 		localStorage.setItem("watch", JSON.stringify($scope.navItems1) );
+		/*点击选中*/
 		$scope.navItemActived = function(index) {
 			if(index > 3) {			
 				$scope.navItems1[index].selected = !$scope.navItems1[index].selected;
@@ -54,7 +61,14 @@ starterCtrls
 		$scope.closeLearn = function() {
 			$state.go("tabs.home.learn");
 		}
-		
+		/*滑动切换*/
+		$scope.onSwipeLeft = function() {
+        $state.go("classify.watch");
+    };
+    $scope.onSwipeRight = function() {
+        $state.go("classify.say");
+    };
+    /*判断本地存储*/
 		if(localStorage.getItem("navItems2")){
 			$scope.navItems2 = JSON.parse(localStorage.getItem("navItems2"));
 		}else{
@@ -77,6 +91,7 @@ starterCtrls
 		}
 		
 		localStorage.setItem("learn", JSON.stringify($scope.navItems2) );
+		/*点击选中*/
 		$scope.navItemActived = function(index) {
 			if(index > 3) {
 				
@@ -100,7 +115,14 @@ starterCtrls
 		$scope.closeSay = function() {
 			$state.go("tabs.home.say");
 		}
-				
+		/*滑动切换*/
+		$scope.onSwipeLeft = function() {
+        $state.go("classify.learn");
+    };
+    $scope.onSwipeRight = function() {
+        $state.go("classify.watch");
+    };
+    /*判断本地存储*/
 		if(localStorage.getItem("navItems3")){
 			$scope.navItems3 = JSON.parse(localStorage.getItem("navItems3"));
 		}else{
@@ -123,6 +145,7 @@ starterCtrls
 		}
 		
 		localStorage.setItem("say", JSON.stringify($scope.navItems3) );
+		/*点击选中*/
 		$scope.navItemActived = function(index) {
 			if(index > 3) {
 				

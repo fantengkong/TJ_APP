@@ -14,29 +14,28 @@
         .live_back{
             position: absolute;
             z-index: 1;
-            width: 2rem;
-            height: 2rem;
+            width: 3.2rem;
+            height: 3.2rem;
             border-radius: 50%;
             background: rgba(0,0,0,0.5);
-            font-size: 1.5rem;
-            line-height: 2rem;
+            line-height: 3.2rem;
             text-align: center;
             color: #fff;
-            left: 1rem;
-            top: 0.625rem;
+            left: 1.6rem;
+            top: 1rem;
         }
         width: 100%;
-        height: 13.125rem;
+        height: 21rem;
         img {
             width: 100%;
-            height: 13.125rem;
+            height: 21rem;
         }
     }
     .l_player {
         z-index: 6;
-        padding: 0 1rem;
+        padding: 0 1.6rem;
         position: absolute;
-        top: 13.1rem;
+        top: 21rem;
         width: 100%;
         height: 40px;
         line-height: 40px;
@@ -80,18 +79,18 @@
     ion-content {
         background: #f0eff5;
         &.padding {
-            padding: 0 1rem;
+            padding: 0 1.6rem;
         }
         .l_system {
-            padding: 0.75rem 2rem 0;
-            line-height: 1.125rem;
+            padding: 1.2rem 3.2rem 0;
+            line-height: 1.8rem;
             font-size: 12px;
             color: #9a9da2;
         }
         .msgContent {
             width: auto;
             height: auto;
-            margin-top: 1rem;
+            margin-top: 1.6rem;
             background: #f0eff5;
             float: left;
             text-align: left;
@@ -101,14 +100,14 @@
                 border-radius: 50%;
                 display: block;
                 float: left;
-                margin-right: 1rem;
+                margin-right: 1.6rem;
                 border: 2px solid #fff;
             }
             p {
                 display: inline-block;
                 position: relative;
                 background-color: #fff;
-                max-width: 14.125rem;
+                max-width: 22.6rem;
                 word-break: break-all;
                 padding: 6px 12px;
                 line-height: 18px;
@@ -151,7 +150,7 @@
                 }
                 img {
                     float: right;
-                    margin-left: 1rem;
+                    margin-left: 1.6rem;
                     margin-right: 0;
                 }
             }
@@ -159,7 +158,7 @@
     }
     .has-footer {
         bottom: 50px;
-        top: 13.125rem;
+        top: 21rem;
     }
     .l_footer.bar-footer {
         height: 50px;

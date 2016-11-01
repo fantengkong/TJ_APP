@@ -18,17 +18,18 @@ starterCtrls
 				}
 			);
 			
-		$scope.latestGoTo = function(index){
+		/*$scope.latestGoTo = function(index){
 			if($scope.latestActivities[index].info=="直播中"){
 				$state.go("live");
 			}else{
 				$state.go("detail", {detailId: index,view: 'activity'});
 			}
+			$state.go("detail", {detailId: index,view: 'activity'});
 		}
 		
 		$scope.pastGoTo = function(index){
 			$state.go("detail", {detailId: index,view: 'activity'});
-		}
+		}*/
 		
   }]);
 	/*$scope.doRefresh = function () {

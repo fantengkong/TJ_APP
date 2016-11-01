@@ -12,7 +12,7 @@
 		<ion-tab title="最新活动">
 			<ion-content>
 				<ion-list>
-					<ion-item ng-repeat="latestActivity in latestActivities" ng-click="latestGoTo($index)">
+					<ion-item ng-repeat="latestActivity in latestActivities" ui-sref="detail({detailId:latestActivity.id,view:'tabs.activity',info:latestActivity.info})">
 						<div>
 							<img ng-src={{latestActivity.imgUrl}} alt="" />
 							<p class="{{latestActivity.background}}">{{latestActivity.info}}</p>
@@ -24,7 +24,7 @@
 		<ion-tab title="往期活动">
 			<ion-content>
 				<ion-list>
-					<ion-item ng-repeat="pastActivity in pastActivities" ng-click="pastGoTo({{pastActivity.id}})">
+					<ion-item ng-repeat="pastActivity in pastActivities" ui-sref="detail({detailId:pastActivity.id,view:'tabs.activity',info:pastActivity.info})">
 						<div>
 							<a><img ng-src={{pastActivity.imgUrl}} alt="" /></a>
 							<p>{{pastActivity.info}}</p>

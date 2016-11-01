@@ -46,6 +46,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 }
 html{
     font-family: PingFangSC;
+    font-size: 62.5%;
 }
 @font-face {
     font-family: 'iconfont';
@@ -71,4 +72,5 @@ $color: #ff6600;
 @import "usage/play";
 @import "usage/login_register";
 @import "usage/classify";
+@import "usage/liveprofile";
 @import "usage/live";

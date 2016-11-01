@@ -12,11 +12,9 @@ d==detail
 	<ion-content>		
 		<div class="d_img">
 			<div ng-click="dBack()" class="d_back">
-				<i class="icon ion-ios-arrow-back"></i>
+				<i class="icon iconfont">&#xe64e;</i>
 			</div>
-			<a href="#/play/{{item.id}}">
-				<img ng-src={{item.imgUrl}} />
-			</a>
+			<img ng-src={{item.imgUrl}} />
 		</div>
 		<ion-list>
 			<p class="d_title">相约北京 | 第二届精准医疗与基因测序大会</p>
@@ -59,6 +57,6 @@ d==detail
 		</ion-list>
 	</ion-content>
 	<ion-footer-bar>
-		<h1 class="title">参加活动</h1>
+		<h1 class="title" ng-click="detailGoTo()">参加活动</h1>
 	</ion-footer-bar>
 </ion-view>

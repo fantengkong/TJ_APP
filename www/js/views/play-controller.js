@@ -1,8 +1,15 @@
 starterCtrls
   .controller('PlayController', ['$scope', '$state', '$stateParams', '$http', function ($scope, $state, $stateParams,$http) {
-//		console.log($stateParams.playId);
+		console.log($stateParams);
 		$scope.pBack=function(){
-			$state.go("detail", {detailId:$stateParams.playId});
+			if($stateParams.playId>=0&&$stateParams.view){
+				$state.go($stateParams.view, {detailId:$stateParams.detailId});
+			}else if($stateParams.detailId>=0){
+				$state.go("detail", {detailId:$stateParams.detailId});
+			}else{
+				$state.go("tabs.home.watch");
+			}
+			
 		}
 		$http.get('mock/home_list.json')
 			.then(

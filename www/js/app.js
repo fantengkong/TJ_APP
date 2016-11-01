@@ -46,13 +46,6 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       templateUrl: './tpls/tabs.html',
       controller: 'TabsController'
     })
-    //配置直播的路由
-  	.state('live', {
-  		url: "/live/:liveId",
-  		cache: true,
-  		templateUrl: './tpls/live.html',
-  		controller: 'LiveController'
-  	})
   	//配置首页的路由
     .state('tabs.home', {
       url: '/home',
@@ -98,7 +91,6 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     .state('tabs.activity', {
       url: '/activity',
       cache: true,
-      params:{"detailId":null,"view":"activity"},
       views: {
         'activity-tab': {
           templateUrl: './tpls/tab-activity.html',
@@ -121,7 +113,12 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     .state('detail', {
       url: '/tab/:detailId',
       //url: '/tab/:homeId',
-      params:{"detailId":null,"view":null},
+      params:{
+      	'info': null,
+      	'detailId': null,
+      	'view': null,
+      	'playId': null
+      },
       cache: true,
       templateUrl: './tpls/detail.html',
       controller: 'DetailController'
@@ -130,6 +127,10 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     .state('play', {
       url: '/play/:playId',
       cache: true,
+      params: {
+      	'detailId':null,
+    		'view':null
+    	},
       templateUrl: './tpls/play.html',
       controller: 'PlayController'
     })
@@ -174,7 +175,35 @@ angular.module('starter', ['ionic', 'starter.controllers'])
           templateUrl: 'tpls/classify/say-classify.html'
         }
       }
-    });
+    })
+    //配置直播简介页的路由
+  	.state('liveprofiles', {
+  		url: "/liveprofile",
+  		cache: true,
+  		params:{
+  			'liveId': null,
+  			'playId': null,
+  			'detailId': null,
+  			'view': null,
+  			'info': null
+  		},
+  		templateUrl: './tpls/live/live_profile.html',
+  		controller: 'LiveProfileController'
+  	})
+    //配置直播的路由
+  	.state('live', {
+  		url: "/live/:liveId",
+  		cache: true,
+  		params:{
+  			'liveId': null,
+  			'playId': null,
+  			'detailId': null,
+  			'view': null,
+  			'info': null
+  		},
+  		templateUrl: './tpls/live.html',
+  		controller: 'LiveController'
+  	});
     $urlRouterProvider.otherwise('/tab/home');
 //  $ionicConfigProvider.tabs.position('bottom');
     

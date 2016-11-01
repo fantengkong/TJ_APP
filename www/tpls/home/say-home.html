@@ -7,7 +7,7 @@
 		</ion-scroll>
 		<!--加载更多-->
 		<button class="h_more button-clear" ng-click="openSayClassify()">
-			<i class="icon ion-ios-plus-outline"></i>
+			<i class="icon iconfont">&#xe65a;</i>
 		</button>
 	</div>
 	<ion-content delegate-handle="h_content" on-scroll="getPos()" scroll-event-interval="5" class="h_content has-header has-subheader">
@@ -26,7 +26,7 @@
 		</div>
 		<ion-list class="h_list">
 			<p class="h_recommend">精选推荐</p>
-			<ion-item ng-repeat="item in items" class="item item-thumbnail-left" href="#/tab/{{item.id}}">
+			<ion-item ng-repeat="item in items" class="item item-thumbnail-left" ui-sref="live({liveId:item.id,view:'tabs.home.say'})">
 				<img ng-src={{item.imgUrl}} alt="" />
 				<h2>{{item.title}}</h2>
 				<p><i>{{item.name}}</i><i> {{item.designation}}</i><span class="h_camera"><i class="icon ion-ios-videocam {{item.icon}}"></i><i>{{item.num}}</i></span></p>

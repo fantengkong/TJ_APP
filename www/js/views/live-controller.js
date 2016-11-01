@@ -1,5 +1,5 @@
 starterCtrls
-  .controller('LiveController',['$scope', '$http', '$ionicScrollDelegate', '$ionicHistory', '$state', function ($scope, $http, $ionicScrollDelegate, $ionicHistory, $state) {
+  .controller('LiveController',['$scope', '$http', '$ionicScrollDelegate', '$ionicHistory', '$state','$stateParams', function ($scope, $http, $ionicScrollDelegate, $ionicHistory, $state, $stateParams) {
     $scope.sendChat = function(){
   		var oDiv=document.createElement('div');
 			oDiv.style='clear:both';
@@ -16,15 +16,26 @@ starterCtrls
     }
     $scope.isActived = false;
     $scope.liveGood = function(){
-    	$scope.isActived = true;
+    	if($scope.isActived == true){
+    		return false;
+    	}else{
+    		$scope.isActived = true;
+    	}
+    	
+    	
     }
     
 //  $scope.liveBack = function(){
 //  	$ionicHistory.backView();
 //  } 
 
+		console.log($stateParams)
     $scope.liveBack = function(){
-    	$state.go("tabs.activity");
+    	if($stateParams.view&&$stateParams.detailId>=0){
+    		$state.go($stateParams.view,{detailId: $stateParams.detailId, view: 'tabs.activity'});
+    	}else{
+    		$state.go('tabs.home');
+    	}
     } 
     
   }]);

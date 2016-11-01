@@ -18,7 +18,7 @@
 		<div class="p_info">
 			<div class="row p_title">
 				<p class="col-90">成人ph+ALL 治疗研究进展(多行演示)</p>
-				<span ng-click="showMore()" class="showMore col-10"><i class="icon ion-chevron-down"></i></span>
+				<span ng-click="showMore()" class="showMore col-10"><i class="icon iconfont">&#xe65f;</i></span>
 			</div>
 			<div class="p_visitor">
 				<i class="icon ion-ios-videocam"></i>
@@ -35,8 +35,7 @@
 				<div class="playIntroduce">
 					<p>有一个大叔有一个大叔有一个大叔有一个大叔有一个大叔有一个大叔有一个大叔有一个大叔有一个大叔有一个大叔有一个大叔有一个大叔.......</p>
 				</div>
-			</div>
-				
+			</div>			
 		</div>
 		<div class="p_anchor row">
 			<div class="a_portrait col col-20">
@@ -51,23 +50,8 @@
 		<div class="p_set">
 			<b>视频选集</b>(<i>5</i>)
 		</div>
-		<div class="p_vList"><!-- ng-repeat="playItem in playList"-->
-			<!--<button ng-repeat="navItem in navItems2"
-				 class="button button-stable" ng-class="{'active':$index==activeNavItem}" 
-				 ng-click="navItemAction($index)">{{navItem.name}}</button>-->
+		<div class="p_vList">
 			<ion-list class="p_list">
-				<!--<ion-item class="item-icon-right playing" ng-click="playing()"
-					ng-class="{'playing':$index==activeNavItem}"
-					ng-click="navItemAction($index)
-					>
-					<div class="p_intro">
-						<p class="">ph+ALL的疾病概述</p>
-						<p class="p_time">04:56</p>
-					</div>
-					
-						<i class="icon iconfont" ng-if="false">&#xe64c;</i>
-						<i class="icon iconfont">&#xe65c;</i>						
-				</ion-item>-->
 				<ion-item class="item-icon-right playAll" ng-repeat="playItem in playList" ng-class="{'playing':$index==selectItem}" ng-click="selectPlay($index)">
 					<div class="p_intro">
 						<p class="">{{playItem.title}}</p>
@@ -76,27 +60,6 @@
 					<i class="icon iconfont" ng-class="{'ng-hide':$index==selectItem}">&#xe64c;</i>
 					<i class="icon iconfont" ng-class="{'ng-hide':$index!=selectItem}">&#xe65c;</i>
 				</ion-item>
-				<!--<ion-item class="item-icon-right">
-					<div class="p_intro">
-						<p class="">ph+ALL的疾病概述</p>
-						<p class="p_time">04:56</p>
-					</div>
-					<i class="icon iconfont">&#xe64c;</i>
-				</ion-item>
-				<ion-item class="item-icon-right">
-					<div class="p_intro">
-						<p class="">ph+ALL的疾病概述</p>
-						<p class="p_time">04:56</p>
-					</div>
-					<i class="icon iconfont">&#xe64c;</i>
-				</ion-item>
-				<ion-item class="item-icon-right">
-					<div class="p_intro">
-						<p class="">ph+ALL的疾病概述</p>
-						<p class="p_time">04:56</p>
-					</div>
-					<i class="icon iconfont">&#xe64c;</i>
-				</ion-item>-->
 			</ion-list>
 		</div>
 	</ion-content>
@@ -104,9 +67,8 @@
 	<div class="p_mask" hidden="true">
 	</div>
 	<!--讲师详情卡片卡片-->
-
 	<div class="list card" hidden="true">
-		<span ng-click="cardClose()"><i class="icon ion-android-close"></i></span>
+		<span ng-click="cardClose()"><i class="icon iconfont">&#xe650;</i></span>
 		<div class="p_background">
 			<div class="item item-thumbnail-left p_people">
 				<img src="../img/adam.jpg">

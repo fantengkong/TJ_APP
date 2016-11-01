@@ -9779,6 +9779,20 @@ html {
   color: #98a4b8; }
   .k_footer .k_color.tab-item-active {
     color: #ff6600; }
+.k_footer .tab-item i.icon {
+  background-size: 24px 24px; }
+.k_footer .bar-home-on {
+  background: url(../../img/tabs/home_on.png) no-repeat center 5px; }
+.k_footer .bar-home-off {
+  background: url(../../img/tabs/home_off.png) no-repeat center 5px; }
+.k_footer .bar-activity-on {
+  background: url(../../img/tabs/activity_on.png) no-repeat center 5px; }
+.k_footer .bar-activity-off {
+  background: url(../../img/tabs/activity_off.png) no-repeat center 5px; }
+.k_footer .bar-mine-on {
+  background: url(../../img/tabs/mine_on.png) no-repeat center 5px; }
+.k_footer .bar-mine-off {
+  background: url(../../img/tabs/mine_off.png) no-repeat center 5px; }
 
 /*
 * @description: "主栏目—活动"页面样式

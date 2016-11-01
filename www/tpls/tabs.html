@@ -1,17 +1,21 @@
 <!--底部tab切换-->
 <ion-tabs class="tabs-light tabs-icon-top k_footer tabs-bottom" delegate-handle="tabs">
-	<ion-tab class="k_color" title="探基" href="#/tab/home" icon="ion-ios-videocam">
+	<!--
+		底部tabs自定义图标.bar-home-on
+		底部tabs选中，未选中字体颜色样式.k_color
+	-->
+	<ion-tab class="k_color" title="探基" href="#/tab/home"  icon="bar-home-on" icon-on="bar-home-on" icon-off="bar-home-off">
 		<ion-nav-view animation="slide-left-right" name="home-tab"></ion-nav-view>
 	</ion-tab>
-	<ion-tab class="k_color" title="活动" href="#/tab/activity" icon="ion-android-bookmark">
+	<ion-tab class="k_color" title="活动" href="#/tab/activity" icon-on="bar-activity-on" icon-off="bar-activity-off">
 		<ion-nav-view animation="slide-left-right" name="activity-tab"></ion-nav-view>
 	</ion-tab>
-	<ion-tab class="k_color" title="我的" href="#/tab/my" icon="ion-android-person">
+	<ion-tab class="k_color" title="我的" href="#/tab/my"  icon-on="bar-mine-on" icon-off="bar-mine-off">
 		<ion-nav-view animation="slide-left-right" name="my-tab"></ion-nav-view>
 	</ion-tab>
 </ion-tabs>
 <!--<style type="text/css">
-	.bar-home-on { background: url(../img/探基.png) no-repeat center 5px;background-size: 24px 24px; }
+	.bar-activity-on { background: url(../img/探基.png) no-repeat center 5px;background-size: 24px 24px; }
 </style>-->
 <!--
 <ion-tabs class="tabs-icon-top tool-bar" ng-class="{'tabs-item-hide': hideTabs}">

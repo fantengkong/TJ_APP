@@ -1,0 +1,182 @@
+@charset "utf-8";
+/*
+* @description: "活动详情页"页面样式
+* @author: 孔
+* @update: name (2016-10-08)
+*/
+/*
+* d==liveprofile
+* i==info
+* w==weixin
+* */
+.liveprofile {
+    p {
+        margin: 0;
+    }
+    ion-content {
+        &.has-footer {
+            bottom: 50px;
+        }
+        .liveprofile_img {
+            position: relative;
+            height: 21rem;
+            .liveprofile_countdown{
+                height: 40px;
+                text-align: center;
+                font-size: 14px;
+                line-height: 40px;
+                background: rgba(0,0,0,0.5);
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                p{
+                    color: #fff;
+                }
+            }
+            .liveprofile_back{
+                position: absolute;
+                z-index: 1;
+                width: 3.2rem;
+                height: 3.2rem;
+                border-radius: 50%;
+                background: rgba(0,0,0,0.5);
+                font-size: 2.4rem;
+                line-height: 3.2rem;
+                text-align: center;
+                color: #fff;
+                left: 1.6rem;
+                top: 1rem;
+            }
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .list {
+            padding: 1.6rem 1.6rem 0;
+            .item {
+                border: none;
+            }
+            .liveprofile_title {
+                font-size: 20px;
+                font-weight: normal;
+                font-style: normal;
+                font-stretch: normal;
+                line-height: 1.4;
+                color: #2b2a2a;
+            }
+            .liveprofile_time,
+            .liveprofile_position {
+                font-size: 14px;
+                padding: 14px 0;
+                i {
+                    padding-right: 12px;
+                    color: #d6dbe2;
+                }
+                b {
+                    color: #5b5b5b;
+                    font-weight: 100;
+                }
+                .row {
+                    padding: 0;
+                }
+                border-bottom: dashed 1px #eaeaea;
+            }
+            .liveprofile_info {
+                margin: 0;
+                dt {
+                    h2 {
+                        margin: 0;
+                        line-height: 2.2rem;
+                        font-size: 16px;
+                        font-weight: 500;
+                        font-style: normal;
+                        font-stretch: normal;
+                        color: #2a2a2a;
+                        padding: 1.8rem 0 1rem;
+                    }
+                    p {
+                        line-height: 1.57;
+                        font-size: 14px;
+                    }
+                }
+                .i_list {
+                    padding: 1rem 0 1.6rem;
+                    li {
+                        list-style: none;
+                    }
+                }
+                .i_pic {
+                    img {
+                        width: 100%;
+                        height: 12.8rem;
+                    }
+                }
+                .i_text {
+                    padding: 1.6rem 0 1rem;
+                    p {
+                        font-size: 14px;
+                        font-weight: normal;
+                        font-style: normal;
+                        font-stretch: normal;
+                        line-height: 1.57;
+                        color: #2a2a2a;
+                    }
+                }
+                .i_url {
+                    a {
+                        display: block;
+                        text-decoration: none;
+                        font-family: PingFangSC;
+                        font-size: 14px;
+                        font-weight: normal;
+                        font-style: normal;
+                        font-stretch: normal;
+                        line-height: 1.57;
+                        color: #4384e9;
+                    }
+                    padding-bottom: 30px;
+                    border-bottom: 1px solid #eaeaea;
+                }
+            }
+            .liveprofile_weixin {
+                text-align: center;
+                .w_attention {
+                    width: 100%;
+                    padding: 1.6rem 6.4rem;
+                    color: #8d939d;
+                    font-size: 14px;
+                    p {
+                        line-height: 2.4rem;
+                        i {
+                            padding: 0 2px;
+                            color: #4689F2;
+                            font-weight: 600;
+                            font-size: 1.6rem;
+                        }
+                    }
+                }
+                .w_QR_code {
+                    img {
+                        width: 15rem;
+                    }
+                }
+                .w_distinguish {
+                    color: #aab0b8;
+                    font-size: 1.2rem;
+                    line-height: 1.8rem;
+                    padding: 1rem 0 6.2rem;;
+                }
+            }
+        }
+    }
+    .bar-footer {
+        &.signUp{
+            background: $color;
+        }
+        height: 50px;
+        .title {
+            color: #fff;
+        }
+    }
+}

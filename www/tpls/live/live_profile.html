@@ -11,29 +11,43 @@ d==detail
 <ion-view class="liveprofile">
 	<ion-content>		
 		<div class="liveprofile_img">
+			<!--返回按钮-->
 			<div ng-click="dBack()" class="liveprofile_back">
 				<i class="icon ion-ios-arrow-back"></i>
 			</div>
+			<!--开播倒计时-->
 			<div class="liveprofile_countdown">
 				<p>距离开播还有: 3天 06小时 23分  18秒</p>
 			</div>
+			<!--视频占位-->
 			<img ng-src={{item.imgUrl}} />
 		</div>
 		<ion-list>
+			<!--直播标题-->
 			<p class="liveprofile_title">成人PH+ALL治疗研究进展  (成人PH+ALL多行演示)</p>
-			<p class="liveprofile_time">
-				<span class="row">
-					<i class=".col-5 icon ion-android-time"></i><b>7月24日 9:00-7月25日 17:30</b>
-				</span>				
+			<!--直播报名人数-->
+			<div class="liveprofile_enrollment">
+				<span><img src="http://placehold.it/24" alt="" /></span>
+				<span><img src="http://placehold.it/24" alt="" /></span>
+				<span><img src="http://placehold.it/24" alt="" /></span>
+				<span><img src="http://placehold.it/24" alt="" /></span>
+				<span><img src="http://placehold.it/24" alt="" /></span>
+				<span><img src="http://placehold.it/24" alt="" /></span>
+				<i>27人已报名</i>
+			</div>
+			<!--直播关键词-->
+			<div class="liveprofile_keywords">
+				<i>大会</i><i>白血病</i><i>血液科</i>
+			</div>
+			<!--直播时间和地点-->
+			<p class="liveprofile_time_place">
+				会议时间：<i>7月24日 9:00-7月25日 17:30</i><br />
+				会议地点：<i>北京 东城区 王府井大街 协和学术会堂 (帅府园胡同协和医院西门对面)</i>
 			</p>
-			<p class="liveprofile_position">
-				<span class="row">
-					<i class=".col-5 icon ion-ios-location-outline"></i><b>北京 东城区 王府井大街 协和学术会堂 (帅府园胡同协和医院西门对面)</b>
-				</span>
-			</p>
+			<!--直播信息-->
 			<dl class="liveprofile_info">
 				<dt>
-					<h2>文本段落样式，需考虑长英文文本的兼容性，</h2>
+					<h2>支持编辑器标题</h2>
 					<p>文本段落样式，需考虑长英文文本的兼容性，实现强制换行。</p>
 				</dt>
 				<dd class="i_list">
@@ -47,19 +61,13 @@ d==detail
 				<dd class="i_text">
 					<p>活动介绍文本段落活动介绍文本段落活动介绍文本段落活动介绍文本段落</p>
 				</dd>
-				<dd class="i_url">
-					<a href="#/detail">http://seq.cn</a>
-					<a href="#/detail">http://m.seq.cn/act/301923.html</a>
+				<dd class="i_text">
+					<p>活动介绍文本段落活动介绍文本段落活动介绍文本段落活动介绍文本段落</p>
 				</dd>
 			</dl>
-			<div class="liveprofile_weixin">
-				<div class="w_attention"><p>更多学习视频,请关注<i>探基</i>微信号</p><p>专注基因行业教育</p></div>				
-				<div class="w_QR_code"><img src="../img/1475915991.png" alt="" /></div>
-				<p class="w_distinguish ">长按上图，选择识别“识别图中二维码”</p>
-			</div>			
 		</ion-list>
 	</ion-content>
-	<ion-footer-bar  class="signUp">
-		<h1 class="title" ng-click="detailGoTo()">参加活动</h1>
+	<ion-footer-bar class="signUp">
+		<h1 class="title" ng-click="liveprofileGoTo()">报名看直播</h1>
 	</ion-footer-bar>
 </ion-view>

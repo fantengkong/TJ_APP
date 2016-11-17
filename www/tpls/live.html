@@ -7,19 +7,44 @@
 k==kong
 l==live
 -->
-<ion-view class="live">
-	<div class="l_play"><img src="../img/List_Act_1.jpg" alt="" /></div>
-	<div class="l_player">
-		<img src="../img/perry.png"/>
-		<i class="l_people">张启科</i>
-		<i class="l_title">讲师</i>
-		<span><i>123456</i>人看<b>·</b><i>1234</i>赞</span>
+<ion-view class="live" view-title="探基-基因行业互助平台">
+	<!--关注探基微信-->
+		<div class="row live_TJweixin" ng-if="TJweixinShow">
+		  <div class="col col-20 TJ_logo">探基</div>
+		  <div class="col col-50 TJ_info"><p>online</p>基因行业在线教育平台</span></div>
+		  <div class="col col-30"><button ng-click="goToTJweixin()">关注公众号</button></div>
+		</div>
+	<!--直播视频-->
+	<div class="l_play">
+		<!--返回按钮-->
+		<div ng-click="liveBack()" class="live_back">
+			<i class="icon iconfont">&#xe650;</i>
+		</div>
+		<!--放大按钮-->
+		<div ng-click="" class="live_fullScreen">
+			<i class="icon iconfont">&#xe662;</i>
+		</div>
+		<!--直播已结束-->
+		<div ng-if="liveOver" class="live_finish">
+			<i class="iconfont">&#xe656;</i>
+			<p>直播已结束</p>
+		</div>
+		<img src="../img/List_Act_1.jpg" alt="" />
+		<!--专家信息-->
+		<div class="l_player">
+			<img src="../img/perry.png" ng-if="isExpert">
+			<i class="l_people" ng-if="isExpert">张启科</i>
+			<i class="l_title" ng-if="isExpert">讲师</i>
+			<span><i>123456</i>人看<b>·</b><i ng-bind="zan">1234</i>赞</span>
+		</div>
 	</div>
-	<ion-content class="has-footer padding" delegate-handle="liveScroll">
+		
+	<ion-content class="has-footer padding" delegate-handle="liveScroll"  ng-class="{true: 'has_weixin'}[TJweixinShow]">
+		<!--聊天记录-->
 		<ul class="l_chat">
-			<li class="msgContent l_speaker" style="clear: both;"><img src="../img/perry.png"/><p><b class="l_left"></b>我是讲师，有专业气泡</p></li>
+			<li class="msgContent l_speaker" ng-if="isExpert" style="clear: both;"><img src="../img/perry.png"/><p><b class="l_left"></b>我是讲师，有专业气泡</p></li>
 			
-			<li class="msgContent l_speaker" style="clear: both;"><img src="../img/perry.png"/><p><b class="l_left"></b>我是讲师，有专业气泡</p></li>
+			<li class="msgContent l_speaker" ng-if="isExpert" style="clear: both;"><img src="../img/perry.png"/><p><b class="l_left"></b>我是讲师，有专业气泡</p></li>
 			<li class="msgContent l_me" style="clear: both;"><p><b class="l_right"></b>我的发言</p><img src="../img/ben.png"/></li>
 			<li class="msgContent" style="clear: both;"><img src="../img/mike.png"/><p><b class="l_left"></b>其它观众发言其它观众发言其它观众发言其它观众发言</p></li>
 			<div class="l_system" style="clear: both;">系统消息：后台场控后台场控后台场控后台场控后台场控后台场控后台场控后台场控后台场控</div>
@@ -27,18 +52,26 @@ l==live
 			
 		</ul>
 	</ion-content>
-	<button class="l_like button button-clear">
-			<i class="iconfont">&#xe603;</i>
-	</button>
-	<div class="l_footer bar bar-footer item-input-inset">
-		<button class="button button-clear">
-			<i class="iconfont">&#xe603;</i>
-		</button>
+	<!--评论间关闭-->
+	<ion-footer-bar class="bar-calm" ng-if="commentsClose">
+		<h1 class="title ">评论间已关闭</h1>
+	</ion-footer-bar>
+	<!--评论间开启-->
+	<div class="l_footer bar bar-footer item-input-inset" ng-if="commentsOpen">
+		<!--点赞按钮-->
+		<!--<button class="button button-clear" ng-click="liveGood()" ng-class="{true: 'actived', false: ''}[isActived]">
+			<i class="icon iconfont">&#xe64d;</i>
+		</button>-->
+		<!--输入框-->
 	  <label class="item-input-wrapper">
-	    <input ng-model="Chat" type="text" placeholder="一起讨论">
+	    <input ng-model="viewer.Chat" ng-focus="focus()" ng-blur="blur()" type="text" placeholder="一起讨论">
 	  </label>
-	  <button class="button button-clear" ng-click="sendChat()">
-	    <i class="iconfont">&#xe605;</i>
-	  </button>
+	  <!--分享按钮-->
+	  <!--<button class="button button-clear" ng-click="sendChat()">
+	    <i class="icon iconfont">&#xe64f;</i>
+	  </button>-->
+	  	
+	  <!--发送按钮-->
+	  <span ng-click="sendChat()" ng-if="keyboard_show">发送</span>
 	</div>
 </ion-view>

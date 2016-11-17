@@ -1,0 +1,12 @@
+<ion-view ng-controller="pastActCtrl">
+	<ion-content>
+		<ion-list>
+			<ion-item ng-repeat="pastActivity in pastActivities" href="" ng-click="past_to_detail({{pastActivity.id}})">
+				<div>
+					<a><img ng-src={{pastActivity.imgUrl}} alt="" /></a>
+					<p>{{pastActivity.info}}</p>
+				</div>
+			</ion-item>
+		</ion-list>
+	</ion-content>
+</ion-view>

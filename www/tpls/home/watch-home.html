@@ -1,0 +1,50 @@
+<ion-view ng-controller="home_watchCtrl">
+	<!--二级分类-->
+	<div class="bar bar-subheader has-header h_center">
+		<ion-scroll scroll-x="false" direction="x" lock="true" scrollbar-y="false" scrollbar-x="false" style="width: 100%;height: 34px;">
+			<div class="h_subnav" style="height: 100%;">
+				<button ng-click="watchRecommend()" ng-class="{true: 'active'}[isActive1]" class="button button-stable">推荐</button>
+				<button ng-repeat="navItem in navItems1" class="button button-stable" ng-class="{'active':$index==activeNavWatch}" ng-click="navWatch($index)">{{navItem.name}}</button>
+			</div>
+		</ion-scroll>
+		<!--加载更多-->
+		<button class="h_more button-clear" ng-click="openWatchClassify()" nav-direction="forward">
+			<i class="icon iconfont">&#xe65a;</i>
+		</button>
+	</div>
+	<!--主体内容-->
+	<ion-content delegate-handle="h_content" on-scroll="getPos()" scroll-event-interval="5" class="scdiv h_content has-subheader has-tabs">
+		<!--轮播图-->
+		<div class="h_banner">
+			<ion-slide-box auto-play="true" does-continue="true" show-pager="true">
+				<ion-slide>
+					<a nav-direction="forward" ui-sref="play({homeId: '0',playId: '0', view:'tabs.home.watch'})"><img src="../img/Home_Banner.jpg" alt="" /></a>
+				</ion-slide>
+				<ion-slide>
+					<a nav-direction="forward" ui-sref="play({homeId: '1',playId: '1', view:'tabs.home.watch'})"><img href="#/play/1" src="../img/List_Act_1.jpg" alt="" /></a>
+				</ion-slide>
+				<ion-slide>
+					<a nav-direction="forward" ui-sref="play({homeId: '2',playId: '2', view:'tabs.home.watch'})"><img href="#/play/2" src="../img/List_Act_3.jpg" alt="" /></a>
+				</ion-slide>
+				<ion-slide>
+					<a nav-direction="forward" ui-sref="play({homeId: '3',playId: '3', view:'tabs.home.watch'})"><img href="#/play/3" src="../img/List_Act_3.jpg" alt="" /></a>
+				</ion-slide>
+				<ion-slide>
+					<a nav-direction="forward" ui-sref="play({homeId: '4',playId: '4', view:'tabs.home.watch'})"><img href="#/play/4" src="../img/List_Act_3.jpg" alt="" /></a>
+				</ion-slide>
+			</ion-slide-box>
+		</div>
+		<!--精品推荐列表-->
+		<ion-list class="h_list">
+			<p class="h_recommend">精选推荐</p>
+			<ion-item ng-repeat="item in items1" id={{item.id}} class="item item-thumbnail-left" ng-click="watch_to_liveprofile(item.id)" href="">				
+				<img ng-src={{item.imgUrl}} />
+				<h2>{{item.title}}</h2>
+				<p><i>{{item.name}}</i><i> {{item.designation}}</i></p>
+				<span class="h_camera"><i class="icon iconfont {{item.icon}}">&#xe652;</i><i>{{item.num}}</i></span>
+				<div class="h_state">{{item.info}}</div>
+			</ion-item>
+		</ion-list>
+		<ion-infinite-scroll spinner="dots" ng-if="watchDataLoad" on-infinite="loadMore()"></ion-infinite-scroll>
+	</ion-content>
+</ion-view>

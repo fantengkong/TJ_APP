@@ -1,0 +1,12 @@
+<ion-view ng-controller="lastestActCtrl">
+	<ion-content>
+		<ion-list>
+			<ion-item ng-repeat="latestActivity in latestActivities" href="" ng-click="last_to_detail({{latestActivity.id}})">
+				<div>
+					<img ng-src={{latestActivity.imgUrl}} alt="" />
+					<p class="{{latestActivity.background}}">{{latestActivity.info}}</p>
+				</div>	
+			</ion-item>
+		</ion-list>
+	</ion-content>
+</ion-view>

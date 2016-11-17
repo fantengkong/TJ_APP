@@ -8,34 +8,33 @@ k==kong
 d==detail
 -->
 
-<ion-view class="k_detail" view-title="详情页">
+<ion-view class="k_detail" view-title="探基-基因行业互助平台">
+	<!--返回按钮-->
+	<div ng-click="dBack()" class="d_back" nav-direction="back">
+		<i class="icon iconfont">&#xe64e;</i>
+	</div>
 	<ion-content>
-		
+		<!--视频图片-->
 		<div class="d_img">
-			<div ng-click="dBack()" class="d_back">
-				<i class="icon ion-ios-arrow-back"></i>
-			</div>
-			<a href="#/play">
-				<img src="../img/List_Act_1.jpg" alt="" />
-			</a>
+			
+			<img ng-src={{item.imgUrl}} />
 		</div>
-
 		<ion-list>
+			<!--活动页标题-->
 			<p class="d_title">相约北京 | 第二届精准医疗与基因测序大会</p>
-			<p class="d_time">
-				<span class="row">
-					<i class=".col-5 icon ion-android-time"></i><b>7月24日 9:00-7月25日 17:30</b>
+			<!--活动时间地点-->
+			<p class="d_time_place" ng-if="!speaker">
+				<span>
+					<i>会议时间：</i><i>7月24日 9:00-7月25日 17:30</i>
 				</span>
-				
-			</p>
-			<p class="d_position">
-				<span class="row">
-					<i class=".col-5 icon ion-ios-location-outline"></i><b>北京 东城区 王府井大街 协和学术会堂 (帅府园胡同协和医院西门对面)</b>
+				<span>
+					<i>会议地点：</i><i>北京 东城区 王府井大街 协和学术会堂 (帅府园胡同协和医院西门对面)</i>
 				</span>
 			</p>
+			<!--活动介绍-->
 			<dl class="d_info">
 				<dt>
-					<h2>活动介绍标题</h2>
+					<h2>{{item.title}}</h2>
 					<p>文本段落样式，需考虑长英文文本的兼容性，实现强制换行。</p>
 				</dt>
 				<dd class="i_list">
@@ -54,16 +53,22 @@ d==detail
 					<a href="#/detail">http://m.seq.cn/act/301923.html</a>
 				</dd>
 			</dl>
+			<!--扫二维码关注探基微信号-->
 			<div class="d_weixin">
-				<div class="w_attention"><p>更多学习视频,请关注<i>探基</i>微信号</p><p>专注基因行业教育</p></div>
-				
-				<div class="w_QR_code"><img src="../img/ionic.png" alt="" /></div>
+				<div class="w_attention"><p>更多学习视频,请关注<i>探基</i>微信号</p><p>专注基因行业教育</p></div>				
+				<div class="w_QR_code"><img src="../img/1475915991.png" alt="" /></div>
 				<p class="w_distinguish ">长按上图，选择识别“识别图中二维码”</p>
-			</div>
-			
+			</div>			
 		</ion-list>
 	</ion-content>
-	<ion-footer-bar>
-		<h1 class="title">参加活动</h1>
+	
+	<ion-footer-bar ng-if="attend">
+		<h1 class="title" ng-click="goToLive()">参加活动</h1>
+	</ion-footer-bar>
+	<ion-footer-bar class="closed" ng-if="close">
+		<h1 class="title" ng-click="goToPlay()">已关闭</h1>
+	</ion-footer-bar>
+	<ion-footer-bar class="beginSoon" ng-if="begin_soon">
+		<h1 class="title">即将开始</h1>
 	</ion-footer-bar>
 </ion-view>

@@ -6,85 +6,45 @@
 <!--
 k==kong
 -->
-<ion-view class="tab-my">
-	<ion-content class="k_nologin">
+<ion-view class="tab-my" view-title="探基-基因行业互助平台">
+	<!--未登录页面-->
+	<ion-content class="k_nologin" scroll="false">
 		<div class="k_no">
 			<p>还未登录，请先
-				<a href="#/login_register"><button class="button button-clear" title="登录">登录</button></a>
+				<a ui-sref="login_register({view: 'tabs.my'})"><button class="button button-clear" title="登录">登录</button></a>
 			</p>
 		</div>
 		<div class="k_prompt">
-			<p class="k_play"><span><i class="icon ion-play"></i></span></p>
-			<p>还没有视频播放记录，开始学习吧！</p>
+			<p class="k_play">
+				<!--<span><i class="icon ion-play"></i></span>-->
+				<img src="../img/TJ.jpg" alt="" />
+			</p>
+			<p>还没有视频播放记录，快去看视频，学知识！</p>
 		</div>
 	</ion-content>
-	<ion-scroll scrollbar-y="false" has-bouncing="false" scroll="false" class="k_haslogin" hidden>
+	<!--已登录页面-->
+	<ion-pane class="k_haslogin" hidden="true">
 		<div>
 			<div class="k_has">
 				<div class="k_border">
-					<img src="../img/List_Act_1.jpg" />
-					<!--<div class="badge">ddddddddd</div>-->
+					<div class="k_border2">
+						<img src="../img/adam.jpg" />
+					</div>
+					<p>认证讲师</p>
 				</div>
-				<p>sofeeling @#^!*$% 兼容特殊字符</p>
+				<p>张启科</p>
 			</div>
 			<div class="k_message" scroll-height1 style="position: relative;">
 				<ion-tabs class="tabs-top tabs-light tabs-striped tabs-color-assertive">
-
-					<ion-tab title="我的视频">
-
-						<ion-content scroll-height2>
-
-							<div class="k_lookedList">
-								<ion-list>
-									<ion-item ng-repeat="item in items1" class="item item-thumbnail-left">
-										<img ng-src={{item.imgUrl}} />
-										<h2>{{item.title}}</h2>
-										<p><i>{{item.name}}</i><i> {{item.designation}}</i><span class="h_camera"><i class="icon ion-ios-videocam {{item.icon}}"></i><i>{{item.num}}</i></span></p>
-									</ion-item>
-								</ion-list>
-
-							</div>
-						</ion-content>
+					<ion-tab title="我的视频" href="#/tab/my/myVedio">
+						<ion-nav-view name="myVedio-my"></ion-nav-view>
 					</ion-tab>
-
-					<ion-tab title="我看过的">
-						<ion-content scroll-height2>
-
-							<div class="k_lookedList">
-								<ion-list>
-									<ion-item ng-repeat="item in items1" class="item item-thumbnail-left">
-										<img ng-src={{item.imgUrl}} />
-										<h2>{{item.title}}</h2>
-										<p><i>{{item.name}}</i><i> {{item.designation}}</i><span class="h_camera"><i class="icon ion-ios-videocam {{item.icon}}"></i><i>{{item.num}}</i></span></p>
-									</ion-item>
-								</ion-list>
-
-							</div>
-
-						</ion-content>
+					<ion-tab title="我看过的" href="#/tab/my/myLooked">
+						<ion-nav-view name="myLooked-my"></ion-nav-view>
 					</ion-tab>
-
 				</ion-tabs>
+				
 			</div>
-
-			<!--<ion-scroll scroll-height1>
-				<div>
-					<div class="k_looked">
-						<p>我看过的</p>
-					</div>
-					<div class="k_lookedList">
-						<ion-list>
-							<ion-item ng-repeat="item in items1" class="item item-thumbnail-left">
-								<img ng-src={{item.imgUrl}} />
-								<h2>{{item.title}}</h2>
-								<p><i>{{item.name}}</i><i> {{item.designation}}</i><span class="h_camera"><i class="icon ion-ios-videocam {{item.icon}}"></i><i>{{item.num}}</i></span></p>
-							</ion-item>
-						</ion-list>
-
-					</div>
-				</div>
-			</ion-scroll>-->
 		</div>
-
-	</ion-scroll>
+	</ion-pane>
 </ion-view>

@@ -1,0 +1,12 @@
+<ion-view ng-controller="watchCtrl" on-swipe-left="onSwipeLeft()" on-swipe-right="onSwipeRight()">
+	<ion-content scroll="false">
+		<!--看大会视频类目-->
+		<p class="c_select">请选择感兴趣的视频类目（可多选）</p>
+		<div class="c_choice">
+			<a class="button" ng-repeat="navItem in navItems1" ng-click="navItemActived($index)" ng-class="{true: 'active', false: ''}[navItem.selected]">{{navItem.name}}<i class="icon ion-ios-checkmark-empty"></i></a>
+		</div>
+	</ion-content>
+	<ion-footer-bar>
+		<h1 class="title" ng-click="closeWatch()">关闭</h1>
+	</ion-footer-bar>
+</ion-view>

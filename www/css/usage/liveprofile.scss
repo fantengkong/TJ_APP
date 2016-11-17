@@ -1,0 +1,423 @@
+@charset "utf-8";
+/*
+* @description: "直播简介页"页面样式
+* @author: 孔
+* @update: name (2016-10-08)
+*/
+/*
+* i==info
+* w==weixin
+* */
+.liveprofile {
+    p {
+        margin: 0;
+    }
+    /*关注微信*/
+    .follow_TJweixin{
+        height: 40px;
+        background: #ff6600;
+        font-size: #fff;
+        padding: 0 1.6rem;
+        .col{
+            padding: 0;
+        }
+        div,button{
+            color: #fff;
+        }
+        .TJ_logo{
+            
+            display: inline-block;
+            line-height: 40px;
+            color: #fff;
+            padding-right: .6rem;
+            font-size: 22px;
+            font-weight: 900;
+        }
+        .TJ_info{
+            display: inline-block;
+            line-height: 12px;
+            font-size: 12px;
+            p{
+              font-size: 12px;
+              line-height: 20px;
+              height: 20px;
+                
+            }
+        }
+        button{
+            font-size: 12px;
+            white-space: nowrap;
+            background: none;
+            margin: .8rem 0;
+            border: 1px solid #fff;
+            border-radius: 4px;
+            height: 24px;
+        }
+    }
+    /*返回按钮*/
+    .liveprofile_back{
+        position: absolute;
+        z-index: 1;
+        width: 3.2rem;
+        height: 3.2rem;
+        border-radius: 50%;
+        background: rgba(0,0,0,0.5);
+        line-height: 3.2rem;
+        text-align: center;
+        color: #fff;
+        left: 1.6rem;
+        top: 1rem;
+        &.back_top{
+            top:5rem;
+        }
+    }
+    ion-content {
+        &.has-footer {
+            bottom: 50px;
+        }
+        &.has-header{
+            top: 40px;
+        }
+    
+        .liveprofile_img {
+            position: relative;
+            height: 21rem;
+            .liveprofile_countdown{
+                height: 40px;
+                text-align: center;
+                font-size: 14px;
+                line-height: 40px;
+                background: rgba(0,0,0,0.5);
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                p{
+                    color: #fff;
+                }
+            }
+            .liveprofile_living,.liveprofile_liveEnd{
+                height: 20px;
+                text-align: center;
+                font-size: 10px;
+                line-height: 20px;
+                background: rgba(0,0,0,0.5);
+                position: absolute;
+                bottom: 1rem;
+                right: 1.6rem;
+                padding: 0 1.6rem;
+                border-radius: 10px;
+                p{
+                    color: #fff;
+                }
+            }
+            .liveprofile_playBack {
+                position: absolute;
+    //          z-index: 1;
+                width: 15rem;
+                height: 8.8rem;
+                border-radius: 5px;
+                background: rgba(0,0,0,0.5);
+                line-height: 5rem;
+                text-align: center;
+                color: #fff;
+                left: 0;
+                top: 0;
+                margin: auto;
+                right: 0;
+                bottom: 0;
+                i{
+                    font-size: 4rem;
+                }
+                p{
+                    font-size: 1.4rem;
+                    line-height: 1.4rem;
+                    margin: 0;
+                }
+            }
+            
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .list {
+            padding: 1.6rem 0 1.6rem 0;
+            .item {
+                border: none;
+            }
+            .liveprofile_title {
+                padding: 0 1.6rem;
+                font-size: 18px;
+                line-height: 1.4;
+                color: #333;
+                padding-bottom: .5rem;
+            }
+            .liveprofile_enrollment{
+                padding: 0 1.6rem;
+//              margin-top: .5rem 0 1.4rem;
+                height: 24px;
+                overflow: hidden;
+                position: relative;
+                img{
+                    border-radius: 5px;
+                    width: 24px;
+                    height: 24px;
+                }
+                span{
+                    display: inline-block;
+                    overflow: hidden;
+                    width: 24px;
+                    height: 24px;
+                    border-radius: 5px;
+                
+                }
+                .people_num{
+                    position: absolute;
+                    top: 0;
+                    height: 24px;
+                    width: auto;
+                    color: #fe6700;
+                    padding: 0 8px;
+                    line-height: 24px;
+                    background: #f4f4f4;
+                    margin: 0 4px;
+                }
+            }
+            .liveprofile_keywords{
+                padding: 1.4rem 1.6rem;
+                i {
+                    display: inline-block;
+                    padding: 0 1.6rem;
+                    font-size: 1.2rem;
+                    line-height: 2.2rem;
+                    box-sizing: border-box;
+                    border-radius: 4px;                   
+                    color: #b4b3ae;
+                    margin-right: .8rem;
+                    background: #f4f4f4;
+                    &:first-of-type{
+                        color: #b4b1ac;
+                        background: none;
+                        border: solid 1px #dbd7d0;
+                        height: 2.2rem;
+                        line-height: 2rem;
+                    }
+                }
+            }
+            .liveprofile_time_place{
+                border-top: 1px solid #eae6e3;
+                padding: 2rem 1.6rem .5rem;
+                color: #888;
+                line-height: 20px;
+                font-size: 13px;
+            } 
+            .live_people {
+                padding: 1rem 1.6rem;
+                border: 1px solid #eaeaea;
+                border-right: none;
+                border-left: none;
+                height: 7.6rem;
+                .col {
+                    padding: 0;
+                }
+                .a_portrait {
+                    img {
+                        width: 5.6rem;
+                        height: 5.6rem;
+                        border-radius: 50%;
+                    }
+                }
+                .a_message {
+                    p {
+                        margin-top: .4rem;
+                        margin-bottom: .5rem;
+                        font-size: 1.2rem;
+                        .a_name {
+                            font-weight: 600;
+                            font-size: 1.6rem;
+                            padding-right: .8rem;
+                            color: #2a2a2a;
+                        }
+                        .a_title {
+                            color: #878787;
+                        }
+                        .a_place {
+                            color: #878787;
+                            padding-right: .8rem;
+                        }
+                        .a_office {
+                            color: #878787;
+                        }
+                    }
+                }
+                .a_go {
+                    line-height: 5.6rem;
+                    text-align: right;
+                    font-size: 1.6rem;
+                    color: #b9b2aa;
+                }
+            }      
+            .liveprofile_info {
+                padding: 0 1.6rem;
+                margin: 0;
+                dt {
+                    h2 {
+                        margin: 0;
+                        line-height: 32px;
+                        font-size: 14px;
+                        font-weight: 500;
+                        color: #333;
+                    }
+                    p {
+                        line-height: 24px;
+                        font-size: 14px;
+                        font-weight: 100;
+                    }
+                }
+                .i_list {
+                    padding: 1rem 0 1.6rem;
+                    li {
+                        list-style: none;
+                    }
+                }
+                .i_pic {
+                    img {
+                        width: 100%;
+                        height: 12.8rem;
+                    }
+                }
+                .i_text {
+                    padding-top: 1.2rem;
+                    p {
+                        font-size: 14px;
+                        line-height: 1.57;
+                        color: #2a2a2a;
+                    }
+                }
+            }
+            
+        }
+    }
+    .bar-footer {
+        &.signUp{
+            background: $color;
+        }
+        &.calm{
+            background: #838f9f;
+        }
+        height: 50px;
+        .title {
+            height: 50px;
+            line-height: 50px;
+            color: #fff;
+        }
+    }
+    .p_mask {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        opacity: 0.5;
+        z-index: 10;
+    }
+    .card {
+        z-index: 11;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 10.2rem;
+        margin: auto;
+        width: 85%;
+        height: 40rem;
+        border-radius: 4px;
+        span {
+            position: absolute;
+            display: block;
+            right: 1rem;
+            top: 1rem;
+            font-size: 1.8rem;
+            color: #fff;
+            width: 1.8rem;
+            height: 1.8rem;
+            text-align: center;
+            z-index: 10002;
+        }
+        
+        ion-scroll {
+            height: 22rem;
+            .scroll-bar-indicator{
+                background: #eae6e3;
+            }
+        }
+        .p_introduce {
+            padding-bottom: 0;
+            padding-top: 0;
+            border-width: 0;
+            p {
+                padding-right: 1rem;
+                &:first-child {
+                    margin-top: 0;
+                }
+            }
+        }
+        .p_background {
+            width: 100%;
+            height: 12rem;
+            overflow: visible;
+            background: url(../../img/background/speaker_bg.jpg);
+            background-size: 100% 100%;
+            margin-bottom: 4.4rem;
+            .item {
+                background: none;
+            }
+            .p_people {
+                height: 16.4rem;
+                overflow: visible;
+                z-index: 1000;
+                padding: 0;
+                border: none;
+                padding: 9rem 0 0.4rem 10.6rem;
+                
+                img {
+                    z-index: 1000;
+                    top: 7rem;
+                    left: 1.6rem;
+                    border: 2px solid #fff;
+                    box-sizing: border-box;
+                    border-radius: 5px;
+                    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+                }
+                h2 {
+                    line-height: 2.2rem;
+                    color: #fff;
+                    font-size: 1.6rem;
+                    margin-bottom: 1.6rem;
+                }
+                p {
+                    color: #8D939D;
+                    line-height: 1.8rem;
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
+}
+.popup-container .popup{
+    background: rgba(0,0,0,0.6);
+    border-radius: 5px;
+    color: #fff;
+    .popup-head{
+       border: none;
+       h5,h3{
+            color: #fff;   
+       }
+       .popup-title{
+         i{
+             font-size: 40px;
+             color: #36d072;
+         }  
+       }
+    }
+}
+

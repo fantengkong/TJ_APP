@@ -1,0 +1,14 @@
+<ion-view ng-controller="MyVedioCtrl">
+	<ion-content scroll-height2>
+		<div class="k_lookedList myVedios">
+			<ion-list>
+				<ion-item ng-repeat="myvedio in myVedios" href="" ng-click="myVedio_to_play({{myvedio.id}})" class="item-thumbnail-left">
+					<img ng-src={{myvedio.imgUrl}} />
+					<h2>{{myvedio.title}}</h2>
+					<p><i>{{myvedio.name}}</i><i> {{myvedio.designation}}</i></p>
+					<b>{{myvedio.message}}</b>
+				</ion-item>
+			</ion-list>
+		</div>
+	</ion-content>
+</ion-view>

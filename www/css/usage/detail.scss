@@ -11,9 +11,21 @@
 * w==weixin
 * */
 .k_detail {
-    font-family: PingFangSC;
     p {
         margin: 0;
+    }
+    .d_back{
+        position: absolute;
+        z-index: 1;
+        width: 3.2rem;
+        height: 3.2rem;
+        border-radius: 50%;
+        background: rgba(0,0,0,0.5);
+        line-height: 3.2rem;
+        text-align: center;
+        color: #fff;
+        left: 1.6rem;
+        top: 1rem;
     }
     ion-content {
         &.has-footer {
@@ -21,27 +33,14 @@
         }
         .d_img {
             position: relative;
-            .d_back{
-                position: absolute;
-                z-index: 1;
-                width: 2rem;
-                height: 2rem;
-                border-radius: 50%;
-                background: rgba(0,0,0,0.5);
-                font-size: 1.5rem;
-                line-height: 2rem;
-                text-align: center;
-                color: #fff;
-                left: 1rem;
-                top: 0.625rem;
-            }
+    
             img {
                 width: 100%;
-                height: 13.625rem;
+                height: 21.8rem;
             }
         }
         .list {
-            padding: 1.125rem 1rem 0;
+            padding: 1.8rem 1.6rem 0;
             .item {
                 border: none;
             }
@@ -53,35 +52,30 @@
                 line-height: 1.4;
                 color: #2b2a2a;
             }
-            .d_time,
-            .d_position {
+            .d_time_place{
+                span{
+                    display: block;
+                    margin-bottom: 5px;
+                    clear: both;
+                }
+                padding: 2rem 0 0;
+                color: #888;
+                line-height: 20px;
                 font-size: 14px;
-                padding: 14px 0;
-                i {
-                    padding-right: 12px;
-                    color: #d6dbe2;
-                }
-                b {
-                    color: #5b5b5b;
-                    font-weight: 100;
-                }
-                .row {
-                    padding: 0;
-                }
-                border-bottom: dashed 1px #eaeaea;
-            }
+                clear: both;
+            } 
             .d_info {
                 margin: 0;
                 dt {
                     h2 {
                         margin: 0;
-                        line-height: 1.375rem;
+                        line-height: 2.2rem;
                         font-size: 16px;
                         font-weight: 500;
                         font-style: normal;
                         font-stretch: normal;
                         color: #2a2a2a;
-                        padding: 1.125rem 0 0.625rem;
+                        padding: 1.8rem 0 1rem;
                     }
                     p {
                         line-height: 1.57;
@@ -89,7 +83,7 @@
                     }
                 }
                 .i_list {
-                    padding: 0.625rem 0 1rem;
+                    padding: 1rem 0 1.6rem;
                     li {
                         list-style: none;
                     }
@@ -97,11 +91,11 @@
                 .i_pic {
                     img {
                         width: 100%;
-                        height: 8rem;
+                        height: 12.8rem;
                     }
                 }
                 .i_text {
-                    padding: 1rem 0 0.625rem;
+                    padding: 1.6rem 0 1rem;
                     p {
                         font-size: 14px;
                         font-weight: normal;
@@ -131,37 +125,45 @@
                 text-align: center;
                 .w_attention {
                     width: 100%;
-                    padding: 1rem 4rem;
+                    padding: 1.6rem 6.4rem;
                     color: #8d939d;
                     font-size: 14px;
                     p {
-                        line-height: 1.5rem;
+                        line-height: 2.4rem;
                         i {
                             padding: 0 2px;
                             color: #4689F2;
                             font-weight: 600;
-                            font-size: 1rem;
+                            font-size: 1.6rem;
                         }
                     }
                 }
                 .w_QR_code {
                     img {
-                        width: 9.375rem;
+                        width: 15rem;
                     }
                 }
                 .w_distinguish {
                     color: #aab0b8;
-                    font-size: 0.75rem;
-                    line-height: 1.125rem;
-                    padding: 0.625rem 0 3.875rem;
+                    font-size: 1.2rem;
+                    line-height: 1.8rem;
+                    padding: 1rem 0 6.2rem;;
                 }
             }
         }
     }
     .bar-footer {
+        &.closed{
+            background: #838e9f;
+        }
+        &.beginSoon{
+            background: #838f9f;
+        }
         background: #de4040;
         height: 50px;
         .title {
+            height: 50px;
+            line-height: 50px;
             color: #fff;
         }
     }

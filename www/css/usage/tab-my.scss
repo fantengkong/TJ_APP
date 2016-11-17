@@ -2,17 +2,30 @@
     p {
         margin: 0;
     }
+    .tabs-color-assertive .tab-item{
+        color: #a49f99;
+    }
+    .tabs-striped.tabs-color-assertive .tab-item.tab-item-active{
+        font-size: 15px;
+        font-weight: 600;
+        color: $color;
+        border-color: $color;
+    }
     .k_nologin {
         .k_no {
             width: 100%;
             font-weight: 600;
             text-align: center;
             color: #fff;
-            background-color: $color;
+            background:url(../../img/background/my_bg.jpg);
+            background-size: 100% 100%;
             p {
-                margin-bottom: 6px;
-                padding: 5.625rem 0;
+                font-size: 14px;
+                font-weight: 600;
+                padding: 9rem 0;
                 .button {
+                    font-weight: 600;
+                    font-size: 14px;
                     min-width: 78px;
                     min-height: 30px;
                     vertical-align: baseline;
@@ -24,56 +37,70 @@
             }
         }
         .k_prompt {
-            color: #dadee4;
-            font-weight: bold;
+            color: #d1d1d1;
+            font-weight: 100;
             text-align: center;
             .k_play {
-                padding: 0 7rem;
-            }
-            span {
-                display: inline-block;
-                color: #dadee4;
-                font-size: 3rem;
-                height: 4.375rem;
-                line-height: 4.375rem;
-                width: 4.375rem;
-                border: 5px solid #dadee4;
-                border-radius: 50%;
-                text-align: center;
-                margin: 1.25rem;
-                i {
-                    position: relative;
-                    top: -5px;
-                    left: 3px;
+                padding: 4.8rem 0 2rem 0;
+                img{
+                   width: 4.2rem;
+                   height: 4.2rem; 
                 }
             }
         }
     }
     .k_haslogin {
         .k_has {
-            .k_border{
-                width: 5.625rem;
-                height: 5.625rem;
-                border: 3px solid #ff944c;
-                margin: auto;
-                margin-top: 3.2rem;
-                margin-bottom: 1rem;
-                border-radius: 50%;
-                img {
-                    width: 100%;
-                    height: 100%;
-                    border: 3px solid #fff;
-                    border-radius: 50%;
-                }
-            }
+            padding-top: 4.8rem;
             z-index: 6;
-            background-color: $color;
-            height: 13.375rem;
+            background:url(../../img/background/my_bg.jpg);
+            background-size: 100% 100%;
+            height: 21.4rem;
             text-align: center;
             
             p {
                 color: #fff;
             }
+            .k_border{
+                width: 9rem;
+                height: 9rem;
+                border: 2px solid #ff944c;
+                margin: auto;
+                
+                margin-bottom: 1rem;
+                border-radius: 50%;
+                position: relative;
+                .k_border2{
+                    width: 100%;
+                    height: 100%;
+                    border: 2px solid #fff;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 50%;
+                    }
+                }
+                    
+                p{
+                    margin: 0;
+                    height: 1.6rem;
+                    width: 5.2rem;
+                    border-radius: .8rem;
+                    background: #33d170;
+                    color: #fff;
+                    line-height: 1.6rem;
+                    text-align: center;
+                    font-size: 1rem;
+                    position: absolute;
+                    bottom: -2px;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                    z-index: 10000;
+                }
+            } 
         }
         .k_message{
             .has-tabs-top{
@@ -81,7 +108,7 @@
             }
             .tabs-top{
                 .tabs{
-                    padding: 0 5rem;
+                    padding: 0 8rem;
                     top: 0;
                     height: 44px;
                     
@@ -93,29 +120,46 @@
         color: #98a4b8;
         font-size: 14px;
         line-height: 20px;
-        padding: 1rem 0 0 1rem;
+        padding: 1.6rem 0 0 1.6rem;
         margin: 0;
     }
     .k_lookedList {
+        padding-top: 1.5rem;
+        border: none;
         .item {
-            padding: 0.75rem 1rem 0.625rem 9rem;
-            border: none;
+            border-style: none;
+            .item-content {
+                padding: 1rem 1.6rem 1rem 14rem;
+                min-height: 9.2rem;
+//              padding-left: 14rem;
+//              padding-right: 1.6rem;
+//              padding-top: 1.2rem;
+            }
+            &.item-thumbnail-left, &.item-thumbnail-left .item-content{
+                min-height: 9.2rem;
+            }
             img {
-                width: 7.25rem;
-                height: 4.5rem;
+                position: absolute;
+                border-radius: 4px;
+                width: 11.6rem;
+                height: 7.2rem;
                 max-width: none;
                 max-height: none;
-                left: 1rem;
-                top: 0.75rem;
+                left: 1.6rem;
+                top: 1rem;
             }
             h2 {
+                padding-top: 2px;
                 white-space: normal;
+                line-height: 18px;
+                
             }
             p {
-                margin-top: 1rem;
-                color: #aab0b8;
+                bottom: 1rem;
+                color: #aba6a0;
                 font-size: 12px;
-                position: relative;
+                position: absolute;
+                line-height: 18px;
                 span {
                     position: absolute;
                     right: 0;
@@ -123,6 +167,20 @@
                         padding: 0 4px;
                     }
                 }
+            }
+            b{
+                position: absolute;
+                top: 1rem;
+                left: 1.6rem;
+                font-weight: 100;
+                display: block;
+                padding: 0 .8rem;
+                background: #409cf3;
+                text-align: center;
+                font-size: 10px;
+                border-radius: 4px 0 4px 0;
+                color: #fff;
+                
             }
         }
     }

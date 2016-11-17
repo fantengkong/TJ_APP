@@ -8,114 +8,14 @@
 -->
 
 <ion-view class="tab-activity" view-title="探基-基因行业互助平台">
-	<ion-tabs class="tabs-table">
-		<ion-tab title="最新活动">
-			<ion-content>
-				<ion-list>
-					<ion-item>
-						<div>
-							<a href="#/tab/activity/detail"><img src="../img/List_Act_1.jpg" alt="" /></a>
-							<p class="k_yugao">预告</p>
-						</div>
-					</ion-item>
-					<ion-item>
-						<div>
-							<img src="../img/List_Act_2.jpg" alt="" />
-							<p class="k_start"><i>后天</i><i class="k-time">20:00</i>开始</p>
-						</div>
-					</ion-item>
-					<ion-item>
-						<div>
-							<img src="../img/List_Act_3.jpg" alt="" />
-							<p class="k_start"><i>明天</i><i class="k-time">20:00</i>开始</p>
-						</div>
-					</ion-item>
-					<ion-item>
-						<div>
-							<img src="../img/List_Act_1.jpg" alt="" />
-							<p class="k_start"><i>今天</i><i class="k-time">20:00</i>开始</p>
-						</div>
-					</ion-item>
-
-				</ion-list>
-			</ion-content>
-		</ion-tab>
-		<ion-tab title="往期活动">
-			<ion-content>
-				<ion-list>
-					<ion-item>
-						<div class="before_activity">
-							<img src="../img/List_Act_2.jpg" alt="" />
-							<p>已结束</p>
-						</div>
-					</ion-item>
-					<ion-item>
-						<div class="before_activity">
-							<a href="#/tab/activity/detail"><img src="../img/List_Act_1.jpg" alt="" /></a>
-							<p>已结束</p>
-						</div>
-					</ion-item>
-					
-					<ion-item>
-						<div class="before_activity">
-							<img src="../img/List_Act_3.jpg" alt="" />
-							<p>已结束</p>
-						</div>
-					</ion-item>
-					<ion-item>
-						<div class="before_activity">
-							<img src="../img/List_Act_1.jpg" alt="" />
-							<p>已结束</p>
-						</div>
-					</ion-item>
-
-				</ion-list>
-			</ion-content>
-		</ion-tab>
-	</ion-tabs>
-	<!--<div class="bar bar-header bar-light">
-		<ion-tabs class="tabs-table" delegate-handle="tabs_activity">
-		  <ion-tab title="最新活动" href="" disabled="false" hidden="false">
-		    <ion-nav-view class="has-header">
-		    		<ion-scroll class="k_pt5">
-		    			<ion-list>
-				    		<ion-item>
-				    			<div>
-				    				<a href="#/tab/activity/detail"><img src="../img/List_Act_1.jpg" alt="" /></a>
-				    				<p class="k_yugao">预告</p>
-				    			</div>
-				    		</ion-item>
-				    		<ion-item>
-				    			<div>
-				    				<img src="../img/List_Act_2.jpg" alt="" />
-				    				<p class="k_start"><i>后天</i><i class="k-time">20:00</i>开始</p>
-									</div>				    		
-				    		</ion-item>
-				    		<ion-item>
-				    			<div>
-				    				<img src="../img/List_Act_3.jpg" alt="" />
-				    				<p class="k_start"><i>明天</i><i class="k-time">20:00</i>开始</p>
-									</div>
-				    		</ion-item>
-				    		<ion-item>
-				    			<div>
-				    				<img src="../img/List_Act_1.jpg" alt="" />
-				    				<p class="k_start"><i>今天</i><i class="k-time">20:00</i>开始</p>
-									</div>
-				    		</ion-item>
-				    		
-			    		</ion-list>
-		    		</ion-scroll>
-		    		
-		    	
-		    	
-		    	
-		    </ion-nav-view>
-		  </ion-tab>
-		  
-		  <ion-tab title="往期活动" href="">
-		    <ion-nav-view></ion-nav-view>
-		  </ion-tab>
+	<div>
+		<ion-tabs class="tabs-table tabs-top tabs-light">
+			<ion-tab title="最新活动" href="#/tab/activity/lastest">
+				<ion-nav-view name="lastestAct"></ion-nav-view>
+			</ion-tab>
+			<ion-tab title="往期活动" href="#/tab/activity/past">
+				<ion-nav-view name="pastAct"></ion-nav-view>
+			</ion-tab>
 		</ion-tabs>
-	</div>-->
+	</div>
 </ion-view>

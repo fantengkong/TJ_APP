@@ -1,8 +1,31 @@
 .k_footer {
-    .k_color {  
+    
+    .k_color {
         &.tab-item-active {
             color: $color;
         }
-        color: #98a4b8;   
+        color: #98a4b8;
+    }
+    
+    .tab-item i.icon { 
+        background-size: 24px 24px;
+    }
+    .bar-home-on {
+        background: url(../../img/tabs/home_on.png) no-repeat center 5px;
+    }
+    .bar-home-off {
+        background: url(../../img/tabs/home_off.png) no-repeat center 5px;
+    }
+    .bar-activity-on {
+        background: url(../../img/tabs/activity_on.png) no-repeat center 5px;
+    }
+    .bar-activity-off {
+        background: url(../../img/tabs/activity_off.png) no-repeat center 5px;
+    }
+    .bar-mine-on {
+        background: url(../../img/tabs/mine_on.png) no-repeat center 5px;
+    }
+    .bar-mine-off {
+        background: url(../../img/tabs/mine_off.png) no-repeat center 5px;
     }
 }

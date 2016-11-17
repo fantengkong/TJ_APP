@@ -12,7 +12,7 @@
 .k_play {
     
     .p_wrap {
-        height: 13.125rem;
+        height: 21rem;
         width: 100%;
         position: relative;
         img {
@@ -21,27 +21,35 @@
         }
         .p_back {
             position: absolute;
-            z-index: 1;
-            width: 2rem;
-            height: 2rem;
+            width: 3.2rem;
+            height: 3.2rem;
             border-radius: 50%;
             background: rgba(0,0,0,0.5);
-            font-size: 1.5rem;
-            line-height: 2rem;
+            line-height: 3.2rem;
             text-align: center;
             color: #fff;
-            left: 1rem;
-            top: 0.625rem;
+            left: 1.6rem;
+            top: 1rem;
+        }
+        .play_fullScreen {
+            position: absolute;
+            width: 3.2rem;
+            height: 3.2rem;
+            border-radius: 50%;
+            background: rgba(0,0,0,0.5);
+            line-height: 3.2rem;
+            text-align: center;
+            color: #fff;
+            right: 1.6rem;
+            bottom: 1rem;
         }
         .p_sign {
             position: absolute;
-            z-index: 1;
-            width: 5.5rem;
-            height: 3.75rem;
+            width: 8.8rem;
+            height: 6rem;
             border-radius: 5px;
-            background: rgba(0,0,0,0.5);
-            font-size: 2.5rem;
-            line-height: 3.75rem;
+            background: rgba(0,0,0,0.7);
+            line-height: 6rem;
             text-align: center;
             color: #fff;
             left: 0;
@@ -49,10 +57,13 @@
             margin: auto;
             right: 0;
             bottom: 0;
+            i{
+                font-size: 4rem;
+            }
         }
     }
     .p_content {
-        top: 13.125rem;
+        top: 21rem;
         p {
             margin: 0;
         }
@@ -60,48 +71,99 @@
             .row {
                 padding: 0;
             }
-            padding: 1.125rem 1rem 0;
+            padding: 1.8rem 1.6rem 0;
             .p_title {
                 p {
-                    font-size: 1.25rem;
-                    font-weight: normal;
-                    font-style: normal;
-                    font-stretch: normal;
+                    font-size: 2rem;
                     line-height: 1.4;
                     color: #2b2a2a;
                 }
-                i {
-                    color: #98a4b8;
-                    text-align: right;
-                    font-size: 1rem;
+                span {
+                    display: block;
+                    padding-top: 4px;
+                    i{
+                        display: block;
+                        
+                        float: right;
+                        color: #b9b2aa;
+                        font-size: 1.6rem;
+                    }
                 }
+//              .showMore{
+//                  i{
+//                      transform: rotate(180deg);
+//                  }
+//              }
             }
             .p_visitor {
                 color: #d6dbe2;
-                line-height: 1.375rem;
-                padding: 0.625rem 0;
+                line-height: 2.2rem;
+                padding: 1rem 0;
                 i {
                     padding: 0 1px;
                     font-size: 14px;
+                    color: #a29f9a;
+                    &.icon{
+                        font-size: 11px;
+                        color: #e8e7e5;
+                    }
                 }
             }
             .p_major {
                 i {
                     display: inline-block;
-                    padding: 0 1rem;
-                    font-size: 0.75rem;
-                    line-height: 1.375rem;
+                    padding: 0 1.6rem;
+                    font-size: 1.2rem;
+                    line-height: 2.2rem;
                     box-sizing: border-box;
-                    border-radius: 6.25rem;
-                    color: #d6dbe2;
-                    border: solid 1px #d6dbe2;
-                    margin-right: 0.5rem;
+                    border-radius: 4px;                   
+                    color: #b4b3ae;
+                    margin-right: .8rem;
+                    background: #f4f4f4;
+                    &.playSign{
+                        height: 2.2rem;
+                        color: #b4b1ac;
+                        background: none;
+                        border: solid 1px #dbd7d0;
+                    }
                 }
-                padding-bottom: 1rem;
+                padding-bottom: 1.4rem;
+            }
+            .playMessage{
+                p{
+                    line-height: 20px;
+                    font-size: 14px;
+                    color: #888;
+                }
+            }
+            .playIntroduce{
+                p{
+                    font-size: 14px;
+                    line-height: 18px;
+                    color: #888;
+                }
+                padding: 10px 0;
             }
         }
+        .activity_time_place{
+            
+            padding: 2rem 1.6rem .5rem;
+            color: #888;
+            line-height: 20px;
+            font-size: 13px;
+            div{
+                overflow: hidden;
+            }
+            span{
+                display: inline-block;
+            }
+            
+        } 
         .p_anchor {
-            padding: 0.625rem 1rem;
+            &:hover{
+                background: #d9d9d9!important;
+            }
+            padding: 1rem 1.6rem;
             border: 1px solid #eaeaea;
             border-right: none;
             border-left: none;
@@ -110,19 +172,19 @@
             }
             .a_portrait {
                 img {
-                    width: 3.5rem;
-                    height: 3.5rem;
+                    width: 5.6rem;
+                    height: 5.6rem;
                     border-radius: 50%;
                 }
             }
             .a_message {
                 p {
-                    margin-bottom: 0.5rem;
-                    font-size: 0.75rem;
+                    margin-bottom: .8rem;
+                    font-size: 1.2rem;
                     .a_name {
                         font-weight: bold;
-                        font-size: 1rem;
-                        padding-right: 0.5rem;
+                        font-size: 1.6rem;
+                        padding-right: .8rem;
                         color: #2a2a2a;
                     }
                     .a_title {
@@ -130,7 +192,7 @@
                     }
                     .a_place {
                         color: #8d939d;
-                        padding-right: 0.5rem;
+                        padding-right: .8rem;
                     }
                     .a_office {
                         color: #8d939d;
@@ -139,45 +201,65 @@
             }
             .a_go {
                 text-align: right;
-                font-size: 1rem;
+                font-size: 1.6rem;
                 color: #98a4b8;
-                padding-top: 1.5rem;
+                padding-top: 2.4rem;
             }
         }
         .p_set {
-            padding: 1rem 1rem 0.625rem;
-            font-size: 0.875rem;
-            line-height: 1.25rem;
-            color: #98a4b8;
+            padding: 1.6rem 1.6rem 1rem;
+            font-size: 1.4rem;
+            line-height: 2rem;
+            color: #898989;
             b {
+                color: #898989;
                 padding-right: 3px;
+                font-weight: 100;
             }
         }
         .p_vList {
+            .item-icon-right .icon{
+                font-size: 22px;
+            }
             .list {
-                padding: 0 1rem;
+                
+                padding: 0 1.6rem 3rem;
                 .item {
-                    margin-bottom: 0.625rem;
+                    border-radius: 5px;
+                    background: #fff2ea;
+                    &.playing{
+                        color: #fff;
+                        background: $color;
+                        .p_intro{
+                            p{
+                                color: #fff;
+                            }
+                        }
+                        i{
+                            color: #fff;                                                     
+                        }
+                    }    
+                    margin-bottom: 1rem;
                     padding: 0;
-                    border-color: #97baf0;
+                    border-color: $color;
                     padding: 2px 0;
                     .p_intro {
-                        padding: 0.5rem 3rem 0.5rem 1rem;
+                        margin: 0.8rem 4.8rem 0.8rem 1.6rem;
                         p {
-                            line-height: 1.25rem;
+                            line-height: 2rem;
                             font-size: 14px;
                             color: #2b2a2a;
                             font-weight: bold;
                         }
                         .p_time {
                             font-weight: normal;
-                            color: #aab0b8;
+                            color: #92908d;
                             font-size: 12px;
-                            line-height: 1rem;
+                            line-height: 1.6rem;
                         }
                     }
                     i {
-                        color: #4689f2;
+                        color: $color;
                     }
                 }
             }
@@ -196,12 +278,12 @@
         span {
             position: absolute;
             display: block;
-            right: 0.625rem;
-            top: 0.625rem;
-            font-size: 1.125rem;
+            right: 1rem;
+            top: 1rem;
+            font-size: 1.8rem;
             color: #fff;
-            width: 1.125rem;
-            height: 1.125rem;
+            width: 1.8rem;
+            height: 1.8rem;
             text-align: center;
             z-index: 10002;
         }
@@ -209,19 +291,19 @@
         position: absolute;
         left: 0;
         right: 0;
-        top: 6.375rem;
+        top: 10.2rem;
         margin: auto;
-        width: 19.75rem;
-        height: 25rem;
+        width: 31.6rem;
+        height: 40rem;
         ion-scroll {
-            height: 15rem;
+            height: 24rem;
         }
         .p_introduce {
             padding-bottom: 0;
             padding-top: 0;
             border-width: 0;
             p {
-                padding-right: 0.625rem;
+                padding-right: 1rem;
                 &:first-child {
                     margin-top: 0;
                 }
@@ -229,36 +311,38 @@
         }
         .p_background {
             width: 100%;
-            height: 7.5rem;
+            height: 12rem;
             overflow: visible;
-            background: #4384e9!important;
-            margin-bottom: 2.75rem;
+            background: url(../../img/background/speaker_bg.jpg);
+            background-size: 100% 100%;
+            margin-bottom: 4.4rem;
             .item {
                 background: none;
             }
             .p_people {
-                height: 10.25rem;
+                height: 16.4rem;
                 overflow: visible;
                 z-index: 1000;
                 padding: 0;
                 border: none;
-                padding: 5.625rem 0 0.25rem 6.625rem;
+                padding: 9rem 0 0.4rem 10.6rem;
                 img {
-                    top: 4.375rem;
-                    left: 1rem;
+                    z-index: 1000;
+                    top: 7rem;
+                    left: 1.6rem;
                     border: 2px solid #fff;
                     box-sizing: border-box;
                 }
                 h2 {
-                    line-height: 1.375rem;
+                    line-height: 2.2rem;
                     color: #fff;
-                    font-size: 1rem;
-                    margin-bottom: 1rem;
+                    font-size: 1.6rem;
+                    margin-bottom: 1.6rem;
                 }
                 p {
                     color: #8D939D;
-                    line-height: 1.125rem;
-                    font-size: 0.75rem;
+                    line-height: 1.8rem;
+                    font-size: 1.2rem;
                 }
             }
         }

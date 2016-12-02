@@ -10,4 +10,5 @@ starterCtrls
     $scope.weixin_back = function(){
     	$state.go($stateParams.view);
     }
+   
   }]);

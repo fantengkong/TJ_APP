@@ -1,0 +1,32 @@
+[
+	{
+		"id":2,
+		"logo":"../img/Home_Banner.jpg",
+		"title":"幻灯片测试11111",
+		"url":"http://tj.seq.cn/index/login"
+	},
+	{
+		"id":3,
+		"logo":"../img/List_Act_3.jpg",
+		"title":"幻灯片测试22222",
+		"url":"http://tj.seq.cn/home/detail"
+	},
+	{
+		"id":5,
+		"logo":"../img/List_Act_1.jpg",
+		"title":"幻灯片测试33333",
+		"url":"http://tj.seq.cn"
+	},
+	{
+		"id":7,
+		"logo":"../img/List_Act_1.jpg",
+		"title":"幻灯片测试33333",
+		"url":"http://tj.seq.cn"
+	},
+	{
+		"id":9,
+		"logo":"../img/List_Act_1.jpg",
+		"title":"幻灯片测试33333",
+		"url":"http://tj.seq.cn"
+	}
+]

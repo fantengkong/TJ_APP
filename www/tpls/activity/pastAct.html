@@ -3,10 +3,11 @@
 		<ion-list>
 			<ion-item ng-repeat="pastActivity in pastActivities" href="" ng-click="past_to_detail({{pastActivity.id}})">
 				<div>
-					<a><img ng-src={{pastActivity.imgUrl}} alt="" /></a>
-					<p>{{pastActivity.info}}</p>
+					<a><img ng-src={{pastActivity.logo}} alt="" /></a>
+					<p>{{pastActivity.timestr}}</p>
 				</div>
 			</ion-item>
 		</ion-list>
+		<ion-infinite-scroll spinner="dots" ng-if="activity_past" on-infinite="load_morepast()"></ion-infinite-scroll>
 	</ion-content>
 </ion-view>

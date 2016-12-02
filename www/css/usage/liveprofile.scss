@@ -95,7 +95,7 @@
                     color: #fff;
                 }
             }
-            .liveprofile_living,.liveprofile_liveEnd{
+            .live_state{
                 height: 20px;
                 text-align: center;
                 font-size: 10px;
@@ -106,9 +106,7 @@
                 right: 1.6rem;
                 padding: 0 1.6rem;
                 border-radius: 10px;
-                p{
-                    color: #fff;
-                }
+                color: #fff;
             }
             .liveprofile_playBack {
                 position: absolute;

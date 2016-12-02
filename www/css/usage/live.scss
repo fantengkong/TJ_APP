@@ -8,6 +8,9 @@
 * k==kong
 * l==live
 * */
+.word_line{
+        height: 100px;
+    }
 .live {
     p{
         margin: 0;
@@ -53,6 +56,19 @@
                 height: 24px;
             }
         }
+    .live_back{
+        position: absolute;
+        z-index: 1;
+        width: 3.2rem;
+        height: 3.2rem;
+        border-radius: 50%;
+        background: rgba(0,0,0,0.5);
+        line-height: 3.2rem;
+        text-align: center;
+        color: #fff;
+        right: 1.6rem;
+        top: 1rem;
+    }
     .l_play {
         position: relative;
         width: 100%;

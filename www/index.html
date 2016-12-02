@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html>
-
 	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		<title>探基</title>
-
 		<link rel="manifest" href="manifest.json">
-
 		<!-- un-comment this code to enable service worker
     <script>
       if ('serviceWorker' in navigator) {
@@ -20,21 +17,32 @@
 		
 		<!-- compiled css output -->
 		<link href="css/ionic.app.css" rel="stylesheet">
-
+		<!--阻止浏览器滑动-->
+		<script>
+      document.ontouchmove = function(e) {
+        if (e.target.tagName.toUpperCase() !== 'IFRAME') {
+            e.preventDefault();
+        }
+      };
+	  </script>
+	  
 		<!-- ionic/angularjs js -->
 		<script src="lib/ionic/js/ionic.bundle.js"></script>
 
 		<!-- cordova script (this will be a 404 during development) -->
-		<script src="cordova.js"></script>
-
-		<!-- your app's js -->
-		<script src="js/controllers.js"></script>
+		<!-- <script src="cordova.js"></script> -->
 		
-		<!--<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>-->
-
+		<script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/ngStorage.min.js"></script>
+		<!-- your app's js -->
+		<script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/routes.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/directives.js"></script>
+    <!--<script src="js/elastic.js"></script>-->
 		
 		<script src="js/views/tabs-controller.js"></script>
-		<!--<script src="js/services.js"></script>-->
 		<script src="js/views/home-controller.js"></script>
 		<script src="js/views/activity-controller.js"></script>
 		<script src="js/views/my-controller.js"></script>
@@ -43,20 +51,67 @@
 		<script src="js/views/login_register-controller.js"></script>
 		<script src="js/views/classify-controller.js"></script>
 		<script src="js/views/liveProfile-controller.js"></script>
-		
 		<script src="js/views/live-controller.js"></script>
-		
-		
-		<script src="js/jquery-3.1.1.min.js"></script>
-		
-		<script src="js/app.js"></script>
-    
-		
 	</head>
-
 	<body ng-app="starter">
-		<!--底部导航-->
-		<ion-nav-view animation="slide-left-right"></ion-nav-view>
+		<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+	  <!-- <script>
+	    wx.config({
+	      debug: true,
+	      appId: "wx6f110c6a4868589d",
+	      timestamp: '1414587457',
+	      nonceStr: 'Wm3WZYTPz0wzccnW',
+	      signature: '23e7a5d12f4905c885f8ec997b0272d184b9269a',
+	      jsApiList: [
+	        // 所有要调用的 API 都要加到这个列表中
+	        'onMenuShareTimeline',
+	        'onMenuShareAppMessage',
+	        'chooseImage',
+	        'previewImage',
+	        'uploadImage',
+	        'downloadImage',
+	        'getNetworkType',
+	        'hideOptionMenu',
+	        'showOptionMenu',
+	        'hideMenuItems',
+	        'showMenuItems',
+	        'hideAllNonBaseMenuItem',
+	        'showAllNonBaseMenuItem',
+	        'closeWindow',
+	        'scanQRCode'
+	      ]
+	    });
+	    wx.ready(function(){
+	    	/*分享到朋友圈*/
+				wx.onMenuShareTimeline({
+			    title: '探基', // 分享标题
+			    link: '', // 分享链接
+			    imgUrl: 'img/TJ.jpg', // 分享图标
+			    success: function () { 
+			        // 用户确认分享后执行的回调函数
+			    },
+			    cancel: function () { 
+			        // 用户取消分享后执行的回调函数
+			    }
+				});
+				/*分享给朋友*/
+				wx.onMenuShareAppMessage({
+			    title: '探基', // 分享标题
+			    desc: '基因测序', // 分享描述
+			    link: '', // 分享链接
+			    imgUrl: 'img/Tj.jpg', // 分享图标
+			    type: 'link', // 分享类型,music、video或link，不填默认为link
+			    dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+			    success: function () { 
+			        // 用户确认分享后执行的回调函数
+			    },
+			    cancel: function () { 
+			        // 用户取消分享后执行的回调函数
+			    }
+				});
+	    });
+	  </script>
+		 --><!--底部导航-->
+		<ion-nav-view></ion-nav-view>
 	</body>
-
 </html>

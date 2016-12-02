@@ -1,0 +1,27 @@
+
+{
+    "id" : 20,
+    "title" : "第三届世界互联网大会",
+    "logo" : "../img/List_Act_3.jpg",
+    "type" : 0,
+    "pretime" : "2016-11-14 14:00:00",
+    "startime" : "2016-11-15 08:00:00",
+    "endtime" : "2016-11-17 17:00:00",
+    "province" : "浙江省",
+    "city" : "嘉兴市",
+    "area" : "桐乡",
+    "address" : "乌镇西栅景区",
+    "jointype" : 0,
+    "url" : "http://test.seq.com",
+    "note" : "11月15日下午16点，第三届世界互联网大会",
+    "created_at" : "2016-10-28 23:29:59",
+    "updated_at" : "2016-10-28 23:29:59",
+    "status" : 1,
+    "activityStatus" : 0,
+    "href" : "http://localtj.com/activity/20",
+    "class" : "activity_end",
+    "timestr" : "进行中",
+    "pretimeFlag" : "2016年月14日 14:00",
+    "startimeFlag" : "2016年月15日 08:00",
+    "endtimeFlag" : "2016年月17日 17:00"
+}

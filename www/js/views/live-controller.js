@@ -1,16 +1,32 @@
 starterCtrls
-  .controller('LiveController',['$ionicViewSwitcher', '$scope', '$http', '$ionicScrollDelegate', '$ionicHistory', '$state', '$stateParams', '$timeout',function ($ionicViewSwitcher, $scope, $http, $ionicScrollDelegate, $ionicHistory, $state, $stateParams, $timeout) {
+  .controller('LiveController',['$ionicLoading', '$sce', 'ApiEndpoint','$ionicViewSwitcher', '$scope', '$http', '$ionicScrollDelegate', '$ionicHistory', '$state', '$stateParams', '$timeout',function ($ionicLoading, $sce, ApiEndpoint, $ionicViewSwitcher, $scope, $http, $ionicScrollDelegate, $ionicHistory, $state, $stateParams, $timeout) {
+    $ionicLoading.show({
+	      template: '数据加载中...'
+	  });
+	  $http.post(ApiEndpoint.url+'/home/getRadioInfo',{uid:27,id:$stateParams.id})
+		.then(
+			function(res) {
+				$scope.item=res.data;
+				console.log($scope.item);
+				$scope.visit_url=$sce.trustAsResourceUrl($scope.item.visit_url);
+				$ionicLoading.hide();
+			}
+		);
+    $scope._width=$(window).width();
+    $scope._height=$(window).height();
+    /*返回*/
+    $scope.liveBack = function(){
+    	if($stateParams.view3){
+    		$state.go($stateParams.view2,{view3:$stateParams.view3,view2: $stateParams.view2,view: $stateParams.view,nav: $stateParams.nav, position:$stateParams.position});
+		}else if($stateParams.view2){
+		$state.go($stateParams.view2,{view: $stateParams.view,nav: $stateParams.nav, position:$stateParams.position,id:$stateParams.id});
+		}
+    	$ionicViewSwitcher.nextDirection("back");
+    }
     
-//  ionic.Platform.isFullScreen = true;
-//
-//		if (ionic.Platform.isIOS()) {
-//		cordova.plugins.Keyboard.disableScroll(true);
-//		}
-//		console.log($('body').scrollTop(10));
-		
-//		console.log($(window).height());
-		
-		
+    
+    
+    
     $scope.keyboard_show = false;
     $scope.viewer ={};
     /*发送聊天*/
@@ -26,38 +42,17 @@ starterCtrls
 				$scope.viewer.Chat="";
 			}
     }
-    
     function GetQueryString(name){
 			var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
 			var r = window.location.search.substr(1).match(reg);
 			if(r!=null)return  unescape(r[2]); return null;
 		}
     /*判断是否显示关注注公众号*/
-   
    	if(GetQueryString("from")){
    		$scope.TJweixinShow = true;
    	}else{
    		$scope.TJweixinShow = false;
    	}
-    $scope.params = $stateParams;
-    /*获取直播间数据*/
-		$http.get('mock/home/home_list.json')
-		.then(
-			function(res) {
-				if($scope.params.id>=0){
-					$scope.item = res.data[$scope.params.id];
-				}else{
-					$scope.item = res.data[0];
-				}
-			}
-		);
-		/*返回*/
-    $scope.liveBack = function(){
-    	$state.go($scope.params.view2,{detailId: $scope.params.liveId, liveId: $scope.params.liveId, liveprofileId: $scope.params.liveId, view: $scope.params.view,nav: $scope.params.nav, position:$scope.params.position});
-    	$ionicViewSwitcher.nextDirection("back");
-    }
-
-    
     /*点赞*/
     $scope.isActived = false;
     $scope.zan = 1234; 
@@ -68,16 +63,7 @@ starterCtrls
     		$scope.isActived = true;
     		$scope.zan++;
     	}
-    	
-    	
     }
-    
-//  $scope.liveBack = function(){
-//  	$ionicHistory.backView();
-//  } 
-
-//		console.log($stateParams)
-		
    	$scope.commentsOpen = true;
     $scope.commentsClose = false;
     $scope.liveOver = false;
@@ -86,16 +72,17 @@ starterCtrls
 	    $scope.commentsClose = true;
     	$scope.liveOver = true;
     },100000);
-    /*判断专家或活动*/
-   $scope.isExpert = true;
-   /*进入探基微信公众号*/
-   $scope.goToTJweixin = function(){
-   	$state.go("login_register",{view:'live'});
-   }
-   $scope.focus = function(){
-   		$scope.keyboard_show = true;
-   }
-   $scope.blur = function(){
-   		$scope.keyboard_show = false;
-   }
+    	/*判断专家或活动*/
+	   $scope.isExpert = true;
+	   /*进入探基微信公众号*/
+	   $scope.goToTJweixin = function(){
+	   	$state.go("login_register",{view:'live',id:$stateParams.id});
+	   }
+	   $scope.focus = function(){
+	   		$scope.keyboard_show = true;
+	   }
+	   $scope.blur = function(){
+	   		$scope.keyboard_show = false;
+	   		
+	   }
   }]);

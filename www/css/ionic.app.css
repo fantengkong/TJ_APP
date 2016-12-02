@@ -9758,7 +9758,6 @@ html {
         opacity: 1; }
     .tab_home .h_banner img {
       width: 100%;
-      height: 13.6rem;
       border-radius: 5px; }
   .tab_home .h_list .h_recommend {
     margin: 0;
@@ -9790,7 +9789,8 @@ html {
         font-size: 12px;
         position: absolute;
         bottom: 10px;
-        line-height: 18px; }
+        line-height: 18px;
+        width: 40%; }
       .tab_home .h_list .item .item-content .h_camera {
         position: absolute;
         font-size: 12px;
@@ -9891,6 +9891,8 @@ html {
         text-align: center;
         padding: 2px 10px;
         border-radius: 4px 0 4px 0; }
+        .tab-activity ion-content .list .item div p.bag {
+          background: #409cf3; }
       .tab-activity ion-content .list .item div .foreshow {
         background-color: #4384e9; }
       .tab-activity ion-content .list .item div .startTime {
@@ -9941,6 +9943,10 @@ html {
     .tab-my .k_nologin .k_prompt .k_play img {
       width: 4.2rem;
       height: 4.2rem; }
+.tab-my .k_haslogin .myVedios, .tab-my .k_haslogin .myLooked {
+  color: #b7b6b1;
+  padding-top: 20px;
+  text-align: center; }
 .tab-my .k_haslogin .k_has {
   padding-top: 4.8rem;
   z-index: 6;
@@ -10024,7 +10030,8 @@ html {
       color: #aba6a0;
       font-size: 12px;
       position: absolute;
-      line-height: 18px; }
+      line-height: 18px;
+      width: 40%; }
       .tab-my .k_lookedList .item p span {
         position: absolute;
         right: 0; }
@@ -10189,6 +10196,7 @@ html {
     width: 100%;
     height: 100%; }
   .k_play .p_wrap .p_back {
+    z-index: 14;
     position: absolute;
     width: 3.2rem;
     height: 3.2rem;
@@ -10436,6 +10444,261 @@ html {
         line-height: 1.8rem;
         font-size: 1.2rem; }
 
+.livePlayBack .p_wrap {
+  height: 21rem;
+  width: 100%;
+  position: relative; }
+  .livePlayBack .p_wrap img {
+    width: 100%;
+    height: 100%; }
+  .livePlayBack .p_wrap .p_back {
+    position: absolute;
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.5);
+    line-height: 3.2rem;
+    text-align: center;
+    color: #fff;
+    left: 1.6rem;
+    top: 1rem; }
+  .livePlayBack .p_wrap .play_fullScreen {
+    position: absolute;
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.5);
+    line-height: 3.2rem;
+    text-align: center;
+    color: #fff;
+    right: 1.6rem;
+    bottom: 1rem; }
+  .livePlayBack .p_wrap .p_sign {
+    position: absolute;
+    width: 8.8rem;
+    height: 6rem;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.7);
+    line-height: 6rem;
+    text-align: center;
+    color: #fff;
+    left: 0;
+    top: 0;
+    margin: auto;
+    right: 0;
+    bottom: 0; }
+    .livePlayBack .p_wrap .p_sign i {
+      font-size: 4rem; }
+.livePlayBack .p_content {
+  top: 21rem; }
+  .livePlayBack .p_content p {
+    margin: 0; }
+  .livePlayBack .p_content .p_info {
+    padding: 1.8rem 1.6rem 0; }
+    .livePlayBack .p_content .p_info .row {
+      padding: 0; }
+    .livePlayBack .p_content .p_info .p_title p {
+      font-size: 2rem;
+      line-height: 1.4;
+      color: #2b2a2a; }
+    .livePlayBack .p_content .p_info .p_title span {
+      display: block;
+      padding-top: 4px; }
+      .livePlayBack .p_content .p_info .p_title span i {
+        display: block;
+        float: right;
+        color: #b9b2aa;
+        font-size: 1.6rem; }
+    .livePlayBack .p_content .p_info .p_visitor {
+      color: #d6dbe2;
+      line-height: 2.2rem;
+      padding: 1rem 0; }
+      .livePlayBack .p_content .p_info .p_visitor i {
+        padding: 0 1px;
+        font-size: 14px;
+        color: #a29f9a; }
+        .livePlayBack .p_content .p_info .p_visitor i.icon {
+          font-size: 11px;
+          color: #e8e7e5; }
+    .livePlayBack .p_content .p_info .p_major {
+      padding-bottom: 1.4rem; }
+      .livePlayBack .p_content .p_info .p_major i {
+        display: inline-block;
+        padding: 0 1.6rem;
+        font-size: 1.2rem;
+        line-height: 2.2rem;
+        box-sizing: border-box;
+        border-radius: 4px;
+        color: #b4b3ae;
+        margin-right: .8rem;
+        background: #f4f4f4; }
+        .livePlayBack .p_content .p_info .p_major i.playSign {
+          height: 2.2rem;
+          color: #b4b1ac;
+          background: none;
+          border: solid 1px #dbd7d0; }
+    .livePlayBack .p_content .p_info .playMessage p {
+      line-height: 20px;
+      font-size: 14px;
+      color: #888; }
+    .livePlayBack .p_content .p_info .playIntroduce {
+      padding: 10px 0; }
+      .livePlayBack .p_content .p_info .playIntroduce p {
+        font-size: 14px;
+        line-height: 18px;
+        color: #888; }
+  .livePlayBack .p_content .activity_time_place {
+    padding: 2rem 1.6rem .5rem;
+    color: #888;
+    line-height: 20px;
+    font-size: 13px; }
+    .livePlayBack .p_content .activity_time_place div {
+      overflow: hidden; }
+    .livePlayBack .p_content .activity_time_place span {
+      display: inline-block; }
+  .livePlayBack .p_content .p_anchor {
+    padding: 1rem 1.6rem;
+    border: 1px solid #eaeaea;
+    border-right: none;
+    border-left: none; }
+    .livePlayBack .p_content .p_anchor:hover {
+      background: #d9d9d9 !important; }
+    .livePlayBack .p_content .p_anchor .col {
+      padding: 0; }
+    .livePlayBack .p_content .p_anchor .a_portrait img {
+      width: 5.6rem;
+      height: 5.6rem;
+      border-radius: 50%; }
+    .livePlayBack .p_content .p_anchor .a_message p {
+      margin-bottom: .8rem;
+      font-size: 1.2rem; }
+      .livePlayBack .p_content .p_anchor .a_message p .a_name {
+        font-weight: bold;
+        font-size: 1.6rem;
+        padding-right: .8rem;
+        color: #2a2a2a; }
+      .livePlayBack .p_content .p_anchor .a_message p .a_title {
+        color: #aab0b8; }
+      .livePlayBack .p_content .p_anchor .a_message p .a_place {
+        color: #8d939d;
+        padding-right: .8rem; }
+      .livePlayBack .p_content .p_anchor .a_message p .a_office {
+        color: #8d939d; }
+    .livePlayBack .p_content .p_anchor .a_go {
+      text-align: right;
+      font-size: 1.6rem;
+      color: #98a4b8;
+      padding-top: 2.4rem; }
+  .livePlayBack .p_content .p_set {
+    padding: 1.6rem 1.6rem 1rem;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    color: #898989; }
+    .livePlayBack .p_content .p_set b {
+      color: #898989;
+      padding-right: 3px;
+      font-weight: 100; }
+  .livePlayBack .p_content .p_vList .item-icon-right .icon {
+    font-size: 22px; }
+  .livePlayBack .p_content .p_vList .list {
+    padding: 0 1.6rem 3rem; }
+    .livePlayBack .p_content .p_vList .list .item {
+      border-radius: 5px;
+      background: #fff2ea;
+      margin-bottom: 1rem;
+      padding: 0;
+      border-color: #ff6600;
+      padding: 2px 0; }
+      .livePlayBack .p_content .p_vList .list .item.playing {
+        color: #fff;
+        background: #ff6600; }
+        .livePlayBack .p_content .p_vList .list .item.playing .p_intro p {
+          color: #fff; }
+        .livePlayBack .p_content .p_vList .list .item.playing i {
+          color: #fff; }
+      .livePlayBack .p_content .p_vList .list .item .p_intro {
+        margin: 0.8rem 4.8rem 0.8rem 1.6rem; }
+        .livePlayBack .p_content .p_vList .list .item .p_intro p {
+          line-height: 2rem;
+          font-size: 14px;
+          color: #2b2a2a;
+          font-weight: bold; }
+        .livePlayBack .p_content .p_vList .list .item .p_intro .p_time {
+          font-weight: normal;
+          color: #92908d;
+          font-size: 12px;
+          line-height: 1.6rem; }
+      .livePlayBack .p_content .p_vList .list .item i {
+        color: #ff6600; }
+.livePlayBack .p_mask {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.5; }
+.livePlayBack .card {
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 10.2rem;
+  margin: auto;
+  width: 31.6rem;
+  height: 40rem; }
+  .livePlayBack .card span {
+    position: absolute;
+    display: block;
+    right: 1rem;
+    top: 1rem;
+    font-size: 1.8rem;
+    color: #fff;
+    width: 1.8rem;
+    height: 1.8rem;
+    text-align: center;
+    z-index: 10002; }
+  .livePlayBack .card ion-scroll {
+    height: 24rem; }
+  .livePlayBack .card .p_introduce {
+    padding-bottom: 0;
+    padding-top: 0;
+    border-width: 0; }
+    .livePlayBack .card .p_introduce p {
+      padding-right: 1rem; }
+      .livePlayBack .card .p_introduce p:first-child {
+        margin-top: 0; }
+  .livePlayBack .card .p_background {
+    width: 100%;
+    height: 12rem;
+    overflow: visible;
+    background: url(../../img/background/speaker_bg.jpg);
+    background-size: 100% 100%;
+    margin-bottom: 4.4rem; }
+    .livePlayBack .card .p_background .item {
+      background: none; }
+    .livePlayBack .card .p_background .p_people {
+      height: 16.4rem;
+      overflow: visible;
+      z-index: 1000;
+      padding: 0;
+      border: none;
+      padding: 9rem 0 0.4rem 10.6rem; }
+      .livePlayBack .card .p_background .p_people img {
+        z-index: 1000;
+        top: 7rem;
+        left: 1.6rem;
+        border: 2px solid #fff;
+        box-sizing: border-box; }
+      .livePlayBack .card .p_background .p_people h2 {
+        line-height: 2.2rem;
+        color: #fff;
+        font-size: 1.6rem;
+        margin-bottom: 1.6rem; }
+      .livePlayBack .card .p_background .p_people p {
+        color: #8D939D;
+        line-height: 1.8rem;
+        font-size: 1.2rem; }
+
 /*
 * @description: 登录/注册页
 * @author: 孔
@@ -10645,7 +10908,7 @@ html {
       width: 100%; }
       .liveprofile ion-content .liveprofile_img .liveprofile_countdown p {
         color: #fff; }
-    .liveprofile ion-content .liveprofile_img .liveprofile_living, .liveprofile ion-content .liveprofile_img .liveprofile_liveEnd {
+    .liveprofile ion-content .liveprofile_img .live_state {
       height: 20px;
       text-align: center;
       font-size: 10px;
@@ -10655,9 +10918,8 @@ html {
       bottom: 1rem;
       right: 1.6rem;
       padding: 0 1.6rem;
-      border-radius: 10px; }
-      .liveprofile ion-content .liveprofile_img .liveprofile_living p, .liveprofile ion-content .liveprofile_img .liveprofile_liveEnd p {
-        color: #fff; }
+      border-radius: 10px;
+      color: #fff; }
     .liveprofile ion-content .liveprofile_img .liveprofile_playBack {
       position: absolute;
       width: 15rem;
@@ -10905,6 +11167,9 @@ html {
 * k==kong
 * l==live
 * */
+.word_line {
+  height: 100px; }
+
 .live p {
   margin: 0; }
 .live .live_TJweixin {
@@ -10939,6 +11204,18 @@ html {
     border: 1px solid #fff;
     border-radius: 4px;
     height: 24px; }
+.live .live_back {
+  position: absolute;
+  z-index: 1;
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  line-height: 3.2rem;
+  text-align: center;
+  color: #fff;
+  right: 1.6rem;
+  top: 1rem; }
 .live .l_play {
   position: relative;
   width: 100%;

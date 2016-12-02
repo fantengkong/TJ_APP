@@ -9,33 +9,34 @@ d==detail
 -->
 
 <ion-view class="k_detail" view-title="探基-基因行业互助平台">
+	
 	<!--返回按钮-->
 	<div ng-click="dBack()" class="d_back" nav-direction="back">
 		<i class="icon iconfont">&#xe64e;</i>
 	</div>
-	<ion-content>
+	<ion-content class="has-footer">
 		<!--视频图片-->
 		<div class="d_img">
 			
-			<img ng-src={{item.imgUrl}} />
+			<img ng-src={{item.logo}} />
 		</div>
 		<ion-list>
 			<!--活动页标题-->
-			<p class="d_title">相约北京 | 第二届精准医疗与基因测序大会</p>
+			<p class="d_title">{{item.title}}</p>
 			<!--活动时间地点-->
 			<p class="d_time_place" ng-if="!speaker">
 				<span>
-					<i>会议时间：</i><i>7月24日 9:00-7月25日 17:30</i>
+					<i>会议时间：</i><i>{{item.startime}}-{{item.endtime}}</i>
 				</span>
 				<span>
-					<i>会议地点：</i><i>北京 东城区 王府井大街 协和学术会堂 (帅府园胡同协和医院西门对面)</i>
+					<i>会议地点：</i><i>{{item.province}} {{item.city}} {{item.area}} {{item.address}}</i>
 				</span>
 			</p>
 			<!--活动介绍-->
 			<dl class="d_info">
 				<dt>
 					<h2>{{item.title}}</h2>
-					<p>文本段落样式，需考虑长英文文本的兼容性，实现强制换行。</p>
+					<p>{{item.note}}</p>
 				</dt>
 				<dd class="i_list">
 					<li>支持序列表</li>
@@ -61,12 +62,11 @@ d==detail
 			</div>			
 		</ion-list>
 	</ion-content>
-	
 	<ion-footer-bar ng-if="attend">
-		<h1 class="title" ng-click="goToLive()">参加活动</h1>
+		<h1 class="title" ng-click="goToLive({{item.id}})">参加活动</h1>
 	</ion-footer-bar>
 	<ion-footer-bar class="closed" ng-if="close">
-		<h1 class="title" ng-click="goToPlay()">已关闭</h1>
+		<h1 class="title">已关闭</h1>
 	</ion-footer-bar>
 	<ion-footer-bar class="beginSoon" ng-if="begin_soon">
 		<h1 class="title">即将开始</h1>

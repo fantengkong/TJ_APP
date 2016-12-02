@@ -3,10 +3,11 @@
 		<ion-list>
 			<ion-item ng-repeat="latestActivity in latestActivities" href="" ng-click="last_to_detail({{latestActivity.id}})">
 				<div>
-					<img ng-src={{latestActivity.imgUrl}} alt="" />
-					<p class="{{latestActivity.background}}">{{latestActivity.info}}</p>
+					<img ng-src={{latestActivity.logo}} alt="" />
+					<p class="bag">{{latestActivity.timestr}}</p>
 				</div>	
 			</ion-item>
 		</ion-list>
+		<ion-infinite-scroll spinner="dots" ng-if="activity_lastest" on-infinite="load_morelastest()"></ion-infinite-scroll>
 	</ion-content>
 </ion-view>

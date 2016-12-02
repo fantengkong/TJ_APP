@@ -1,14 +1,17 @@
 <ion-view ng-controller="MyVedioCtrl">
 	<ion-content scroll-height2>
-		<div class="k_lookedList myVedios">
+		<div class="k_lookedList" ng-if="hasVedios">
 			<ion-list>
-				<ion-item ng-repeat="myvedio in myVedios" href="" ng-click="myVedio_to_play({{myvedio.id}})" class="item-thumbnail-left">
-					<img ng-src={{myvedio.imgUrl}} />
+				<ion-item ng-repeat="myvedio in myVedios" href="" ng-click="myVedio_to_play({{myvedio.id}},{{myvedio.type}})" class="item-thumbnail-left">
+					<img ng-src={{myvedio.logo}} />
 					<h2>{{myvedio.title}}</h2>
-					<p><i>{{myvedio.name}}</i><i> {{myvedio.designation}}</i></p>
-					<b>{{myvedio.message}}</b>
+					<p><i>{{myvedio.note}}</i><i> </i></p>
+					<b>{{myvedio.flag}}</b>
 				</ion-item>
 			</ion-list>
+		</div>
+		<div class="myVedios" ng-if="!hasVedios">
+			您还没有收藏视频哦!
 		</div>
 	</ion-content>
 </ion-view>

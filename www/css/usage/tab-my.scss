@@ -50,6 +50,11 @@
         }
     }
     .k_haslogin {
+        .myVedios,.myLooked{
+            color: #b7b6b1;
+            padding-top: 20px;
+            text-align: center;
+        }
         .k_has {
             padding-top: 4.8rem;
             z-index: 6;
@@ -160,6 +165,7 @@
                 font-size: 12px;
                 position: absolute;
                 line-height: 18px;
+                width: 40%;
                 span {
                     position: absolute;
                     right: 0;

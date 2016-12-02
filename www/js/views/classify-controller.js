@@ -1,11 +1,46 @@
 starterCtrls
-	.controller('ClassifyController', ['$scope',function($scope) {
+	.controller('ClassifyController', ['$http', '$scope',function($http, $scope) {
+		$scope.navItems1=[];
+		$scope.navItems2=[];
+		$scope.navItems3=[];
+		
+		$http.get('./mock/home/home_classify.json')
+			.then(
+				function(res) {
+					for(var i=0;i<res.data.cate.length;i++){
+						if(res.data.cate[i].title=="学知识"){
+							$scope.navItems2=res.data.cate[i].son;
+							for(var j=0;j<$scope.navItems2.length;j++){
+									$scope.navItems2[j].selected = true;
+							}
+							localStorage.setItem("learn", JSON.stringify($scope.navItems2) );
+						}else if(res.data.cate[i].title=="看大会"){
+							$scope.navItems1=res.data.cate[i].son;
+							for(var j=0;j<$scope.navItems1.length;j++){
+									$scope.navItems1[j].selected = true;
+							}
+							localStorage.setItem("watch", JSON.stringify($scope.navItems1) );
+							
+						}else if(res.data.cate[i].title=="大咖说"){
+							$scope.navItems3=res.data.cate[i].son;
+							for(var j=0;j<$scope.navItems3.length;j++){
+									$scope.navItems3[j].selected = true;
+							}
+							localStorage.setItem("say", JSON.stringify($scope.navItems3) );
+						}
+					}
+				}
+			);	
 	}])
 	/*看大会*/
-	.controller('watchCtrl',['$scope', '$state', function($scope, $state) {
+	.controller('watchCtrl',['ApiEndpoint', '$http', '$scope', '$state', function(ApiEndpoint, $http, $scope, $state) {
 		/*跳转到首页*/
 		$scope.closeWatch = function() {
 			$state.go("tabs.home.watch",{}, {reload: true});
+			if(localStorage.getItem("uid")){
+				$scope.Llearn=JSON.parse(localStorage.getItem("watch"));
+				$http.post(ApiEndpoint.url+'/home/saveRadioCates',{uid:localStorage.getItem("uid"),cates:$scope.Llearn}).then()
+			}
 		}
 		/*滑动切换*/
 		$scope.onSwipeLeft = function() {
@@ -15,33 +50,29 @@ starterCtrls
         $state.go("classify.learn");
     };
 		/*判断本地存储*/
-		if(localStorage.getItem("navItems1")){
-			$scope.navItems1 = JSON.parse(localStorage.getItem("navItems1"));
+		if(!localStorage.getItem("navItems1")){
+			$http.get('./mock/home/home_classify.json')
+			.then(
+				function(res) {
+					for(var i=0;i<res.data.cate.length;i++){
+						if(res.data.cate[i].title=="看大会"){
+							$scope.navItems1=res.data.cate[i].son;
+							for(var j=0;j<$scope.navItems1.length;j++){
+									$scope.navItems1[j].selected = true;
+							}
+						}
+					}
+				}
+			);
 		}else{
-			$scope.navItems1 = [
-				{id: 0,name: "了解基因",selected: true},
-				{id: 1,name: "基因组",selected: true}, 
-				{id: 2,name: "癌症",selected: true}, 
-				{id: 3,name: "单细胞",selected: true}, 
-				{id: 4,name: "基因检测",selected: false}, 
-				{id: 5,name: "转基因",selected: false}, 
-				{id: 6,name: "六字类目名称",selected: false}, 
-				{id: 7,name: "二字",selected: false}, 
-				{id: 8,name: "三字名",selected: false}, 
-				{id: 9,name: "English Name",selected: false}, 
-				{id: 10,name: "三字名",selected: false}, 
-				{id: 11,name: "五字类目",selected: false}, 
-				{id: 12,name: "二字",selected: false}, 
-				{id: 13,name: "三字名",selected: false}
-			];
+			$scope.navItems1 = JSON.parse(localStorage.getItem("navItems1"));
 		}		
-		localStorage.setItem("watch", JSON.stringify($scope.navItems1) );
+		
+
 		/*点击选中*/
 		$scope.navItemActived = function(index) {
-			if(index > 3) {			
-				$scope.navItems1[index].selected = !$scope.navItems1[index].selected;
-				localStorage.setItem("navItems1", JSON.stringify($scope.navItems1) );
-			}
+			$scope.navItems1[index].selected = !$scope.navItems1[index].selected;
+			localStorage.setItem("navItems1", JSON.stringify($scope.navItems1) );
 			$scope.watch = [];
 			var len = $scope.navItems1.length;
 			for(var i=0;i<len;i++){
@@ -53,11 +84,15 @@ starterCtrls
 		}
 	}])
 	/*学知识*/
-	.controller('learnCtrl',['$scope', '$state', function($scope, $state) {
+	.controller('learnCtrl',['ApiEndpoint', '$http', '$scope', '$state', function(ApiEndpoint, $http, $scope, $state) {
 		
 		/*跳转到首页*/
 		$scope.closeLearn = function() {
 			$state.go("tabs.home.learn",{}, {reload: true});
+			if(localStorage.getItem("uid")){
+				$scope.Llearn=JSON.parse(localStorage.getItem("learn"));
+				$http.post(ApiEndpoint.url+'/home/saveRadioCates',{uid:localStorage.getItem("uid"),cates:$scope.Llearn}).then()
+			}
 		}
 		/*滑动切换*/
 		$scope.onSwipeLeft = function() {
@@ -67,37 +102,34 @@ starterCtrls
         $state.go("classify.say");
     };
     /*判断本地存储*/
-		if(localStorage.getItem("navItems2")){
-			$scope.navItems2 = JSON.parse(localStorage.getItem("navItems2"));
+   	
+		if(!localStorage.getItem("navItems2")){
+			$http.get('./mock/home/home_classify.json')
+			.then(
+				function(res) {
+					for(var i=0;i<res.data.cate.length;i++){
+						if(res.data.cate[i].title=="学知识"){
+							$scope.navItems2=res.data.cate[i].son;
+							for(var j=0;j<$scope.navItems2.length;j++){
+									$scope.navItems2[j].selected = true;
+							}
+						}
+					}
+				}
+			);
 		}else{
-			$scope.navItems2 = [
-				{id: 0,name: "基因讨论",selected: true},
-				{id: 1,name: "基因组",selected: true}, 
-				{id: 2,name: "癌症",selected: true}, 
-				{id: 3,name: "单细胞",selected: true}, 
-				{id: 4,name: "基因检测",selected: false}, 
-				{id: 5,name: "转基因",selected: false}, 
-				{id: 6,name: "六字类目名称",selected: false}, 
-				{id: 7,name: "二字",selected: false}, 
-				{id: 8,name: "三字名",selected: false}, 
-				{id: 9,name: "English Name",selected: false}, 
-				{id: 10,name: "三字名",selected: false}, 
-				{id: 11,name: "五字类目",selected: false}, 
-				{id: 12,name: "二字",selected: false}, 
-				{id: 13,name: "三字名",selected: false}
-			];
+			$scope.navItems2 = JSON.parse(localStorage.getItem("navItems2"));
 		}
-		
 		localStorage.setItem("learn", JSON.stringify($scope.navItems2) );
+		
 		/*点击选中*/
 		$scope.navItemActived = function(index) {
-			if(index > 3) {
-				
-				$scope.navItems2[index].selected = !$scope.navItems2[index].selected;
-				localStorage.setItem("navItems2", JSON.stringify($scope.navItems2) );
-			}
+			console.log(index);
 			$scope.learn = [];
+			$scope.navItems2[index].selected = !$scope.navItems2[index].selected
+			localStorage.setItem("navItems2", JSON.stringify($scope.navItems2) );
 			var len = $scope.navItems2.length;
+			console.log($scope.navItems2)
 			for(var i=0;i<len;i++){
 				if($scope.navItems2[i].selected == true){
 					$scope.learn.push($scope.navItems2[i]);
@@ -107,11 +139,15 @@ starterCtrls
 		}
 	}])
 	/*大咖说*/
-	.controller('sayCtrl', ['$scope', '$state', function($scope, $state) {
+	.controller('sayCtrl', ['ApiEndpoint', '$http', '$scope', '$state', function(ApiEndpoint, $http, $scope, $state) {
 		
 		/*跳转到首页*/
 		$scope.closeSay = function() {
 			$state.go("tabs.home.say",{}, {reload: true});
+			if(localStorage.getItem("uid")){
+				$scope.Llearn=JSON.parse(localStorage.getItem("say"));
+				$http.post(ApiEndpoint.url+'/home/saveRadioCates',{uid:localStorage.getItem("uid"),cates:$scope.Llearn}).then()
+			}
 		}
 		/*滑动切换*/
 		$scope.onSwipeLeft = function() {
@@ -121,35 +157,27 @@ starterCtrls
         $state.go("classify.watch");
     };
     /*判断本地存储*/
-		if(localStorage.getItem("navItems3")){
-			$scope.navItems3 = JSON.parse(localStorage.getItem("navItems3"));
+		if(!localStorage.getItem("navItems3")){
+			$http.get('./mock/home/home_classify.json')
+			.then(
+				function(res) {
+					for(var i=0;i<res.data.cate.length;i++){
+						if(res.data.cate[i].title=="大咖说"){
+							$scope.navItems3=res.data.cate[i].son;
+							for(var j=0;j<$scope.navItems3.length;j++){
+									$scope.navItems3[j].selected = true;
+							}
+						}
+					}
+				}
+			);	
 		}else{
-			$scope.navItems3 = [
-				{id: 0,name: "基因权威",selected: true},
-				{id: 1,name: "基因组",selected: true}, 
-				{id: 2,name: "癌症",selected: true}, 
-				{id: 3,name: "单细胞",selected: true}, 
-				{id: 4,name: "基因检测",selected: false}, 
-				{id: 5,name: "转基因",selected: false}, 
-				{id: 6,name: "六字类目名称",selected: false}, 
-				{id: 7,name: "二字",selected: false}, 
-				{id: 8,name: "三字名",selected: false}, 
-				{id: 9,name: "English Name",selected: false}, 
-				{id: 10,name: "三字名",selected: false}, 
-				{id: 11,name: "五字类目",selected: false}, 
-				{id: 12,name: "二字",selected: false}, 
-				{id: 13,name: "三字名",selected: false}
-			];
+			$scope.navItems3 = JSON.parse(localStorage.getItem("navItems3"));
 		}
-		
-		localStorage.setItem("say", JSON.stringify($scope.navItems3) );
 		/*点击选中*/
 		$scope.navItemActived = function(index) {
-			if(index > 3) {
-				
 				$scope.navItems3[index].selected = !$scope.navItems3[index].selected;
 				localStorage.setItem("navItems3", JSON.stringify($scope.navItems3) );
-			}
 			$scope.say = [];
 			var len = $scope.navItems3.length;
 			for(var i=0;i<len;i++){

@@ -1,14 +1,15 @@
 <ion-view ng-controller="MyLookedCtrl">
 	<ion-content scroll-height2>
-		<div class="k_lookedList myLooked">
+		<div class="k_lookedList" ng-if="hasLooked">
 			<ion-list>
-				<ion-item ng-repeat="myLookedVedio in myLookedVedios" href="" ng-click="looked_to_play({{myLookedVedio.id}})" class="item-thumbnail-left">
-					<img ng-src={{myLookedVedio.imgUrl}} />
+				<ion-item ng-repeat="myLookedVedio in myLookedVedios" href="" ng-click="looked_to_play({{myLookedVedio.id}},{{myLookedVedio.type}})" class="item-thumbnail-left">
+					<img ng-src={{myLookedVedio.logo}} />
 					<h2>{{myLookedVedio.title}}</h2>
-					<p><i>{{myLookedVedio.name}}</i><i> {{myLookedVedio.designation}}</i></p>
-					<b>{{myLookedVedio.message}}</b>
+					<p><i>{{myLookedVedio.note}}</i><i></i></p>
+					<b>{{myLookedVedio.flag}}</b>
 				</ion-item>
 			</ion-list>
 		</div>
+		<div class="myLooked" ng-if="!hasLooked">您还没有播放记录哦!</div>
 	</ion-content>
 </ion-view>

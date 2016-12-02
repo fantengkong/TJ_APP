@@ -8,31 +8,31 @@ k==kong
 -->
 <ion-view class="tab-my" view-title="探基-基因行业互助平台">
 	<!--未登录页面-->
-	<ion-content class="k_nologin" scroll="false">
+	<ion-content class="k_nologin" scroll="false" ng-if="!login">
 		<div class="k_no">
 			<p>还未登录，请先
-				<a ui-sref="login_register({view: 'tabs.my'})"><button class="button button-clear" title="登录">登录</button></a>
+				<!--<button ng-click="islogin()" class="button button-clear" title="登录">登录</button>-->
+				<a href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxc7d41ebf423a8ae0&redirect_uri=http%3a%2f%2ftest.tj.seq.cn%2f&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect"><button class="button button-clear" title="登录">登录</button></a>
 			</p>
 		</div>
 		<div class="k_prompt">
 			<p class="k_play">
-				<!--<span><i class="icon ion-play"></i></span>-->
-				<img src="../img/TJ.jpg" alt="" />
+				<img src="../img/TJ.jpg" />
 			</p>
 			<p>还没有视频播放记录，快去看视频，学知识！</p>
 		</div>
 	</ion-content>
 	<!--已登录页面-->
-	<ion-pane class="k_haslogin" hidden="true">
+	<ion-pane class="k_haslogin" ng-if="login">
 		<div>
 			<div class="k_has">
 				<div class="k_border">
 					<div class="k_border2">
-						<img src="../img/adam.jpg" />
+						<img  ng-src={{speaker.headimgurl}} />
 					</div>
-					<p>认证讲师</p>
+					<p>会员</p>
 				</div>
-				<p>张启科</p>
+				<p>{{speaker.nickname}}</p>
 			</div>
 			<div class="k_message" scroll-height1 style="position: relative;">
 				<ion-tabs class="tabs-top tabs-light tabs-striped tabs-color-assertive">
@@ -43,7 +43,6 @@ k==kong
 						<ion-nav-view name="myLooked-my"></ion-nav-view>
 					</ion-tab>
 				</ion-tabs>
-				
 			</div>
 		</div>
 	</ion-pane>

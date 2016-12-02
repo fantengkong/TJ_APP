@@ -1,0 +1,1 @@
+1、直播列表传的cates是什么？js/views/home-controller.js 47行285行

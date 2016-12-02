@@ -6,7 +6,8 @@
 <ion-view class="k_play" view-title="探基-基因行业互助平台">
 	<!--视频播放页内容-->
 	<div ng-click="pause()" class="p_wrap">
-		
+		<script src='//player.polyv.net/script/polyvplayer.min.js'></script>
+    
 		<div ng-click="pBack()" class="p_back">
 			<i class="icon iconfont">&#xe64e;</i>
 		</div>
@@ -18,13 +19,22 @@
 		<div class="play_fullScreen" ng-if="!playSignShow">
 			<i class="icon iconfont">&#xe662;</i>
 		</div>
-		<img ng-src={{item2.imgUrl}} alt="" />
+		<img ng-src={{playItems.logo}} ng-if="!playStart"/>
+		<div id='plv_aa1cc4b547c4882c9b7204ca4828919d_a' ng-if="playStart" style="position: fixed;top: 0;left: 0;z-index: 999;width: 100%;height: 100%;"></div>
+    <script>
+      var player = polyvObject('#plv_aa1cc4b547c4882c9b7204ca4828919d_a').videoPlayer({
+          'height':'240',
+          'vid' : aa1cc4b547c4882c9b7204ca4828919d_a,
+					'ban_control' : 'on',
+          'session_id' :'TEST_POLYV'
+      });
+    </script>
 	</div>
 	<ion-content class="p_content">		
 		<div class="p_info">
 			<div class="row p_title">
-				<p ng-class="{true:'col-90'}[Video]">成人ph+ALL 治疗研究进展(多行演示)</p>
-				<span ng-click="showMore()"  ng-if="Video" class="showMore col-10"><i class="icon iconfont">&#xe65f;</i></span>
+				<p ng-class="{true:'col-90'}[Video]">{{playItems.title}}</p>
+				<span ng-click="showMore()"  ng-if="Video&&!speaker" class="showMore col-10"><i class="icon iconfont">&#xe65f;</i></span>
 			</div>
 			<div class="p_visitor">
 				<i class="icon iconfont">&#xe652;</i>
@@ -46,11 +56,11 @@
 		<!--直播专家信息-->
 		<div class="p_anchor row" ng-click="cardShow()" ng-if="speaker">
 			<div class="a_portrait col col-20">
-				<img src="../img/adam.jpg" alt="" />
+				<img ng-src={{playItems.logo}} alt="" />
 			</div>
 			<div class="a_message col col-70">
-				<p><i class="a_name">张启科</i><i class="a_title">研究员</i></p>
-				<p><i class="a_place">甘肃省人民医院</i><i class="a_office">血液科</i></p>
+				<p><i class="a_name"> {{playItems.real_name}}</i><i class="a_title">{{playItems.pro_title}}</i></p>
+				<p><i class="a_place"> {{playItems.department}}</i><i class="a_office"> {{playItems.group}}</i></p>
 			</div>
 			<span><i class="card_show icon col ion-chevron-right col-10 a_go"></i></span>
 		</div>
@@ -78,16 +88,14 @@
 		<span ng-click="cardClose()"><i class="icon iconfont">&#xe650;</i></span>
 		<div class="p_background">
 			<div class="item item-thumbnail-left p_people">
-				<img src="../img/adam.jpg">
-				<h2>张启科</h2>
-				<p>甘肃省人民医院 血液科</p>
+				<img ng-src={{playItems.logo}}>
+				<h2>{{playItems.real_name}}</h2>
+				<p>{{playItems.department}} {{playItems.group}}</p>
 			</div>
 		</div>
 		<div class="item item-body p_introduce">
 			<ion-scroll>
-				<p>现在主要从事血液肿瘤及造血干细胞的临床工作，近年在国内外专业核心期刊杂志发表论文近40余篇、专著2部、发表sci论文2篇。参与和完成课题近十项，现正在参与研究国家自然科学基金两项。</p>
-				<p>甘肃省人民医院血液科主任医师、血液科主任；现任甘肃省抗癌协会淋巴瘤专业委员会委员、中国医学会血液学会副主任委员、中国抗癌协会协中心（CSC-O）会员、甘肃省临床输血专业委员会临床输血指导专家、甘肃省医学会中西医结合血液学会会员、甘肃省老年医学学会委员。</p>
-				<p>现在主要从事血液肿瘤及造血干细胞的临床工作，近年在国内外专业核心期刊杂志发表论文近40余篇、专著2部、发表sci论文2篇。参与和完成课题近十项，现正在参与研究国家自然科学基金两项。</p>
+				{{playItems.note}}
 			</ion-scroll>
 		</div>
 	</div>

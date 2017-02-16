@@ -1,0 +1,53 @@
+<!--
+@description: "我的"页面
+-->
+<ion-view class="tab-my">
+	<!--未登录页面-->
+	<ion-content class="my_nologin" scroll="false" ng-if="!login">
+		<div class="my_no">
+			<p>还未登录，请先
+				<button ng-click="wxLogin()" class="button button-clear" title="登录">登录</button>
+			</p>
+		</div>
+		<div class="my_prompt">
+			<p class="my_play">
+				<img src="../img/TJ.jpg" />
+			</p>
+			<p>还没有视频播放记录，快去看视频，学知识！</p>
+		</div>
+	</ion-content>
+	<!--已登录页面-->
+	<ion-pane class="my_haslogin" ng-if="login">
+		<div>
+			<div class="my_has">
+				<div class="my_border">
+					<div class="my_border2">
+						<img  ng-src={{speaker.headimgurl}} />
+					</div>
+				</div>
+				<p>{{speaker.nickname}}</p>
+			</div>
+			<ion-content lazy-scroll class="has-header mySeen">
+				<div class="see">我看过的</div>
+				<div class="my_lookedList" ng-if="hasSeen">
+					<ion-list>
+						<ion-item ng-repeat="mySeen in mySeens" href="" ng-click="looked_to_play({{mySeen.info_id}})" class="item-thumbnail-left">
+							<img image-lazy-src="{{mySeen.logo}}" ng-if="mySeen.logo!=null" class="popupBox" />
+							<img image-lazy-src="../img/background/homeBg.jpg" ng-if="mySeen.logo == null" class="popupBox"/>
+							<h2 ng-bind="mySeen.title"></h2>
+							<p><i ng-repeat="sub in mySeen.subjects" style="padding-right: 5px;" ng-bind="sub.title"></i></p>
+							<p><i ng-repeat="sub in mySeen.subjects" ng-bind="sub.title"></i></p>
+							<span class="h_camera"><i class="icon iconfont" ng-if="mySeen.numType==1&&mySeen.clickNum!=null">&#xe652;</i><i ng-if="mySeen.numType==1&&mySeen.clickNum!=null" ng-bind="mySeen.clickNum"></i><i ng-if="mySeen.numType==2&&mySeen.signNum!=null">{{mySeen.signNum}}  人已报名</i></span>
+							<div class="h_state" ng-bind="mySeen.icon"></div>
+						</ion-item>
+						
+					</ion-list>
+					<ion-infinite-scroll spinner="dots" ng-if="myDataLoad" on-infinite="loadMoreVideo()"></ion-infinite-scroll>
+					<p ng-if="!myDataLoad" class="noContent">没有更多内容了</p>
+				</div>
+				
+				<div class="myLooked" ng-if="!hasSeen">您还没有播放记录哦!</div>
+			</ion-content>
+		</div>
+	</ion-pane>
+</ion-view>

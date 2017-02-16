@@ -1,0 +1,28 @@
+<!--
+@description: "直播间"页面
+l==live
+-->
+    
+    
+<ion-view class="live" ng-controller="LiveController">
+	<!--关注探基微信-->
+		<!--<div class="row live_TJweixin" ng-if="TJweixinShow">
+		  <div class="col col-20 TJ_logo">探基</div>
+		  <div class="col col-50 TJ_info"><p>online</p>基因行业在线教育平台</span></div>
+		  <div class="col col-30"><button ng-click="goToTJweixin()">关注公众号</button></div>
+		</div>-->
+		
+		<!--关注探基公众微信号-->
+		<div class="tj_wx" ng-if="tj_wx">
+			<img ng-click="closeWx()" src="../img/TJlook.jpg" ng-style="imgHeight" alt="" />
+		</div>
+		
+		<!--<img src="../img/TJlook.jpg" style="width: 100%;" alt="" />-->
+		
+		<!--返回按钮-->
+		<div ng-click="liveBack()" class="live_back" ng-style="backTop">
+			<i class="icon iconfont">&#xe650;</i>
+		</div>
+		
+	<iframe width="100%" height="100%"  id="myFrame" name="myFrame" ng-src="{{visit_url}}" frameborder="0" scrolling="no"></iframe>
+</ion-view>

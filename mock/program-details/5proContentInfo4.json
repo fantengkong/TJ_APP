@@ -1,0 +1,65 @@
+{
+	"code":"200",
+	"msg":"成功",
+	"data":
+	{
+    "type" :4,              
+    "datas" : [
+      {
+        "id" : 1,        
+        "title" : "1111",        
+        "status" : "1",
+        "duration" : "",
+        "startTime" : "12:21",    
+        "visitUrl" : "http://",   
+        "recordUrl" : "http://e.vhall.com/webinar/record/196923?embed=video"    
+      },
+      {
+        "id" : 2,        
+        "title" : "2222",        
+        "status" : "2", 
+        "duration" : "",
+        "startTime" : "12:21",    
+        "visitUrl" : "http://",   
+        "recordUrl" : "http://e.vhall.com/webinar/record/196923?embed=video"    
+      },
+      {
+        "id" : 3,        
+        "title" : "3333",        
+        "status" : "3", 
+        "duration" : "",  
+        "startTime" : "12:21",    
+        "visitUrl" : "http://",   
+        "recordUrl" : "http://e.vhall.com/webinar/record/196923?embed=video"    
+      },
+      {
+        "id" : 4,        
+        "title" : "4444",        
+        "status" : "4",  
+        "duration" : "", 
+        "startTime" : "12:21",    
+        "visitUrl" : "http://",   
+        "recordUrl" : "http://e.vhall.com/webinar/record/196923?embed=video"    
+      },
+      {
+        "id" : 5,        
+        "title" : "5555",        
+        "status" : "5",  
+        "duration" : "",
+        "startTime" : "12:21",    
+        "visitUrl" : "http://",   
+        "recordUrl" : "http://e.vhall.com/webinar/record/196923?embed=video"    
+      },
+      {
+        "id" : 6,        
+        "title" : "超长视频超长视频超长视频超长视频超长视频超长视频超长视频超长视频超长视频超长视频超长视频超长视频超长视频超长视频超长视频超长视频超长视频超长视频超长视频超长视频超长视频超长视频超长视频超长视频",        
+        "status" : "6",
+        "duration" : "33", 
+        "startTime" : "12:21",    
+        "visitUrl" : "http://",   
+        "recordUrl" : "http://e.vhall.com/webinar/record/196923?embed=video"    
+      }
+    ]
+	}
+
+}

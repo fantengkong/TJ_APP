@@ -1,0 +1,20 @@
+<!--
+@description: "主栏目—活动"页面
+-->
+<ion-view class="tab-activity">
+	<ion-header-bar>
+		<h1 class="title title_color">最新活动</h1>
+	</ion-header-bar>
+	<ion-content lazy-scroll>
+		<ion-list>
+			<ion-item ng-repeat="latestActivity in latestActivities" href="" ng-click="last_to_detail({{latestActivity.id}} , {{latestActivity.type}} ,$index )">
+				<div>
+					<a><img image-lazy-src="{{latestActivity.logo}}" lazy-scroll-resize="true" class="popupBox" alt="" /></a>
+					<p class="bag">{{latestActivity.timestr}}</p>
+				</div>	
+			</ion-item>
+		</ion-list>
+		<ion-infinite-scroll spinner="dots" ng-if="activity_lastest" on-infinite="load_morelastest()"></ion-infinite-scroll>
+		<p ng-if="!activity_lastest" class="noContent">没有更多内容了</p>
+	</ion-content>
+</ion-view>

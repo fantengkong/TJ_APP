@@ -1,0 +1,19 @@
+{
+	"code":"200",
+	"msg":"成功",
+	"data":{
+    "type" :3,              
+    "datas" : [
+      {
+          "id" : 1,        
+          "title" : "1111",       
+          "status" : "200",    
+          "startTime" : "12:21",    
+          "visitUrl" : "http://",   
+          "recordUrl" : "" ,
+          "recordUrl1" : "http://e.vhall.com/webinar/record/196923?embed=video"    
+      }     
+    ]
+	}
+
+}

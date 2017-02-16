@@ -1,0 +1,54 @@
+
+
+
+
+{
+	"code":"200",
+	"msg":"成功",
+	"data":
+	{
+		"type":2,
+		"clickNum":"6",
+		"signNum":"8",
+		"signDatas":[
+			{
+				"name":"1",
+				"logo":"../../img/max.png"
+			},{
+				"name":"2",
+				"logo":"../../img/mike.png"
+			},{
+				"name":"2",
+				"logo":"../../img/mike.png"
+			},{
+				"name":"2",
+				"logo":"../../img/mike.png"
+			},
+			{
+				"name":"3",
+				"logo":"../../img/mike.png"
+			},{
+				"name":"4",
+				"logo":"../../img/perry.png"
+			},
+			{
+				"name":"5",
+				"logo":"../../img/shareIMG.jpg"
+			},{
+				"name":"6",
+				"logo":"../../img/ionic.png"
+			},{
+				"name":"6",
+				"logo":"../../img/ionic.png"
+			},{
+				"name":"6",
+				"logo":"../../img/ionic.png"
+			}
+			
+			
+			
+			
+		]
+	}
+
+}

@@ -1,0 +1,240 @@
+<!--
+@description: "节目简介"页面
+@time:"2016-12-28"
+-->
+<ion-view class="programDetails" ng-controller="ProgramDetailsController">
+
+	<!--关注探基公众微信号-->
+	<div class="tj_wx" ng-if="pro.tj_wx" ng-style="tjImgHeight">
+		<img ng-click="goToTJwx()" src="../../img/tjwx/tjwx.jpg" alt="" />
+		<div ng-click="closeWx()" class="wxClose"></div>
+	</div>
+
+	<!--后退-->
+	<div ng-click="proBackOff()" ng-if="pro.proBack" class="backOff" ng-style="backTop">
+		<i class="icon iconfont">&#xe64e;</i>
+	</div>
+
+	<!--回到顶部-->
+	<button class="scrollToTop button-clear" ng-class="{'hasFooterBot':pro.botPro}" ng-click="proScrollTop()" ng-if="pro.proBackTop">
+		<i class="iconfont">&#xe654;</i>
+	</button>
+	<!--群交流按钮-->
+	<button ng-click="groupOpen()" ng-style="pro.GroupPos" ng-if="pro.groupBtnShow" class="button group_exchange icon-left ion-chevron-left">群交流</button>
+	<!--banner-->
+	<div class="proBanner" ng-if="pro.banPro" ng-style="pro.banHeight">
+		<!--封面-->
+		<div class="proVideo">
+			<img ng-if="proBasicInfos.logo"  class="" ng-src={{proBasicInfos.logo}} alt="" />
+			<img ng-if="!proBasicInfos.logo&&pro.vidselectItem==0" src="../img/background/proBg.jpg"  class="popupBox" alt="" />
+		</div>
+
+		<!--播放按钮-->
+		<div class="proPlay" ng-if="pro.banPlay" ng-click="playVideo(vActived, vActivedIndex)">
+			<i class="icon iconfont">&#xe66a;</i>
+		</div>
+
+		<!--视频接口-->
+		<iframe videoauto="1" ng-src="{{targetUrl}}" width="100%" height="{{pro.Vheight}}" ng-if="pro.banPlayBack"></iframe>
+		
+		<div ng-repeat="Bvid in proContentInfos" ng-if="pro.banVideo" ng-show="Bvid.id==vActived"  id='plv_{{Bvid.vid}}' class="polyVid" flashvars="vid={{Bvid.vid}}&autoplay = 1" style="position: absolute;top: 0;left: 0;z-index: 0;width: 100%;height: 0;"></div>
+		
+		<!--直播预告-->
+		<div class="proCountdown" ng-if="pro.banPre">
+			<p>距离开播还有: <span>{{countDown.day}}<i></i></span>天<span>{{countDown.hour}}<i></i></span>时<span>{{countDown.min}}<i></i></span>分<span>{{countDown.second}}<i></i></span>秒</p>
+		</div>
+
+	</div>	
+
+	<!--主体内容-->
+	<ion-content ng-class="{'has-footer':pro.botPro}" delegate-handle="proMain" on-scroll="proContentScroll()" direction="y" lock="true"  ng-style="pro.hasWx">
+
+		<!--节目标题-->
+		<p class="proTitle" ng-bind="proBasicInfos.title"></p>
+		
+		<!--节目类目-->
+		<div class="proCategory" ng-if="procate">
+			<i ng-bind="main_category"></i><i ng-repeat="sub in sub_category" ng-bind="sub"></i>
+		</div>
+
+		<!--节目统计: 报名人数/点击量/评论量-->
+		<div class="proCount" ng-if="pro.numPro">
+
+			<!--报名人数-->
+			<div class="proEnroll" ng-if="pro.numEnroll">
+				<img ng-repeat="peo in registered" ng-src={{peo.logo}} alt="" />
+				<span class="people_num">{{proPeoNums.signNum}}人已报名</span>
+			</div>
+
+			<!--点击量-->
+			<div class="proClick" ng-if="pro.numClick">
+				<i class="icon iconfont">&#xe652;</i>
+				<i ng-bind="proPeoNums.clickNum"></i>
+			</div>
+
+			<!--评论量-->
+			<div class="proComment" ng-if="pro.numComment">
+				<i>--</i>人在看<b class="proPad">·</b><b class="proGray"><i>--</i>赞<b class="proPad">·</b><i>--</i>评论</b>
+			</div>
+
+		</div>
+
+		<!--讲师或会议显示between-->
+		<div ng-if="pro.betPro">
+			<!--讲师简介-->
+			<div class="proCom" ng-if="pro.betLecturer||pro.betLecturers">讲师简介</div>
+
+			<!--单讲师简介-->
+			<ion-item class="item-thumbnail-left trainerIntro" ng-if="pro.betLecturer" ng-click="OpenlecturerDetails()">
+				<img ng-src="{{lecturer.logo}}">
+				<h2 ng-bind="lecturer.name"></h2>
+				<p>{{lecturer.department}}&nbsp;&nbsp;{{lecturer.title}}</p>
+				<i class="card_show icon ion-chevron-right"></i>
+			</ion-item>
+			<!--!单讲师简介-->
+
+			<!--多讲师简介-->
+				<!--<ion-scroll ng-if="pro.betLecturers" class="moreTrainer" direction="x" lock="true" scrollbar-y="false" scrollbar-x="false" style="width: 100%;">-->
+					<!--<ion-list class="moreTrainer" style="white-space:nowrap;">
+						<ion-item ng-repeat="data in proHostInfos.datas" class="item-thumbnail-left trainerIntro" ng-click="OpenlecturerDetails(data.id)">
+							<img ng-src="{{data.logo}}">
+							<h2 ng-bind="data.name"></h2>
+							<p ng-bind="data.title"></p>
+						</ion-item>
+					</ion-list>-->
+					<div class="moreTrainer"  ng-if="pro.betLecturers" style="overflow: hidden;white-space: nowrap;width: 100%;">
+							<ion-item on-swipe-left="left" ng-repeat="data in proHostInfos.datas" on-finish="ngRepeatFinished" class="item-thumbnail-left trainerIntro" ng-click="OpenlecturerDetails(data.id)">
+								<img ng-src="{{data.logo}}">
+								<h2 ng-bind="data.name"></h2>
+								<p ng-bind="data.title"></p>
+							</ion-item>
+					</div>
+				<!--</ion-scroll>-->
+			<!--!多讲师简介-->
+
+			<!--会议时间地点-->
+			<div class="proDP" ng-if="pro.betMetting">
+				<span ng-if="m_time">
+						<i class="a_time ion-android-time"></i><i ng-bind="proBasicInfos.meeting.durationTime"></i><br />
+					</span>
+				<span ng-if="m_address">
+						<i class="a_place ion-android-pin"></i><i ng-bind="proBasicInfos.meeting.address"></i>
+					</span>
+			</div>
+			<!--!会议时间地点-->
+		</div>
+
+		<!--视频集显示-->
+		<div class="vids" ng-if="pro.proVid">
+
+			<!--视频数量-->
+			<div class="proCom" ng-if="pro.vidOnDemand">视频选集 (<i ng-bind="numMultiVid"></i>)</div>
+			<div class="proCom" ng-if="pro.vidLive">视频选集 (<i ng-bind="numMultiLive"></i>)</div>
+
+			<!--视频选集-->
+			<ion-list class="vidOnDemands" ng-if="pro.vidOnDemand">
+				<ion-item ng-repeat="vedItem in multiVid" ng-class="{'playing':vedItem.id == pro.selectItem}" class="item-icon-right videoItem" ng-click="selectVideo(vedItem.id,$index)">
+					<div class="p_intro">
+						<p class="" ng-bind="vedItem.title"></p>
+						<p class="" ng-bind="vedItem.times"></p>
+					</div>
+					<i class="icon iconfont vPause">&#xe64c;</i>
+					<i class="icon iconfont vPlay">&#xe65c;</i>
+				</ion-item>
+			</ion-list>
+			<!--!视频选集-->
+
+			<!--未开播直播视频大纲数量-->
+			<div class="proCom" ng-if="pro.vidOutline">视频大纲 (<i ng-bind="numMultiLive"></i>)</div>
+
+			<!--未开播直播视频大纲-->
+			<div class="vidOutlines" ng-if="pro.vidOutline">
+				<div class="vidOutline" ng-repeat="liveItem in multiLive">
+					<div class="outStyle"></div>
+					<p class="outPara" ng-bind="liveItem.title"></p>
+					<p class="outPara" ng-if="liveItem.startTime" ng-bind="liveItem.startTime"></p>
+					<div class="outVerticalLine"></div>
+				</div>
+			</div>
+			<!--!未开播直播视频大纲-->
+																			
+			<!--已开播直播视频选集-->
+			<ion-list class="vidLives" ng-if="pro.vidLive">
+				<ion-item class="item-icon-right videoItem" ng-class="{'vidActived':vActived==liveItem.id,'playing' : vActived==liveItem.id}" ng-repeat="liveItem in multiLive" >
+					
+					<div class="clearfix" ng-click="selectLive($index,liveItem.id,liveItem.status)" ng-if="liveItem.ctype==2">
+						<div class="p_intro">
+							<p ng-bind="liveItem.title">01. NGS技术原理及临床应用</p>
+							<p class="p_state"><b>直播</b><span ng-if="liveItem.status==5">已回放</span><span ng-if="liveItem.status==3 || liveItem.status==4">等待回放</span><span ng-if="liveItem.status==2">直播中</span><span ng-if="liveItem.status==1||liveItem.status==6"><span ng-bind="liveItem.startTime"></span>&nbsp;&nbsp;开播</span></p>
+						</div>
+						<i class="icon iconfont vPause" ng-if="(liveItem.status==5 || liveItem.status==2)">&#xe678;</i>
+						<i class="icon iconfont vPlay" ng-if="nowDate >= liveItem.startTime">&#xe65c;</i>
+						<i class="icon iconfont lvIcon" ng-if="liveItem.status==3 || liveItem.status==4">&#xe67a;</i>
+						<i class="icon iconfont lvIcon" ng-if="liveItem.status==1">&#xe679;</i>
+					</div>
+					
+					<div class="clearfix" ng-click="selectVideo(liveItem.id, $index, liveItem.startTime)" ng-if="liveItem.ctype==1">
+						<div class="p_intro">
+							<p class="" ng-if="liveItem.title" ng-bind="liveItem.title"></p>
+							<!--时长-->
+							<p class="" ng-if=" liveItem.duration && nowDate >= liveItem.startTime " ng-bind="liveItem.duration"></p>
+							<!--预告时间-->
+							<p class="" ng-if=" liveItem.startTime && nowDate < liveItem.startTime " ng-bind="liveItem.startTime"></p>
+						</div>
+						<i class="icon iconfont vPause" ng-if="nowDate >= liveItem.startTime">&#xe678;</i>
+						<i class="icon iconfont vPlay" ng-if="nowDate >= liveItem.startTime">&#xe65c;</i>
+						<i class="icon iconfont lvIcon" ng-if="nowDate < liveItem.startTime ">&#xe679;</i>
+					</div>
+					
+				</ion-item>
+			</ion-list>
+			<!--/已开播直播视频选集-->
+		</div>
+		<!--/视频集显示-->
+		
+		<div class="proCom" ng-if="proBasicInfos.intro">节目简介</div>
+		
+		<!--节目简介-->
+		<div class="proInfo" ng-bind-html="proBasicInfos.intro"></div>
+		<!--/节目简介-->
+		
+		<!--扫二维码关注探基微信号-->
+		<div class="proWX" ng-if="pro.tj_wx">
+			<div class="w_attention"><p>更多精彩视频，请关注<i>探基</i>微信号</p><p>测序中国旗下 - 基因行业互助学习平台</p></div>				
+			<div class="w_QR_code"><img src="../img/TJwx.jpg" alt="" /></div>
+			<p class="w_distinguish ">长按上图选择“识别图中二维码”</p>
+		</div>
+	</ion-content>
+
+	<ion-footer-bar ng-if="pro.botPro" class="proFooter" ng-class="{'botenter':pro.botEnter,'calm':pro.botEnd||pro.botEnrolled}">
+		<!--登录-->
+		<h1 class="title" ng-if="pro.botLogin" ng-click="proLogin()">报名看直播</h1>
+		<!--报名看直播-->
+		<h1 class="title" ng-if="pro.botEnroll" ng-click="showAlert()">报名看直播</h1>
+		<!--已报名-->
+		<h1 class="title" ng-if="pro.botEnrolled">报名成功</h1>
+		<!--进入直播页-->
+		<h1 class="title" ng-if="pro.botEnter" ng-click="enterLive()">进入直播间</h1>
+		<!--直播结束-->
+		<h1 class="title" ng-if="pro.botEnd">直播结束</h1>
+	</ion-footer-bar>
+	<!--遮罩层-->
+	<div class="proMask" ng-if="cardShow"></div>
+	<!--讲师详情卡片-->
+	<div class="list card trainerDetail popupBox" ng-if="cardShow">
+		<span ng-click="closeLecturerDetails()" class="closecardtrue"><i class="icon iconfont closeCardIcon">&#xe650;</i></span>
+		<div class="p_background">
+			<div class="item item-thumbnail-left p_people">
+				<img ng-src={{lecturer.logo}}>
+				<h2 ng-bind="lecturer.name"></h2>
+				<p>{{lecturer.department}} {{lecturer.title}}</p>
+			</div>
+		</div>
+		<div class="item item-body p_introduce">
+			<ion-scroll>
+				<div ng-bind-html="lecturer.intro | to_trusted"></div>
+				<!--<p><span style="line-height: 17.1429px;">换行测试</span><span style="line-height: 17.1429px;">换行测试</span><span style="line-height: 17.1429px;">换行测试</span><span style="line-height: 17.1429px;">换行测试</span></p><p><span style="line-height: 17.1429px;"><br></span></p><p><span style="line-height: 17.1429px;">换行测试</span><span style="line-height: 17.1429px;">换行测试</span><span style="line-height: 17.1429px;">换行测试</span><span style="line-height: 17.1429px;">换行测试</span><span style="line-height: 17.1429px;">换行测试</span><span style="line-height: 17.1429px;">换行测试</span><span style="line-height: 17.1429px;">换行测试</span><span style="line-height: 17.1429px;">换行测试</span></p><p><span style="line-height: 17.1429px;"><br></span></p><p><span style="line-height: 17.1429px;">换行测试</span><span style="line-height: 17.1429px;">换行测试</span><span style="line-height: 17.1429px;">换行测试</span></p><p><span style="line-height: 17.1429px;">换行测试</span><span style="line-height: 17.1429px;">换行测试</span><span style="line-height: 17.1429px;"><br></span><span style="line-height: 17.1429px;"><br></span><span style="line-height: 17.1429px;"><br></span></p>-->
+			</ion-scroll>
+		</div>
+	</div>
+</ion-view>

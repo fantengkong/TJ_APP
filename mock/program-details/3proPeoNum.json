@@ -1,0 +1,14 @@
+
+{
+	"code":"200",
+	"msg":"成功",
+	"data":{
+		"type":1,
+		"clickNum":10,
+		"signNum":5,
+		"signDatas":[
+			
+		]
+	}
+
+}

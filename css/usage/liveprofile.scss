@@ -1,0 +1,879 @@
+@charset "utf-8";
+/*
+* @description: "节目详情页"页面样式
+* i==info
+* w==weixin
+* */
+.tabContent-footer{
+    display: none!important;
+}
+.programDetails{
+    background: #fff;
+    /*重置元素*/
+    p {
+        margin: 0;
+    }
+    
+    .has-footer {
+        bottom: 50px;
+    }
+    
+    /*关注微信号样式*/
+    .tj_wx{
+        position: relative;
+        img{
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        .wxClose{
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 13%;
+        }
+    }
+    
+    /*返回按钮*/
+    .backOff{
+        position: fixed;
+        z-index: 1;
+        width: 3.2rem;
+        height: 3.2rem;
+        border-radius: 50%;
+        background: rgba(0,0,0,0.5);
+        line-height: 3.2rem;
+        text-align: center;
+        color: #fff;
+        left: 1.6rem;
+        top: 1rem;
+    }
+    
+    /*回到顶部*/
+    .scrollToTop {
+        height: 32px;
+        width: 32px;
+        background: #7f7f7f;
+        border-radius: 50%;
+        position: absolute;
+        bottom: 15px;
+        right: 10px;
+        z-index: 9;
+        color: #fff;
+        padding: 0;
+        border-width: 0;
+        line-height: 32px;
+        &.hasFooterBot{
+            bottom: 65px;
+        }
+    }
+    .group_exchange{
+        position: absolute;
+        bottom: 15px;
+        right: 10px;
+        z-index: 9;
+        height: 40px;
+        line-height: 40px;
+        min-height: 40px;
+        padding: 0 25px 0 15px;;
+        border-radius: 15px;
+        color: #9b9591;
+        font-size: 14px;
+        &.button.button-light.button-outline{
+            background: #fff;
+        }
+        &.icon-left:before {
+            float: left;
+            padding-right: 10px;
+            padding-left: 0;
+        }
+    }
+    
+    /*banner*/
+    .proBanner{
+        overflow: hidden;
+        position: relative;
+        /*节目视频窗口*/
+        .proVideo{
+           overflow: hidden;
+           img{
+               display: block;
+               width: 100%;
+           }
+        } 
+        .proPlay{
+            i{
+                display: block;
+                font-size: 30px;
+                text-align: center;
+                width: 50px;
+                border-radius: 50%;
+                height: 50px;
+                color: #fff;
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                line-height: 50px;
+                background: rgba(0,0,0,0.5);
+            }   
+        }
+        
+        /*预告时间*/
+        .proCountdown{
+            height: 40px;
+            text-align: center;
+            font-size: 14px;
+            line-height: 40px;
+            background: rgba(0,0,0,0.5);
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            p{
+                span{
+                    display: inline-block;
+                    width: 36px;
+                    height: 30px;
+                    text-align: 36px;
+                    line-height: 30px;
+                    background: rgba(0,0,0,0.6);
+                    color: #fff;
+                    border-radius: 2px;
+                    font-size: 20px;
+                    margin: 5px 5px;
+                    position: relative;
+                    font-weight: bold;
+                    i{
+                        position: absolute;
+                        left: 0;
+                        width: 36px;
+                        height: 1px;
+                        line-height: 30px;
+                        background: rgba(0,0,0,0.7);
+                        top: 16px;
+                    }
+                }
+                color: #fff;
+            }
+        }
+        
+        /*直播状态*/
+        .live_state{
+            height: 20px;
+            text-align: center;
+            font-size: 10px;
+            line-height: 20px;
+            background: rgba(0,0,0,0.5);
+            position: absolute;
+            bottom: 1rem;
+            right: 1.6rem;
+            padding: 0 1.6rem;
+            border-radius: 10px;
+            color: #fff;
+        }
+        
+    }
+    
+    /*节目标题*/
+    .proTitle {
+        padding: 1.8rem 1.6rem 0;
+        font-size: 18px;
+        line-height: 1.4;
+        color: #333;
+        padding-bottom: .5rem;
+        word-break:break-all;
+    }
+    
+    /*节目统计*/
+    .proCount{
+        overflow: hidden;
+        padding: 0 1.6rem;
+        
+        /*节目报名人数*/
+        .proEnroll{
+            
+            height: 24px;
+            overflow: hidden;
+            position: relative;
+            img{
+                border-radius: 100%;
+                width: 24px;
+                height: 24px;
+                margin-right: 4px;
+            }
+            span{
+                display: inline-block;
+                overflow: hidden;
+                width: 24px;
+                height: 24px;
+                border-radius: 5px;
+            }
+            .people_num{
+                position: absolute;
+                top: 0;
+                height: 24px;
+                width: auto;
+                color: #fe6700;
+                padding: 0 8px;
+                line-height: 24px;
+                background: #f4f4f4;
+                margin: 0 4px;
+            }
+        }
+        
+        /*点击量*/
+        .proClick {
+            font-size: 12px;
+            color: #aba6a0;
+            .icon {
+                color: #e7e6e4;
+                padding: 0 0.32rem;
+                font-size: 12px;
+            }
+        }
+        
+        /*评论量*/
+        .proComment{
+            font-size: 12px;
+            .proGray{
+                color: #aba6a0;
+                font-weight: normal;
+            }
+            .proPad{
+                padding: 0 8px;
+            }
+        }
+    }
+    
+    /*节目类目*/
+    .proCategory{
+        padding: 1.4rem 1.6rem 0;
+        i {
+            display: inline-block;
+            padding: 0 1.6rem;
+            font-size: 1.2rem;
+            line-height: 2.2rem;
+            box-sizing: border-box;
+            border-radius: 4px;                   
+            color: #b4b3ae;
+            margin-right: .8rem;
+            background: #f4f4f4;
+            margin: 0 .8rem .8rem 0; 
+            &:first-of-type{
+                color: #b4b1ac;
+                background: none;
+                border: solid 1px #dbd7d0;
+                height: 2.2rem;
+                line-height: 2rem;
+            }
+        }
+    }  
+    
+    /*单讲师简介*/
+    .trainerIntro{
+        border: 1px solid #eaeaea;
+        padding-right: 3.0rem;
+        min-height: 7.6rem;
+        padding-top: 1.6rem;
+        padding-left: 8.6rem;
+        img{
+            width: 5.6rem;
+            height: 5.6rem;
+            border-radius: 50%;
+            left: 1.6rem;
+        }
+        h2{
+            font-weight: normal;
+            font-size: 1.6rem;
+            padding-right: .8rem;
+            color: #2a2a2a;
+        }
+        p{
+            color:#878787;
+        }
+        i.icon{
+            position: absolute; 
+            right: 1.6rem;
+            top:0;
+            display: block;
+            color: #b9b2aa;
+            height: 7.4rem;
+            line-height: 7.4rem;
+        }
+    }
+    
+    /*多讲师简介*/
+    .moreTrainer{
+       border: none;
+       border-bottom: 1px solid #eaeaea;
+       
+       /*强制不换行*/
+       .scroll{
+           white-space: nowrap;
+       }
+
+       //每个讲师
+       .trainerIntro{
+            margin: 0;
+            display: inline-block;
+            border: none;
+            min-height: 7.6rem;
+            padding: 0;
+            width: 8rem;
+            text-align: center;
+            padding-bottom: 1.6rem;
+            img{
+                position: static;
+                width: 4.6rem;
+                height: 4.6rem;
+                border-radius: 50%;
+            }
+            h2{
+                font-weight: normal;
+                width: 100%;
+                font-size: 1.6rem;
+                padding-right: 0;
+                color: #2a2a2a;
+                text-align: center;
+            }
+            p{
+                color:#878787;
+            }
+        }
+       
+       /*去掉滑动bar*/
+       &.scroll-view.scroll-x {
+            overflow-x: hidden;
+            overflow-y: hidden;
+        }
+        
+    }
+    
+    /*会议时间地点*/
+    .proDP{
+        padding: .7rem 1.6rem .5rem;
+        color: #888;
+        line-height: 20px;
+        font-size: 13px;
+        overflow: hidden;
+        span{
+            overflow: hidden;
+            clear: all;
+            display: block;
+            margin-bottom: 3px;
+            clear: both;
+            position: relative;
+            i{
+                display: inline-block;
+                width: 90%;
+                float: left;
+                color: #888;
+            }
+            .a_time,.a_place{
+                font-size: 14px;
+                color: #b4b1ad;
+                display: inline-block;
+                width: 5%;
+                float: left;
+            }
+        }
+            
+    } 
+    
+    /*讲师简介，视频数量*/
+    .proCom{
+        padding: 2.6rem 1.6rem 1rem 1.6rem; 
+        color: #a39f99;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    } 
+    
+    .vids{
+        
+        /*点播+直播 视频选集共同样式*/            
+        .vidOnDemands,.vidLives{
+            .item-icon-right .icon{
+                font-size: 22px;
+            }
+            .list{
+                padding: 0 1.6rem 0;
+                .videoItem {
+                    background: #fff2ea;
+                    &:first-child{
+                        border-radius: 5px 5px 0 0;
+                    }
+                    &:last-child{
+                        border-radius: 0 0 5px 5px;
+                    }
+                    &.playing{
+                        color: #fff;
+                        background: $color;
+                        .p_intro{
+                            p{
+                                color: #fff;
+                            }
+                        }
+                        i{
+                            &.vPause{
+                                display: none;
+                            }
+                            
+                            &.vPlay{
+                                display: flex;
+                            }
+                            color: #fff;                                                     
+                        }
+                    }
+                    &.vidActived{
+                        color: #fff;
+                        background: $color;
+                        .p_intro{
+                            p{
+                                color: #fff;
+                                &.p_state{
+                                    span{
+                                        color: #fff;
+                                    }
+                                    b{
+                                        background: #fff;
+                                        color: $color;
+                                    }
+                                }
+                            }
+                        }
+                        i{
+                            color: #fff;                                                     
+                        }
+                    }    
+                    border-color: $color;
+                    padding: 1.8rem 4.8rem 1.8rem 1.4rem;
+                    .p_intro {
+                        p {
+                            line-height: 2rem;
+                            font-size: 14px;
+                            color: #2b2a2a;
+                            font-weight: normal;
+                        }
+                        .p_state {
+                            b{
+                                display: inline-block;
+                                font-weight: normal;
+                                padding: 2px;
+                                line-height: 10px;
+                                background: $color;
+                                color: #fff;
+                                font-size: 10px;
+                                -moz-border-radius: 2px; /* Firefox */
+                                -webkit-border-radius: 2px; /* Safari 和 Chrome */
+                                border-radius: 2px; /* Opera 10.5+, 以及使用了IE-CSS3的IE浏览器 */
+                            }
+                            span{
+                                display: inline-block;
+                                font-size: 12px;
+                                line-height: 14px;
+                                color: #9b9591;
+                                padding-left: 6px;
+                            }
+                        }
+                    }
+                    i {
+                        color: $color;
+                        &.vPlay{
+                            display: none;
+                        }
+                        &.vPause{
+                            display: flex;
+                        }
+                    }
+                }
+            }
+        }
+        
+        /*点播视频选集*/
+        .vidOnDemands {
+            
+            .list {
+                .videoItem {
+                    background: #fff2ea;
+                    &:first-child{
+                        border-radius: 5px 5px 0 0;
+                    }
+                    &:last-child{
+                        border-radius: 0 0 5px 5px;
+                    }
+                    &.playing{
+                        color: #fff;
+                        background: $color;
+                        .p_intro{
+                            p{
+                                color: #fff;
+                            }
+                        }
+                        i{
+                            color: #fff;                                                     
+                        }
+                    }    
+                    border-color: $color;
+                    padding: 1.8rem 4.8rem 1.8rem 1.4rem;
+                    .p_intro {
+                        p {
+                            line-height: 2rem;
+                            font-size: 14px;
+                            color: #2b2a2a;
+                            font-weight: normal;
+                        }
+                        .p_time {
+                            font-weight: normal;
+                            color: #92908d;
+                            font-size: 12px;
+                            line-height: 1.6rem;
+                        }
+                    }
+                    i {
+                        color: $color;
+                    }
+                }
+            }
+        }
+        
+        /*直播视频大纲*/
+        .vidOutlines{
+            .vidOutline{
+                position: relative;
+                padding:0 16px 9px 42px;
+                &:last-child{
+                    padding-bottom: 0;
+                    .outVerticalLine{
+                        display: none;
+                    }
+                }
+                .outStyle{
+                    position: absolute;
+                    left: 16px;
+                    top: 5px;
+                    width: 12px;
+                    height: 12px;
+                    background-color: #ffffff;
+                    border: solid 1.5px #33d26f;
+                    border-radius: 50%;
+                }
+                .outPara{
+                    height: 20px;
+                    font-size: 14px;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    overflow: hidden;
+                }
+                .outVerticalLine{
+                    position: absolute;
+                    left: 21px;
+                    top: 16px;
+                    width: 0.5px;
+                    height: 38px;
+                    border: solid 0.5px #33d26f;
+                }
+            }
+        }
+        
+        .vidLives{
+            .list{
+                .videoItem{
+                   padding: 1rem 4.8rem 1rem 1.4rem; 
+                   .lvIcon{
+                      color: #ffd1b3; 
+                   }
+                }
+            }
+        }
+        
+    }   
+    
+    /*节目简介*/
+    .proInfo {
+        img{
+            width: 100%;
+        }
+        line-height: 2;
+        padding: 0 1.6rem 1.6rem;
+    }
+            
+    /*底部*/
+    .proFooter{
+        height: 50px;
+        .title{
+            line-height: 50px;
+        }
+        background: $color;
+        &.calm{
+            background: #838f9f;
+        }
+        &.botenter{
+            background: #f00;
+        }
+        .title {
+            color: #fff;
+        }
+    }
+    
+    /*关注微信*/
+    .proWX {
+        text-align: center;
+        padding: 0 1.6rem;
+        .w_attention {
+            border-top: solid 1px #e9e6e4;
+            width: 100%;
+            padding: 1.6rem 0;
+            color: #8d939d;
+            font-size: 14px;
+            p {
+                line-height: 2.4rem;
+                i {
+                    padding: 0 2px;
+                    color: #4689F2;
+                    font-weight: 600;
+                    font-size: 1.6rem;
+                }
+            }
+        }
+        .w_QR_code {
+            img {
+                width: 15rem;
+            }
+        }
+        .w_distinguish {
+            color: #aab0b8;
+            font-size: 1.2rem;
+            line-height: 1.8rem;
+            padding: 1rem 0 6.2rem;;
+        }
+    }
+    
+    /*遮罩层*/
+    .proMask {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        opacity: 0.5;
+        z-index: 10;
+    }
+   
+    /*讲师详情卡片*/
+    
+    .trainerDetail {
+        z-index: 999;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 10.2rem;
+        margin: auto;
+        width: 85%;
+        height: 40rem;
+        border-radius: 4px;
+        .closecardtrue {
+            .closeCardIcon{
+                font-size: 20px;
+            }
+            position: absolute;
+            display: block;
+            right: 1rem;
+            top: 1rem;
+            font-size: 1.8rem;
+            color: #fff;
+            width: 1.8rem;
+            height: 1.8rem;
+            text-align: center;
+            z-index: 10002;
+        }
+        ion-scroll {
+            height: 22rem;
+            .scroll-bar-indicator{
+                background: #eae6e3;
+            }
+            &.scroll-view.scroll-y {
+                overflow-x: hidden;
+                overflow-y: hidden;
+            }
+        }
+        .p_introduce {
+            padding-bottom: 0;
+            padding-top: 0;
+            border-width: 0;
+            p {
+                padding-right: 1rem;
+                &:first-child {
+                    margin-top: 0;
+                }
+            }
+            
+        }
+        .p_background {
+            width: 100%;
+            height: 12rem;
+            overflow: visible;
+            background: url(../../img/background/speaker_bg.jpg);
+            background-size: 100% 100%;
+            margin-bottom: 4.4rem;
+            .item {
+                background: none;
+            }
+            .p_people {
+                height: 16.4rem;
+                overflow: visible;
+                z-index: 1000;
+                padding: 0;
+                border: none;
+                padding: 9rem 0 0.4rem 10.6rem;
+                
+                img {
+                    z-index: 1000;
+                    top: 7rem;
+                    left: 1.6rem;
+                    border: 2px solid #fff;
+                    box-sizing: border-box;
+                    border-radius: 5px;
+                    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+                }
+                h2 {
+                    line-height: 2.2rem;
+                    color: #fff;
+                    font-size: 1.6rem;
+                    margin-bottom: 1.6rem;
+                }
+                p {
+                    color: #8D939D;
+                    line-height: 1.8rem;
+                    font-size: 1.2rem;
+                    height: 3.6rem;
+                    overflow: hidden;
+                    white-space: normal;
+                }
+            }
+        }
+    }
+}
+        
+
+.popup-container .popup{
+    background: rgba(0,0,0,0.6);
+    border-radius: 5px;
+    color: #fff;
+    .popup-head{
+       border: none;
+       h5,h3{
+            color: #fff;   
+       }
+       .popup-title{
+         i{
+             font-size: 40px;
+             color: #36d072;
+         }  
+       }
+    }
+}
+
+.groupChats{
+    color: #000;
+    background: none;
+}
+p{
+    margin: 0;
+}
+.popup-container .popup .popup-head h3,.popup-container .popup .popup-head h5{
+    color: #c4c3be;
+    font-size: 12px;
+}
+.popup-container .popup .popup-head{
+    border-bottom: 1px solid #e9e6e4;
+}
+.tabs-striped.tabs-background-light .tabs{
+    position: static;
+    background: #fff;
+}
+.groupChats .pane.tab-content{
+    /*background: none;*/
+    color: #000000;
+    position: static;
+}
+.groupChats .pane.tab-content img{
+    /*margin-top: 12px;*/
+}
+.groupChats .erweima{
+    text-align: center;
+    color: #b4b1ac;
+    font-size:12px;
+    position: relative;
+}
+.groupChats .erweima img{
+    width: 180px;
+    height: 180px;
+    margin-top: 12px;
+}
+.groupChats .erweima .mask{
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    left: 0;
+    right: 0;
+    margin: 12px auto 0;
+    background: rgba(0,0,0,.5);
+    text-align: center;
+    line-height: 180px;
+    color: #fff;
+    font-size: 20px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.popup-container .popup{
+    background: #fff;
+    width: 75%;
+}
+.groupCloseBtn{
+    position: absolute;
+    top: -66px;
+    right: 10px;
+    font-size: 40px;
+    line-height: 1;
+    font-weight: normal;
+    color: #b9b2aa;
+}
+.onlyOne{
+    position: relative;
+    text-align: center;
+    color: #a5a19b;
+    border: 1px dashed #d9d3cf;
+    width: 50%;
+    margin: 0 auto;
+    border-radius: 100px;
+    background: #f4f4f4;
+    font-size: 14px;
+    line-height: 32px;
+}
+.onlyOne:before{
+position: absolute;
+left: -50%;
+width: 50%;
+top: 16px;
+content: "";
+border-bottom: 1px dashed #d9d3cf;
+}
+.onlyOne:after{
+position: absolute;
+right: -50%;
+width: 50%;
+top: 16px;
+content: "";
+border-bottom: 1px dashed #d9d3cf;
+}
+.popup-body{
+    position: relative;
+    padding-left: 0;
+    padding-right: 0;
+    overflow: visible;
+}

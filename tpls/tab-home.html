@@ -1,0 +1,56 @@
+<!--
+@description: "主栏目—视频"页面
+h==home
+-->
+<ion-view class="tab_home">
+	<ion-header-bar class="h_home">
+		<!--主类目-->
+		<h1 class="mainTitle" ng-class="{'mainActive':homeVar.mainNav=='learn'}" ng-click="learn()">学知识</h1>
+		<h1 class="mainTitle" ng-class="{'mainActive':homeVar.mainNav=='watch'}" ng-click="watch()">看大会</h1>
+	</ion-header-bar>
+	<!--科目-->
+	<div class="bar bar-subheader has-header h_center">
+		<ion-scroll direction="x" lock="true" scrollbar-y="false" scrollbar-x="false" style="width: 100%;">
+			<div class="h_subnav">
+				<button ng-click="Recommend()" ng-class="{true: 'active'}[homeVar.isActive]" class="button button-stable">推荐</button>
+				<button ng-repeat="item in homeVar.SubNav" class="button button-stable" ng-click="nav1({{item.sid}})" ng-class="{ 'active' : ({{item.sid}}+0) == homeVar.activeNav }">{{item.title}}</button>
+			</div>
+		</ion-scroll>
+	</div>
+	<!--主体内容-->
+	<ion-content  lazy-scroll on-scroll="getPos()" delegate-handle="home" class="scdiv h_content has-header has-subheader">
+		<!--幻灯片-->
+		<div class="h_banner">
+			<ion-slide-box auto-play="true" does-continue="true" show-pager="true" ng-if="homeVar.slideShow">
+				<ion-slide ng-repeat="slide in homeVar.slides">
+					<a nav-direction="forward" href="{{slide.url}}"><img ng-src={{slide.logo}} alt="{{slide.title}}" /></a>
+				</ion-slide>
+			</ion-slide-box>
+		</div>
+		<!--精品推荐列表-->
+		<ion-list class="h_list" ng-if="homeVar.ListShow">
+			<p class="h_recommend">精选推荐</p>
+			<ion-item home-finish = "ngRepeatOk" ng-repeat="item in homeVar.Items" class="item item-thumbnail-left" ng-click="to_program(item.id,item.type)" href="">
+				<!--图片-->
+				<img image-lazy-src="{{item.logo}}" ng-if="item.logo!=null" class="popupBox" />
+				<img src="../img/background/homeBg.jpg" ng-if="item.logo == null" class="popupBox"/>
+				<!--标题-->
+				<h2>{{item.title}}</h2>
+				<!--科目-->
+				<p><i ng-bind="item.subjectName"></i></p>
+				<!--观看或报名人数-->
+				<span class="h_camera" ng-bind-html="item.analysis_data"></span>
+				<!--播放状态-->
+				<div class="h_state" ng-if="item.play_status" ng-bind="item.play_status"></div>
+				<!--节目类型：直播/点播-->
+				<div class="live" ng-if="item.program_type" ng-bind="item.program_type"></div>
+			</ion-item>
+		</ion-list>
+		<ion-infinite-scroll spinner="dots" ng-if="homeVar.DataLoad" on-infinite="loadMore()"></ion-infinite-scroll>
+		<p ng-if="!homeVar.DataLoad" class="noContent">没有更多内容了</p>
+	</ion-content>
+	<!--回到顶部按钮-->
+	<button class="scrollToTop button-clear" ng-click="scrollTop()" ng-if="homeVar.backTopShow">
+		<i class="iconfont">&#xe654;</i>
+	</button>
+</ion-view>

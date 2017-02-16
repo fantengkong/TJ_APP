@@ -1,0 +1,59 @@
+@charset "utf-8";
+/*
+* @description: "主栏目—活动"页面样式
+* */
+.tab-activity {
+    background: #fff;
+    .title_color{
+        color: $color;
+        font-weight: bold;
+        font-size: 16px;
+    }
+    ion-content {
+        .list {
+            padding-bottom: 1.6rem;
+            .item {
+                .item-content{
+                    padding: 0;
+                }
+                border: none;
+                margin: 1.6rem 1.6rem 0;
+                padding: 0;
+                div {
+                    height: 100%;
+                    width: 100%;
+                    position: relative;
+                    p {
+                        background: #838e9f;
+                        position: absolute;
+                        z-index: 1;
+                        top: 0;
+                        left: 0;
+                        color: #fff;
+                        text-align: center;
+                        padding: 2px 10px;
+                        border-radius: 4px 0 4px 0; 
+                        &.bag{
+                            background: #409cf3;
+                        }   
+                    }
+                    .foreshow {
+                        background-color: #4384e9;
+                    }
+                    .startTime {
+                        .k-time {
+                            padding: 0 5px;
+                        }
+                        background-color: #4384e9;
+                    }
+                    img {
+                        display: block;
+                        border-radius: 4px;
+                        width: 100%;
+                    }
+                }
+                    
+            }
+        }
+    }
+}
